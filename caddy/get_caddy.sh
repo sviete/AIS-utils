@@ -50,5 +50,5 @@ caddy -version
 echo "-----------------------------"
 
 echo "-----------------------------"
-echo "Successfully installed"
+echo "Successfully installed, your HTTP server is ready on http://ais-dom:8180"
 echo "-----------------------------"
