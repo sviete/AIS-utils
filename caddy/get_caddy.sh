@@ -40,7 +40,7 @@ echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
 
-pm2 start caddy --name http -- -c "$PREFIX/bin/Caddyfile"
+pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
 pm2 save
 
 
@@ -52,7 +52,3 @@ echo "-----------------------------"
 echo "-----------------------------"
 echo "Successfully installed"
 echo "-----------------------------"
-
-
-
-return 0
