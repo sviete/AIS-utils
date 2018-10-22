@@ -17,8 +17,6 @@ pip install ais-dom -U
 # 1. Download and extract Caddy HTTP server    #
 ################################################
 
-curl https://raw.githubusercontent.com/sviete/AIS-utils/master/upgrades/0.80.sh | bash
-
 
 echo "-----------------------------"
 echo "Downloading Caddy for AIS dom"
