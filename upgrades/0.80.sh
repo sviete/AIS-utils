@@ -48,7 +48,7 @@ rm -rf "$dl"
 echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
-
+pm2 delete http
 pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
 pm2 save
 
@@ -79,11 +79,20 @@ rm -rf -- "$dl"
 curl -o "$dl" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/Googlequicksearchbox.apk
 
 echo "-----------------------------"
-echo "Installing..."
+echo "Installing the Googlequicksearchbox..."
 echo "-----------------------------"
 
+echo "remount system rw"
 su -c "mount -o rw,remount,rw /system"
-su -c "mv $dl /system/priv-app/"
+
+echo "mv app from $dl to /system/priv-app/Googlequicksearchbox.apk"
+su -c "mv $dl /system/priv-app/Googlequicksearchbox.apk"
+
+echo "chmod 644 /system/priv-app/Googlequicksearchbox.apk"
 su -c "chmod 644 /system/priv-app/Googlequicksearchbox.apk"
 
+echo "remount system ro"
+su -c "mount -o ro,remount,ro /system"
+
+echo "reboot"
 su -c "reboot"
