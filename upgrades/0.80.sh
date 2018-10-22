@@ -1,17 +1,8 @@
-#!/usr/bin/env bash
 #
-#   AIS dom upgrade script
+#   AIS dom upgrade script to version 0.80.x
 #
 #   Homepage: https://ai-speaker.com
 #
-
-################################################
-# 0. Update ais-dom from pip                   #
-################################################
-echo "-----------------------------"
-echo "pip update ais-dom"
-echo "-----------------------------"
-pip install ais-dom -U
 
 ################################################
 # 1. Download and extract Caddy HTTP server    #
@@ -64,21 +55,8 @@ echo "-----------------------------"
 
 
 ################################################
-# 2. Upgrade Googlequicksearchbox.apk          #
+# 2. HDMI 4K                                   #
 ################################################
-
-
-echo "-----------------------------"
-echo "Downloading GoogleApk for AIS dom"
-echo "-----------------------------"
-
-# Use $PREFIX for compatibility with AIS dom on Android
-rm -rf -- "/data/data/pl.sviete.dom/files/usr/tmp/Googlequicksearchbox.apk"
-
-curl -o "/data/data/pl.sviete.dom/files/usr/tmp/Googlequicksearchbox.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/Googlequicksearchbox.apk
-
-echo "-----------------------------"
-echo "Installing the Googlequicksearchbox..."
-echo "-----------------------------"
-
-su -c "mount -o rw,remount,rw /system && mv /data/data/pl.sviete.dom/files/usr/tmp/Googlequicksearchbox.apk /system/priv-app/Googlequicksearchbox.apk && chmod 644 /system/priv-app/Googlequicksearchbox.apk && mount -o ro,remount,ro /system && reboot"
+echo "HDMI 4K to build.prop start"
+su -c "mount -o rw,remount,rw /system && sed -i '/ro.platform.support.over.4k30/d' '/system/build.prop' &&  echo 'ro.platform.support.over.4k30=false' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'"
+echo "HDMI 4K to build.prop done"
