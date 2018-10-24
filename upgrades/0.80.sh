@@ -48,11 +48,11 @@ echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
 echo "pm2 delete http"
-/data/data/pl.sviete.dom/files/usr/bin/pm2 delete http
+node $PREFIX/bin/pm2 delete http
 echo "pm2 start caddy"
-/data/data/pl.sviete.dom/files/usr/bin/pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
-echo "pm2 start caddy"
-/data/data/pl.sviete.dom/files/usr/bin/pm2 save
+node $PREFIX/bin/pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
+echo "pm2 save caddy"
+node $PREFIX/bin/pm2 save
 
 
 echo "-----------------------------"
@@ -71,4 +71,4 @@ echo "-----------------------------"
 echo "HDMI 4K to build.prop start"
 su -c "mount -o rw,remount,rw /system && sed -i '/ro.platform.support.over.4k30/d' '/system/build.prop' &&  echo 'ro.platform.support.over.4k30=false' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'"
 echo "HDMI 4K to build.prop done"
-echo $(date '+%Y %b %d %H:%M') STOP 
+echo $(date '+%Y %b %d %H:%M') STOP
