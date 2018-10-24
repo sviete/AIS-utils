@@ -48,11 +48,11 @@ echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
 echo "pm2 delete http"
-node $PREFIX/bin/pm2 delete http
+node $PREFIX/bin/pm2 delete http >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
 echo "pm2 start caddy"
-node $PREFIX/bin/pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
+node $PREFIX/bin/pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile" >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
 echo "pm2 save caddy"
-node $PREFIX/bin/pm2 save
+node $PREFIX/bin/pm2 save >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
 
 
 echo "-----------------------------"
