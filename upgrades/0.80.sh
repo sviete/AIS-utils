@@ -47,12 +47,13 @@ rm -rf "$dl"
 echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
-echo "pm2 delete http"
-node $PREFIX/bin/pm2 delete http >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
-echo "pm2 start caddy"
-node $PREFIX/bin/pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile" >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
-echo "pm2 save caddy"
-node $PREFIX/bin/pm2 save >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt
+echo "inception... go deeper..."
+ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
+pm2 delete http
+pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
+pm2 save
+EOF
+echo "inception... go back"
 
 
 echo "-----------------------------"
