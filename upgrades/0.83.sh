@@ -7,7 +7,9 @@
 ################################################
 # 1. Download and extract Caddy HTTP server    #
 ################################################
-
+echo "-----------------------------"
+echo "-----------------------------"
+echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M') START
 echo "-----------------------------"
 echo "AIS dom upgrade to version 0.83.x"
@@ -33,18 +35,22 @@ echo "-----------------------------------"
 echo "AisExplorer"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisExplorer.apk
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk"
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk || true"
 echo "-----------------------------------"
 echo "AisLauncher"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisLauncher.apk
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk"
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk || true"
 echo "-----------------------------------"
 echo "AisSynchro"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisSynchro.apk
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk"
-
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk || true"
+echo "-----------------------------------"
+echo "AisPanelApp"
+echo "-----------------------------------"
+curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisPanelApp.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisPanelApp.apk
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisPanelApp.apk || true"
 
 
 echo "all done"
