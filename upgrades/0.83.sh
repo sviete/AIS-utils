@@ -3,7 +3,7 @@
 #
 #   Homepage: https://ai-speaker.com
 #
-
+# curl https://raw.githubusercontent.com/sviete/AIS-utils/master/upgrades/0.83.sh | bash
 ################################################
 # 1. Download and extract Caddy HTTP server    #
 ################################################

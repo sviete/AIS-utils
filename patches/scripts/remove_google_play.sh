@@ -55,15 +55,14 @@ su -c "chown root:root /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chown root:root /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chown root:root /system/priv-app/GoogleApp/GoogleApp.apk";
 
-su -c "chmod 644 /system/priv-app/GoogleChrome";
-su -c "chmod 644 /system/priv-app/GoogleTts";
-su -c "chmod 644 /system/priv-app/GoogleApp";
+su -c "chmod 755 /system/priv-app/GoogleChrome";
+su -c "chmod 755 /system/priv-app/GoogleTts";
+su -c "chmod 755 /system/priv-app/GoogleApp";
 su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
 
 echo "-----------------------------"
-echo "----mount system to read ----"
+echo $(date '+%Y %b %d %H:%M')
+echo "----ALL OK END -> RESTART----"
 echo "-----------------------------"
-
-su -c "mount -o ro,remount,ro /system";
