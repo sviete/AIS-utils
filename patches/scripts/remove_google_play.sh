@@ -33,6 +33,7 @@ su -c "rm -rf /system/priv-app/GmsCore";
 su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
 su -c "rm -rf /system/priv-app/GoogleServicesFramework";
 su -c "rm -rf /system/priv-app/Phonesky";
+su -c "rm -rf /system/priv-app/*.apk";
 
 
 echo "-----------------------------";
@@ -47,10 +48,16 @@ su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-a
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp";
 
+su -c "chown root:root /system/priv-app/GoogleChrome";
+su -c "chown root:root /system/priv-app/GoogleTts";
+su -c "chown root:root /system/priv-app/GoogleApp";
 su -c "chown root:root /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chown root:root /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chown root:root /system/priv-app/GoogleApp/GoogleApp.apk";
 
+su -c "chmod 644 /system/priv-app/GoogleChrome";
+su -c "chmod 644 /system/priv-app/GoogleTts";
+su -c "chmod 644 /system/priv-app/GoogleApp";
 su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
