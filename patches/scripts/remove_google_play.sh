@@ -8,7 +8,6 @@
 ################################################
 
 
-echo "-----------------------------";
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";
 
@@ -18,14 +17,12 @@ curl -o "/data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk" -L https://powied
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk" -L https://powiedz.co/ota/android/GoogleChrome.apk;
 
 
-echo "-----------------------------";
 echo "----mount system to write----";
 echo "-----------------------------";
 
 su -c "mount -o rw,remount,rw /system";
 
 
-echo "-----------------------------";
 echo "----remove old apps ---------";
 echo "-----------------------------";
 
@@ -36,7 +33,6 @@ su -c "rm -rf /system/priv-app/Phonesky";
 su -c "rm -rf /system/priv-app/*.apk";
 
 
-echo "-----------------------------";
 echo "Installing the new apps...---";
 echo "-----------------------------";
 
@@ -47,6 +43,10 @@ su -c "mkdir -p /system/priv-app/GoogleApp";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-app/GoogleChrome";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp";
+
+
+echo "set the perimitions...-------";
+echo "-----------------------------";
 
 su -c "chown root:root /system/priv-app/GoogleChrome";
 su -c "chown root:root /system/priv-app/GoogleTts";
@@ -61,5 +61,3 @@ su -c "chmod 755 /system/priv-app/GoogleApp";
 su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
-
-exit 0

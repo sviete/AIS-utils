@@ -18,21 +18,18 @@ echo "-----------------------------";
 
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/remove_google_play.sh;
 
-echo "-----------------------------";
 echo "chmod------------------------";
 echo "-----------------------------";
 
 chmod 777 /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
 
 
-echo "-----------------------------";
-echo "execute----------------------";
+echo "execute main script----------";
 echo "-----------------------------";
 
 /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
 
-echo "-----------------------------";
-echo "remove script----------------";
+echo "remove main script-----------";
 echo "-----------------------------";
 
 rm /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
