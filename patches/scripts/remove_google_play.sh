@@ -1,5 +1,14 @@
+#
+#   AIS dom
+#
+#   Homepage: https://ai-speaker.com
+#
 ################################################
-#  Upgrade Googlequicksearchbox.apk          #
+#  Remove Google Play script,                  #
+#  run it by executiong in AIS dom console:
+#
+#  curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" \
+#           -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/upgrades/remove_google_play.sh
 ################################################
 
 
@@ -51,10 +60,3 @@ echo "----mount system to read ----"
 echo "-----------------------------"
 
 su -c "mount -o ro,remount,ro /system"
-
-
-echo "-----------------------------"
-echo "---- reboot------------------"
-echo "-----------------------------"
-
-su -c "reboot"
