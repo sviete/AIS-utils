@@ -16,8 +16,7 @@ echo "Downloading main script------";
 echo "-----------------------------";
 
 
-curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scrips/remove_google_play.sh;
-
+curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/remove_google_play.sh;
 
 echo "-----------------------------";
 echo "chmod------------------------";
