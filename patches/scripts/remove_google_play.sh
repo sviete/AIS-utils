@@ -62,7 +62,4 @@ su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
 
-echo "-----------------------------"
-echo $(date '+%Y %b %d %H:%M')
-echo "----ALL OK END -> RESTART----"
-echo "-----------------------------"
+exit 0
