@@ -61,3 +61,39 @@ su -c "chmod 755 /system/priv-app/GoogleApp";
 su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
+
+echo "-------count to 10 and restart--------";
+sleep 1
+echo "1";
+sleep 1
+echo "2";
+sleep 1
+echo "3";
+sleep 1
+echo "4";
+sleep 1
+echo "5";
+sleep 1
+echo "6";
+sleep 1
+echo "7";
+sleep 1
+echo "8";
+sleep 1
+echo "9";
+sleep 1
+echo "10";
+sleep 1
+echo "-----------------------------"
+echo $(date '+%Y %b %d %H:%M')
+echo "----ALL OK END -> RESTART----"
+echo "-----------------------------"
+
+echo "-----------------------------";
+echo "reboot ----------------------";
+echo "-----------------------------";
+
+su -c "reboot now"
+
+# Success
+exit 0;
