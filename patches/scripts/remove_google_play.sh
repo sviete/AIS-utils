@@ -4,11 +4,7 @@
 #   Homepage: https://ai-speaker.com
 #
 ################################################
-#  Remove Google Play script,                  #
-#  run it by executiong in AIS dom console:
-#
-#  curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" \
-#           -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/upgrades/remove_google_play.sh
+#  Remove Google Play
 ################################################
 
 
@@ -29,34 +25,41 @@ echo "-----------------------------";
 echo "----mount system to write----";
 echo "-----------------------------";
 
-su -c "mount -o rw,remount,rw /system";
+mount -o rw,remount,rw /system;
 
 
 echo "-----------------------------";
 echo "----remove old apps ---------";
 echo "-----------------------------";
 
-su -c "rm -rf /system/priv-app/GmsCore";
-su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
-su -c "rm -rf /system/priv-app/GoogleServicesFramework";
-su -c "rm -rf /system/priv-app/Phonesky";
+rm -rf /system/priv-app/GmsCore;
+rm -rf /system/priv-app/GmsCoreSetupPrebuilt;
+rm -rf /system/priv-app/GoogleServicesFramework;
+rm -rf /system/priv-app/Phonesky;
 
 
 echo "-----------------------------";
 echo "Installing the new apps...---";
 echo "-----------------------------";
 
-su -c "mkdir -p /system/priv-app/GoogleChrome";
-su -c "mkdir -p /system/priv-app/GoogleTts";
-su -c "mkdir -p /system/priv-app/GoogleApp";
+mkdir -p /system/priv-app/GoogleChrome;
+mkdir -p /system/priv-app/GoogleTts;
+mkdir -p /system/priv-app/GoogleApp;
 
-su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-app/GoogleChrome";
-su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts";
-su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp";
+mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-app/GoogleChrome;
+mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts;
+mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp;
 
+chown root:root /system/priv-app/GoogleChrome/GoogleChrome.apk
+chown root:root /system/priv-app/GoogleTts/GoogleTts.apk
+chown root:root /system/priv-app/GoogleApp/GoogleApp.apk
+
+chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk
+chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk
+chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk
 
 echo "-----------------------------"
 echo "----mount system to read ----"
 echo "-----------------------------"
 
-su -c "mount -o ro,remount,ro /system"
+mount -o ro,remount,ro /system
