@@ -11,36 +11,36 @@
 ################################################
 
 
-echo "-----------------------------"
-echo "Downloading main script"
-echo "-----------------------------"
+echo "-----------------------------";
+echo "Downloading main script------";
+echo "-----------------------------";
 
 
-curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scrips/remove_google_play.sh
+curl -o "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scrips/remove_google_play.sh;
 
 
-echo "-----------------------------"
-echo "chmod"
-echo "-----------------------------"
+echo "-----------------------------";
+echo "chmod------------------------";
+echo "-----------------------------";
 
-chmod 777 /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh
-
-
-echo "-----------------------------"
-echo "execute"
-echo "-----------------------------"
-
-/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh
-
-echo "-----------------------------"
-echo "remove"
-echo "-----------------------------"
-
-rm /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh
+chmod 777 /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
 
 
-echo "-----------------------------"
-echo "---- reboot------------------"
-echo "-----------------------------"
+echo "-----------------------------";
+echo "execute----------------------";
+echo "-----------------------------";
 
-su -c "reboot"
+/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
+
+echo "-----------------------------";
+echo "remove-----------------------";
+echo "-----------------------------";
+
+rm /data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh;
+
+
+echo "-----------------------------";
+echo "---- reboot------------------";
+echo "-----------------------------";
+
+su -c "reboot";
