@@ -62,6 +62,17 @@ su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
 
+echo "remove apps from data/app----";
+echo "-----------------------------";
+su -c "rm -rf /data/app/com.android.vending*"
+su -c "rm -rf /data/app/com.google.android.gms*"
+
+echo "remove apps from data/data----";
+echo "-----------------------------";
+su -c "rm -rf /data/data/com.android.vending"
+su -c "rm -rf /data/data/com.google.android.gms*"
+su -c "rm -rf /data/data/com.google.android.gsf*"
+
 echo "-------count to 10 and restart--------";
 sleep 1
 echo "1";
@@ -84,6 +95,7 @@ echo "9";
 sleep 1
 echo "10";
 sleep 1
+
 echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M')
 echo "----ALL OK END -> RESTART----"
