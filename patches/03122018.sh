@@ -29,7 +29,7 @@ echo "-----------------------------";
 echo "execute----------------------";
 echo "-----------------------------";
 
-su -c "/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh  >> /data/data/pl.sviete.dom/files/home/AIS/www/upgrade_log.txt"
+/data/data/pl.sviete.dom/files/usr/tmp/remove_google_play.sh
 
 echo "-----------------------------";
 echo "remove script----------------";
