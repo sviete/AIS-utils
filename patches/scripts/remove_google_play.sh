@@ -68,12 +68,12 @@ su -c "rm -rf /data/app/com.android.vending*"
 su -c "rm -rf /data/app/com.google.android.gms*"
 
 echo "remove apps from data/data----";
-echo "-----------------------------";
+echo "------------------------------";
 su -c "rm -rf /data/data/com.android.vending"
 su -c "rm -rf /data/data/com.google.android.gms*"
 su -c "rm -rf /data/data/com.google.android.gsf*"
 
-echo "-------count to 10 and restart--------";
+echo "---count to 10 and restart----";
 sleep 1
 echo "1";
 sleep 1
