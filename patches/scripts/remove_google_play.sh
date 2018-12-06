@@ -27,7 +27,9 @@ echo "----remove old apps ---------";
 echo "-----------------------------";
 
 su -c "rm -rf /system/priv-app/GmsCore";
+su -c "rm -rf /system/app/GmsCore";
 su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
+su -c "rm -rf /system/priv-app/GooglePartnerSetup";
 su -c "rm -rf /system/priv-app/GoogleServicesFramework";
 su -c "rm -rf /system/priv-app/Phonesky";
 su -c "rm -rf /system/priv-app/*.apk";
