@@ -7,6 +7,13 @@
 #  Remove Google Play
 ################################################
 
+if [ -d "/system/preinstall" ]; then
+  echo "Patch the DEV BT version";
+  APP_DIR="preinstall"
+else
+  echo "Patch the DEV 1 version";
+  APP_DIR="pre_app"
+fi
 
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";
@@ -29,7 +36,7 @@ su -c "mkdir -p /system/priv-app/GoogleApp";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-app/GoogleChrome";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp";
-su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk /system/pre_app";
+su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk /system/$APP_DIR";
 
 
 echo "Set the perimitions...-------";
@@ -40,7 +47,7 @@ su -c "chown root:root /system/priv-app/GoogleApp";
 su -c "chown root:root /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chown root:root /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chown root:root /system/priv-app/GoogleApp/GoogleApp.apk";
-su -c "chown root:root /system/pre_app/AisLauncher.apk";
+su -c "chown root:root /system/$APP_DIR/AisLauncher.apk";
 
 su -c "chmod 755 /system/priv-app/GoogleChrome";
 su -c "chmod 755 /system/priv-app/GoogleTts";
@@ -48,11 +55,11 @@ su -c "chmod 755 /system/priv-app/GoogleApp";
 su -c "chmod 644 /system/priv-app/GoogleChrome/GoogleChrome.apk";
 su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
-su -c "chmod 644 /system/pre_app/AisLauncher.apk";
+su -c "chmod 644 /system/$APP_DIR/AisLauncher.apk";
 
 echo "Install AisLauncher.apk------";
 echo "-----------------------------";
-su -c "pm install -r /system/pre_app/AisLauncher.apk"
+su -c "pm install -r /system/$APP_DIR/AisLauncher.apk"
 
 echo "Remove apps from data/app----";
 echo "-----------------------------";
