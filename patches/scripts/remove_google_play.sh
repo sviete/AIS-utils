@@ -34,7 +34,6 @@ su -c "rm -rf /system/priv-app/GooglePartnerSetup";
 su -c "rm -rf /system/priv-app/GoogleServicesFramework";
 su -c "rm -rf /system/priv-app/Phonesky";
 su -c "rm -rf /system/priv-app/*.apk";
-su -c "rm -rf /system/priv-app/AisLauncher";
 
 
 echo "Installing the new apps...---";
@@ -83,6 +82,9 @@ echo "------------------------------";
 su -c "rm -rf /data/data/com.android.vending"
 su -c "rm -rf /data/data/com.google.android.gms*"
 su -c "rm -rf /data/data/com.google.android.gsf*"
+
+echo "remove AisLauncher------------------";
+su -c "rm -rf /system/priv-app/AisLauncher";
 
 echo "---count to 10 and restart----";
 sleep 1
