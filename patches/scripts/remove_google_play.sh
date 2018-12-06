@@ -61,6 +61,12 @@ echo "Install AisLauncher.apk------";
 echo "-----------------------------";
 su -c "pm install -r /system/$APP_DIR/AisLauncher.apk"
 
+
+echo "Grants for storage and mic---";
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE"
+su -c "pm grant pl.sviete.dom android.permission.RECORD_AUDIO"
+su -c "pm grant com.google.android.googlequicksearchbox android.permission.RECORD_AUDIO"
+
 echo "Remove apps from data/app----";
 echo "-----------------------------";
 su -c "rm -rf /data/app/com.android.vending*"
