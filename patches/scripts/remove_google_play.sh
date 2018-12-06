@@ -10,8 +10,6 @@
 
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";
-
-
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk" -L https://powiedz.co/ota/android/GoogleApp.apk;
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk" -L https://powiedz.co/ota/android/GoogleTts.apk;
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk" -L https://powiedz.co/ota/android/GoogleChrome.apk;
@@ -20,29 +18,14 @@ curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk" -L https://powi
 
 echo "----mount system to write----";
 echo "-----------------------------";
-
 su -c "mount -o rw,remount,rw /system";
 
 
-echo "----remove old apps ---------";
+echo "Copy the new apps...---";
 echo "-----------------------------";
-
-su -c "rm -rf /system/priv-app/GmsCore";
-su -c "rm -rf /system/app/GmsCore";
-su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
-su -c "rm -rf /system/priv-app/GooglePartnerSetup";
-su -c "rm -rf /system/priv-app/GoogleServicesFramework";
-su -c "rm -rf /system/priv-app/Phonesky";
-su -c "rm -rf /system/priv-app/*.apk";
-
-
-echo "Installing the new apps...---";
-echo "-----------------------------";
-
 su -c "mkdir -p /system/priv-app/GoogleChrome";
 su -c "mkdir -p /system/priv-app/GoogleTts";
 su -c "mkdir -p /system/priv-app/GoogleApp";
-
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleChrome.apk /system/priv-app/GoogleChrome";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleTts.apk /system/priv-app/GoogleTts";
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/GoogleApp";
@@ -51,7 +34,6 @@ su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk /system/pre_app
 
 echo "set the perimitions...-------";
 echo "-----------------------------";
-
 su -c "chown root:root /system/priv-app/GoogleChrome";
 su -c "chown root:root /system/priv-app/GoogleTts";
 su -c "chown root:root /system/priv-app/GoogleApp";
@@ -71,7 +53,6 @@ echo "install AisLauncher.apk------";
 echo "-----------------------------";
 su -c "pm install -r /system/priv-app/GoogleApp/AisLauncher.apk"
 
-
 echo "remove apps from data/app----";
 echo "-----------------------------";
 su -c "rm -rf /data/app/com.android.vending*"
@@ -83,8 +64,17 @@ su -c "rm -rf /data/data/com.android.vending"
 su -c "rm -rf /data/data/com.google.android.gms*"
 su -c "rm -rf /data/data/com.google.android.gsf*"
 
-echo "remove AisLauncher------------------";
+echo "----remove old apps ---------";
+echo "-----------------------------";
+su -c "rm -rf /system/priv-app/GmsCore";
+su -c "rm -rf /system/app/GmsCore";
+su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
+su -c "rm -rf /system/priv-app/GooglePartnerSetup";
+su -c "rm -rf /system/priv-app/GoogleServicesFramework";
 su -c "rm -rf /system/priv-app/AisLauncher";
+su -c "rm -rf /system/priv-app/Phonesky";
+su -c "rm -rf /system/priv-app/*.apk";
+
 
 echo "---count to 10 and restart----";
 sleep 1
