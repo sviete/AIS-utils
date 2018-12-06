@@ -6,7 +6,7 @@
 ################################################
 #  Remove Google Play script,                  #
 #  run it by executiong in AIS dom console:
-# curl https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/03122018.sh | bash
+# curl https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/03122018_remove_gms.sh | bash
 #
 ################################################
 set -e
