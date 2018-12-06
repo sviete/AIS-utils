@@ -21,7 +21,7 @@ echo "-----------------------------";
 su -c "mount -o rw,remount,rw /system";
 
 
-echo "Copy the new apps...---";
+echo "Copy the new apps...---------";
 echo "-----------------------------";
 su -c "mkdir -p /system/priv-app/GoogleChrome";
 su -c "mkdir -p /system/priv-app/GoogleTts";
@@ -32,7 +32,7 @@ su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/GoogleApp.apk /system/priv-app/
 su -c "mv /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk /system/pre_app";
 
 
-echo "set the perimitions...-------";
+echo "Set the perimitions...-------";
 echo "-----------------------------";
 su -c "chown root:root /system/priv-app/GoogleChrome";
 su -c "chown root:root /system/priv-app/GoogleTts";
@@ -49,31 +49,31 @@ su -c "chmod 644 /system/priv-app/GoogleTts/GoogleTts.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/GoogleApp.apk";
 su -c "chmod 644 /system/priv-app/GoogleApp/AisLauncher.apk";
 
-echo "install AisLauncher.apk------";
+echo "Install AisLauncher.apk------";
 echo "-----------------------------";
-su -c "pm install -r /system/priv-app/GoogleApp/AisLauncher.apk"
+su -c "pm install -r /system/pre_app/AisLauncher.apk"
 
-echo "remove apps from data/app----";
+echo "Remove apps from data/app----";
 echo "-----------------------------";
 su -c "rm -rf /data/app/com.android.vending*"
 su -c "rm -rf /data/app/com.google.android.gms*"
 
-echo "remove apps from data/data----";
+echo "Remove apps from data/data----";
 echo "------------------------------";
 su -c "rm -rf /data/data/com.android.vending"
 su -c "rm -rf /data/data/com.google.android.gms*"
 su -c "rm -rf /data/data/com.google.android.gsf*"
 
-echo "----remove old apps ---------";
+echo "Remove old apps -------------";
 echo "-----------------------------";
 su -c "rm -rf /system/priv-app/GmsCore";
 su -c "rm -rf /system/app/GmsCore";
 su -c "rm -rf /system/priv-app/GmsCoreSetupPrebuilt";
 su -c "rm -rf /system/priv-app/GooglePartnerSetup";
 su -c "rm -rf /system/priv-app/GoogleServicesFramework";
-su -c "rm -rf /system/priv-app/AisLauncher";
 su -c "rm -rf /system/priv-app/Phonesky";
 su -c "rm -rf /system/priv-app/*.apk";
+su -c "rm -rf /system/priv-app/AisLauncher";
 
 
 echo "---count to 10 and restart----";
