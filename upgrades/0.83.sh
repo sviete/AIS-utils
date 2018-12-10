@@ -24,14 +24,20 @@ echo "        transparent" >> $PREFIX/bin/Caddyfile
 echo "    }" >> $PREFIX/bin/Caddyfile
 echo "}" >> $PREFIX/bin/Caddyfile
 
+
+echo "-----------------------------"
+echo "Switch Node-red to http"
+echo "-----------------------------"
+sed -i 's,https://127.0.0.1:8123,http://127.0.0.1:8180,g' /data/data/pl.sviete.dom/files/home/.node-red/flows_localhost.json
+
+
 echo "-----------------------------"
 echo "pm2 part"
 echo "-----------------------------"
 echo "inception... go deeper..."
 ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
 pm2 restart http
-pm2 delete nred
-pm2 save
+pm2 restart nred
 EOF
 echo "inception... go back"
 
