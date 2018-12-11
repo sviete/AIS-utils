@@ -37,7 +37,8 @@ echo "-----------------------------"
 echo "inception... go deeper..."
 ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
 pm2 restart http
-pm2 restart nred
+pm2 delete nred
+pm2 save
 EOF
 echo "inception... go back"
 
