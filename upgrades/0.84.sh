@@ -19,17 +19,17 @@ echo "-----------------------------------"
 echo "AisExplorer"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisExplorer.apk &&
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk" &&
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk" &&
 echo "-----------------------------------"
 echo "AisLauncher"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisLauncher.apk &&
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisExplorer.apk" &&
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk" &&
 echo "-----------------------------------"
 echo "AisSynchro"
 echo "-----------------------------------"
 curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk" -L https://github.com/sviete/AIS-WWW/raw/master/ota/android/AisSynchro.apk &&
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisLauncher.apk" &&
+su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisSynchro.apk" &&
 
 echo "-----------------------------------"
 echo "New grants"
