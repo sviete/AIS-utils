@@ -22,6 +22,7 @@ add adnroid to /data/data/pl.sviete.dom/files/usr/lib/node_modules/localtunnel/n
 
 npm install -g local-tunnel-manager
 
+pm2 start lt -- -p 8180 -s aisdom
 
 
 echo "all done"
