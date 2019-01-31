@@ -14,15 +14,13 @@ echo "AIS dom upgrade to version 0.86.x"
 echo "-----------------------------"
 
 
-npm install localtunnel
+echo "-----------------------------";
+echo "Downloading lovelace json----";
+echo "-----------------------------";
 
-./termux-fix-shebang lt
 
-add adnroid to /data/data/pl.sviete.dom/files/usr/lib/node_modules/localtunnel/node_modules/openurl/openurl.js
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace;
 
-npm install -g local-tunnel-manager
-
-pm2 start lt -- -p 8180 -s aisdom
 
 
 echo "all done"
