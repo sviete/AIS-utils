@@ -72,4 +72,16 @@ echo "-----------------------------"
 echo "HDMI 4K to build.prop start"
 su -c "mount -o rw,remount,rw /system && sed -i '/ro.platform.support.over.4k30/d' '/system/build.prop' &&  echo 'ro.platform.support.over.4k30=false' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'"
 echo "HDMI 4K to build.prop done"
+
+
+echo "-----------------------------";
+echo "Install dom-tunnel ----------";
+echo "-----------------------------";
+npm install -g dom-tunnel
+echo "-----------------------------";
+echo "Downloading lovelace json----";
+echo "-----------------------------";
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace;
+
+
 echo $(date '+%Y %b %d %H:%M') STOP
