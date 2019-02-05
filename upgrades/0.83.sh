@@ -33,6 +33,7 @@ pm2 restart http
 pm2 delete nred
 pm2 save
 npm install -g dom-tunnel
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace
 EOF
 echo "inception... go back"
 

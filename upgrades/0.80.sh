@@ -53,6 +53,7 @@ pm2 delete http
 pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
 pm2 save
 npm install -g dom-tunnel
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace
 EOF
 echo "inception... go back"
 
