@@ -15,8 +15,11 @@ echo "-----------------------------"
 echo "-----------------------------";
 echo "Install dom-tunnel ----------";
 echo "-----------------------------";
+echo "inception... go deeper..."
+ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
 npm install -g dom-tunnel
-echo "-----------------------------";
+EOF
+echo "inception... go back"
 echo "-----------------------------";
 echo "Upgrade pip------------------";
 echo "-----------------------------";

@@ -32,14 +32,10 @@ ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/fi
 pm2 restart http
 pm2 delete nred
 pm2 save
+npm install -g dom-tunnel
 EOF
 echo "inception... go back"
 
-echo "-----------------------------";
-echo "Install dom-tunnel ----------";
-echo "-----------------------------";
-npm install -g dom-tunnel
-echo "-----------------------------";
 echo "-----------------------------";
 echo "Upgrade pip------------------";
 echo "-----------------------------";

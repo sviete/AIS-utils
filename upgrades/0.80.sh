@@ -52,6 +52,7 @@ ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/fi
 pm2 delete http
 pm2 start caddy --name http -- -conf "$PREFIX/bin/Caddyfile"
 pm2 save
+npm install -g dom-tunnel
 EOF
 echo "inception... go back"
 
@@ -73,12 +74,6 @@ echo "HDMI 4K to build.prop start"
 su -c "mount -o rw,remount,rw /system && sed -i '/ro.platform.support.over.4k30/d' '/system/build.prop' &&  echo 'ro.platform.support.over.4k30=false' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'"
 echo "HDMI 4K to build.prop done"
 
-
-echo "-----------------------------";
-echo "Install dom-tunnel ----------";
-echo "-----------------------------";
-npm install -g dom-tunnel
-echo "-----------------------------";
 echo "Upgrade pip------------------";
 echo "-----------------------------";
 pip install pip -U
