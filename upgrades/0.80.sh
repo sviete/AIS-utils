@@ -79,6 +79,11 @@ echo "Install dom-tunnel ----------";
 echo "-----------------------------";
 npm install -g dom-tunnel
 echo "-----------------------------";
+echo "Upgrade pip------------------";
+echo "-----------------------------";
+pip install pip -U
+echo "-----------------------------";
+echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
 curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace;

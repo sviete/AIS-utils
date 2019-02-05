@@ -24,6 +24,11 @@ echo "-----------------------------";
 curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace;
 
 echo "-----------------------------";
+echo "Upgrade pip------------------";
+echo "-----------------------------";
+pip install pip -U
+
+echo "-----------------------------";
 echo "Install ais-dom--------------";
 echo "-----------------------------";
 curl -o "/sdcard/ais-dom-0.86.4.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.86.4.tar.gz;
