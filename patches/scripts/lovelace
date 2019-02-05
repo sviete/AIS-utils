@@ -304,6 +304,7 @@
                         {
                             "entities": [
                                 "sensor.version_info",
+                                "script.ais_update_system",
                                 {
                                     "icon": "mdi:file-document",
                                     "name": "Logi aktualizacji",
