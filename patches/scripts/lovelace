@@ -51,6 +51,10 @@
                             "type": "vertical-stack"
                         },
                         {
+                            "entity": "media_player.wbudowany_glosnik",
+                            "type": "media-control"
+                        },
+                        {
                             "entities": [
                                 "input_select.ais_bookmark_last_played",
                                 "input_select.ais_bookmark_favorites"
@@ -58,10 +62,6 @@
                             "show_header_toggle": false,
                             "title": "Zak\u0142adki",
                             "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.wbudowany_glosnik",
-                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:home-outline",
@@ -77,6 +77,7 @@
                     "cards": [
                         {
                             "entity": "weather.openweathermap",
+                            "name": "Pogoda",
                             "type": "weather-forecast"
                         }
                     ],
@@ -230,16 +231,7 @@
                             "show_header_toggle": false,
                             "title": "Ustawienia sieci",
                             "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:wifi",
-                    "path": "wifi",
-                    "title": "WiFi"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
+                        },
                         {
                             "entities": [
                                 {
@@ -310,24 +302,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        "input_select.ais_rss_help_topic"
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Strony pomocy",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "[[ sensor.ais_rss_help_text.attributes.text ]]\n",
-                                    "type": "custom:useful-markdown-card"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
-                        },
-                        {
                             "entities": [
                                 "sensor.version_info",
                                 {
@@ -344,6 +318,24 @@
                             "show_header_toggle": false,
                             "title": "System",
                             "type": "entities"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        "input_select.ais_rss_help_topic"
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Strony pomocy",
+                                    "type": "entities"
+                                },
+                                {
+                                    "content": "[[ sensor.ais_rss_help_text.attributes.text ]]\n",
+                                    "type": "custom:useful-markdown-card"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "vertical-stack"
                         },
                         {
                             "cards": [
