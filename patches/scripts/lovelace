@@ -341,11 +341,11 @@
                         {
                             "cards": [
                                 {
-                                    "content": "## Dost\u0119p do bramki w lokalnej sieci\n### Aplikacja w przegl\u0105darce\nAplikacja dost\u0119pna jest w sieci lokalnej pod adresem:\nhttp://[[sensor.internal_ip_address.state]]:8180 i/lub http://[[sensor.local_host_name.state ]].local:8180\n### FTP\nNa urz\u0105dzeniu dzia\u0142a serwer ftp dost\u0119pny pod adresem:\nftp://[[sensor.internal_ip_address.state]]:1024 i/lub ftp://[[sensor.local_host_name.state ]].local:1024\n### Konsola SSH\nautoryzowany [klucz ssh](http://[[sensor.internal_ip_address.state]]:8180/local/id_rsa_ais)\n\n\n```ssh [[sensor.internal_ip_address.state]] -p 8022 -i <\u015bcie\u017cka do klucza ssh> ``` ",
+                                    "content": "## Dost\u0119p do bramki w lokalnej sieci\n### Aplikacja w przegl\u0105darce\nAplikacja dost\u0119pna jest w sieci lokalnej pod adresem:\nhttp://[[sensor.internal_ip_address.state]]:8180 i/lub http://[[sensor.local_host_name.state ]].local:8180\n### FTP\nNa urz\u0105dzeniu dzia\u0142a serwer ftp dost\u0119pny pod adresem: ``` ftp://[[sensor.internal_ip_address.state]]:1024 ``` i/lub  ``` ftp://[[sensor.local_host_name.state ]].local:1024 ```      \n### Konsola SSH\nautoryzowany [klucz ssh](http://[[sensor.internal_ip_address.state]]:8180/local/id_rsa_ais)\n\n\n```ssh [[sensor.internal_ip_address.state]] -p 8022 -i <\u015bcie\u017cka do klucza ssh> ``` ",
                                     "type": "custom:useful-markdown-card"
                                 },
                                 {
-                                    "content": "## Dost\u0119p do bramki z Internetu\n**Gdy w\u0142\u0105czysz dost\u0119p z Internetu** to aplikacja b\u0119dzie osi\u0105galna pod adresem http://[[sensor.ais_secure_android_id_dom.state]].paczka.pro",
+                                    "content": "## Dost\u0119p do bramki z Internetu\n**Gdy w\u0142\u0105czysz dost\u0119p z Internetu** to aplikacja b\u0119dzie osi\u0105galna pod adresem https://[[sensor.ais_secure_android_id_dom.state]].paczka.pro",
                                     "type": "custom:useful-markdown-card"
                                 }
                             ],
