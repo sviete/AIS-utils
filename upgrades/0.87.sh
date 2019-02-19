@@ -48,7 +48,7 @@ echo "-----------------------------";
 echo "inception... go deeper..."
 ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
 pm2 delete webssh
-pm2 start wssh --name webssh
+pm2 start wssh --name webssh --interpreter=python
 pm2 save
 EOF
 echo "inception... go back"
