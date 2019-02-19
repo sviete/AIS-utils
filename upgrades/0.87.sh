@@ -16,7 +16,7 @@ echo "-----------------------------"
 echo "-----------------------------";
 echo "Install make and git---------";
 echo "-----------------------------";
-apt install make git
+apt -y install make git &&
 
 echo "-----------------------------";
 echo "Install pynacl and webssh----";
