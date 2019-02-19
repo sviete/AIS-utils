@@ -64,8 +64,8 @@ pip install pip -U;
 echo "-----------------------------";
 echo "Install ais-dom--------------";
 echo "-----------------------------";
-curl -o "/sdcard/ais-dom-0.87.1.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.86.1.tar.gz;
-pip install /sdcard/ais-dom-0.86.1.tar.gz -U;
+curl -o "/sdcard/ais-dom-0.87.1.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.87.1.tar.gz;
+pip install /sdcard/ais-dom-0.87.1.tar.gz -U;
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
