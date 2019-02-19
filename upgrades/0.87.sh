@@ -16,7 +16,7 @@ echo "-----------------------------"
 echo "-----------------------------";
 echo "Install make and git---------";
 echo "-----------------------------";
-apt install make git
+apt -y install make git &&
 
 echo "-----------------------------";
 echo "Install pynacl and webssh----";
@@ -50,6 +50,7 @@ ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/fi
 pm2 delete webssh
 pm2 start wssh --name webssh --interpreter=python
 pm2 save
+npm install -g dom-tunnel
 EOF
 echo "inception... go back"
 
