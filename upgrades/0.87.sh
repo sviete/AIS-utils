@@ -34,7 +34,9 @@ cd ~
 rm -rf webssh
 echo "We will generate ssh id_rsa private key file now..."
 cd ~/.ssh
-ssh-keygen -m PEM -t rsa -f rsa-key
+rm rsa-key
+rm rsa-key.pub
+ssh-keygen -m PEM -t rsa -f rsa-key -N ""
 cat ~/.ssh/rsa-key.pub >> ~/.ssh/authorized_keys
 sed -i -e '$a\' ~/.ssh/authorized_keys
 echo "RSA key generation done"
