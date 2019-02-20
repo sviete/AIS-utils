@@ -13,24 +13,24 @@ echo "-----------------------------"
 echo "AIS dom upgrade to version 0.87.x"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start instalacji. Pozostaw urządzenie podłączone do prądu i Internetu."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji. To potrwa 30 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------"
 echo "-----------------------------";
 echo "Install make and git---------";
 echo "-----------------------------";
 apt -y install make git &&
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 5%"}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 5%"}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";
 echo "Install pynacl and webssh----";
 echo "-----------------------------";
 cd ~
 git clone https://github.com/araczkowski/pynacl.git
 cd pynacl
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Kompilacja, ten krok potrwa 15 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Kompilacja. Ten krok potrwa 15 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 python setup.py install
 cd ~
 rm -rf pynacl
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 55%"}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 55%"}' http://localhost:8122/text_to_speech &&
 git clone https://github.com/araczkowski/webssh.git
 cd webssh
 python setup.py install
@@ -57,7 +57,7 @@ pm2 save
 npm install -g dom-tunnel
 EOF
 echo "inception... go back"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 65%"}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 65%"}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
@@ -70,7 +70,7 @@ echo "-----------------------------";
 echo "Upgrade pip------------------";
 echo "-----------------------------";
 pip install pip -U;
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja, aktualizacja Asystenta domowego."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja Asystenta domowego."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Install ais-dom--------------";
@@ -78,6 +78,6 @@ echo "-----------------------------";
 curl -o "/sdcard/ais-dom-0.87.2.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.87.2.tar.gz;
 pip install /sdcard/ais-dom-0.87.2.tar.gz -U;
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 75%, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 75%, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
