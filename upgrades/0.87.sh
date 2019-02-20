@@ -26,7 +26,7 @@ echo "-----------------------------";
 cd ~
 git clone https://github.com/araczkowski/pynacl.git
 cd pynacl
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Kompilacja, ten krok potrwa 15 minut. Prosimy o cierpliwość."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Kompilacja, ten krok potrwa 15 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 python setup.py install
 cd ~
 rm -rf pynacl
@@ -78,6 +78,6 @@ echo "-----------------------------";
 curl -o "/sdcard/ais-dom-0.87.2.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.87.2.tar.gz;
 pip install /sdcard/ais-dom-0.87.2.tar.gz -U;
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 75%, za chwilę wykonamy restart urządzenia."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja 75%, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
