@@ -241,7 +241,7 @@
                                     "icon": "mdi:open-in-new",
                                     "name": "Przejdz do konfiguracji us\u0142ug",
                                     "type": "weblink",
-                                    "url": "https://ai-speaker.com/ords/f?p=100"
+                                    "url": "https://powiedz.co/ords/f?p=100"
                                 },
                                 "sensor.ais_secure_android_id_dom",
                                 "script.ais_cloud_sync"

@@ -70,14 +70,7 @@ echo "-----------------------------";
 echo "Upgrade pip------------------";
 echo "-----------------------------";
 pip install pip -U;
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja Asystenta domowego."}' http://localhost:8122/text_to_speech &&
 
-echo "-----------------------------";
-echo "Install ais-dom--------------";
-echo "-----------------------------";
-curl -o "/sdcard/ais-dom-0.87.2.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.87.2.tar.gz;
-pip install /sdcard/ais-dom-0.87.2.tar.gz -U;
-
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 75%, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja Asystenta domowego, mamy 75%, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
