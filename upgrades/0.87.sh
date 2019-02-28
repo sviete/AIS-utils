@@ -13,7 +13,7 @@ echo "-----------------------------"
 echo "AIS dom upgrade to version 0.87.x"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji. To potrwa 30 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.87.3. To potrwa 30 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------"
 echo "-----------------------------";
 echo "Install make and git---------";
