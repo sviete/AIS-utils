@@ -21,7 +21,24 @@ echo "-----------------------------";
 curl -o "/sdcard/ais-dom-0.88.2.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.88.2.tar.gz;
 pip install /sdcard/ais-dom-0.88.2.tar.gz -U;
 echo "-----------------------------";
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
+
+echo "-----------------------------";
+echo "Downloading lovelace json----";
+echo "-----------------------------";
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace
+echo "-----------------------------";
+echo "Downloading aps for AIS dom";
+echo "-----------------------------";
+curl -o "/sdcard/Spotify.apk" -L https://powiedz.co/ota/android/Spotify.apk;
+echo "-----------------------------";
+echo "Install Spotify.apk------";
+echo "-----------------------------";
+su -c "pm install -r /sdcard/Spotify.apk"
+
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja wykonana, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
+
 
 echo "Model name to build.prop start"
 su -c "mount -o rw,remount,rw /system && sed -i '/ro.product.model=p281/d' '/system/build.prop' &&  echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'"

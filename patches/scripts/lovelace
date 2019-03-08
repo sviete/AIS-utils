@@ -161,16 +161,25 @@
                     "cards": [
                         {
                             "entities": [
-                                "input_text.ais_youtube_query",
-                                "input_select.ais_youtube_track_name",
-                                "input_select.ais_music_player"
+                                {
+                                    "entity": "input_select.ais_music_service"
+                                },
+                                {
+                                    "entity": "input_text.ais_music_query"
+                                },
+                                {
+                                    "entity": "input_select.ais_music_track_name"
+                                },
+                                {
+                                    "entity": "input_select.ais_music_player"
+                                }
                             ],
                             "show_header_toggle": false,
-                            "title": "Muzyka z YouTube",
+                            "title": "Muzyka",
                             "type": "entities"
                         }
                     ],
-                    "icon": "mdi:youtube",
+                    "icon": "mdi:music",
                     "path": "yt",
                     "title": "YouTube"
                 },
@@ -190,7 +199,7 @@
                             "type": "entities"
                         }
                     ],
-                    "icon": "mdi:audiobook",
+                    "icon": "mdi:book-open-page-variant",
                     "path": "books",
                     "title": "Books"
                 },
