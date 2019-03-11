@@ -41,7 +41,10 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 
 
 echo "Model name to build.prop start"
-su -c "mount -o rw,remount,rw /system && sed -i '/ro.product.model=p281/d' '/system/build.prop' &&  echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system && echo 'done'" &&
+su -c "mount -o rw,remount,rw /system" &&
+su -c "sed -i '/ro.product.model=p281/d' '/system/build.prop'" &&
+su -c "echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop" &&
+su -c "mount -o ro,remount,ro /system" &&
 echo "Model name to build.prop done"
 
 echo "all done"
