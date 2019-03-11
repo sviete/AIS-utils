@@ -1,5 +1,5 @@
 #
-#   AIS dom upgrade script to version 0.88.x
+#   AIS dom upgrade script to version 0.89.x
 #
 #   Homepage: https://ai-speaker.com
 #
@@ -22,15 +22,6 @@ curl -o "/sdcard/ais-dom-0.89.1.tar.gz" -L  https://raw.githubusercontent.com/sv
 pip install /sdcard/ais-dom-0.89.1.tar.gz -U;
 echo "-----------------------------";
 
-
-echo "Model name to build.prop start" &&
-su -c "mount -o rw,remount,rw /system" &&
-su -c "sed -i '/ro.product.model=p281/d' '/system/build.prop'" &&
-su -c "echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop" &&
-su -c "mount -o ro,remount,ro /system" &&
-echo "Model name to build.prop done" &&
-
-
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
@@ -44,7 +35,7 @@ curl -o "/sdcard/Spotify.apk" -L https://powiedz.co/ota/android/Spotify.apk &&
 echo "-----------------------------";
 echo "Install Spotify.apk------";
 echo "-----------------------------";
-su -c "pm install -r /sdcard/Spotify.apk" &&
+su -c "pm install -r /sdcard/Spotify.apk && mount -o rw,remount,rw /system && sed -i '/ro.product.model=p281/d' '/system/build.prop' && echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system" &&
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja wykonana, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
 
