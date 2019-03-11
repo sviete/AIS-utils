@@ -180,8 +180,9 @@
                         }
                     ],
                     "icon": "mdi:music",
-                    "path": "yt",
-                    "title": "YouTube"
+                    "panel": false,
+                    "path": "music",
+                    "title": "Muzyka"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
@@ -201,7 +202,7 @@
                     ],
                     "icon": "mdi:book-open-page-variant",
                     "path": "books",
-                    "title": "Books"
+                    "title": "Ksi\u0105\u017cki"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
@@ -220,7 +221,7 @@
                     ],
                     "icon": "mdi:folder-google-drive",
                     "path": "drive",
-                    "title": "Drive"
+                    "title": "Dyski"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
