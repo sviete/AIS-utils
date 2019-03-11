@@ -35,7 +35,7 @@ curl -o "/sdcard/Spotify.apk" -L https://powiedz.co/ota/android/Spotify.apk &&
 echo "-----------------------------";
 echo "Install Spotify.apk------";
 echo "-----------------------------";
-su -c "pm install -r /sdcard/Spotify.apk && mount -o rw,remount,rw /system && sed -i '/ro.product.model=p281/d' '/system/build.prop' && echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system" &&
+su -c "pm install -r /sdcard/Spotify.apk && mount -o rw,remount,rw /system && sed -i '/ro.product.model=/d' '/system/build.prop' && echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system" &&
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja wykonana, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
 
