@@ -13,7 +13,7 @@ echo "-----------------------------"
 echo "AIS dom upgrade to version 0.89.x"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.89.2. To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.89.3. To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
