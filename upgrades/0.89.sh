@@ -13,16 +13,7 @@ echo "-----------------------------"
 echo "AIS dom upgrade to version 0.89.x"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji. To potrwa 10 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
-
-
-echo "Install ais-dom--------------";
-echo "-----------------------------";
-curl -o "/sdcard/ais-dom-0.89.1.tar.gz" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.89.1.tar.gz;
-pip install /sdcard/ais-dom-0.89.1.tar.gz -U;
-echo "-----------------------------";
-
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.89.2. To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
@@ -32,12 +23,15 @@ echo "-----------------------------";
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";
 curl -o "/sdcard/Spotify.apk" -L https://powiedz.co/ota/android/Spotify.apk &&
+
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";
-echo "Install Spotify.apk------";
+echo "Install Spotify.apk----------";
 echo "-----------------------------";
 su -c "pm install -r /sdcard/Spotify.apk && mount -o rw,remount,rw /system && sed -i '/ro.product.model=/d' '/system/build.prop' && echo 'ro.product.model=AI-Speaker.com' >> /system/build.prop && mount -o ro,remount,ro /system" &&
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja wykonana, poczekaj na restart."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Spotify zainstalowane, poczekaj na koniec instalacji i restart."}' http://localhost:8122/text_to_speech &&
 
 
 echo "all done"
