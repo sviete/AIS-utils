@@ -161,18 +161,28 @@
                     "cards": [
                         {
                             "entities": [
-                                "input_text.ais_youtube_query",
-                                "input_select.ais_youtube_track_name",
-                                "input_select.ais_music_player"
+                                {
+                                    "entity": "input_select.ais_music_service"
+                                },
+                                {
+                                    "entity": "input_text.ais_music_query"
+                                },
+                                {
+                                    "entity": "input_select.ais_music_track_name"
+                                },
+                                {
+                                    "entity": "input_select.ais_music_player"
+                                }
                             ],
                             "show_header_toggle": false,
-                            "title": "Muzyka z YouTube",
+                            "title": "Muzyka",
                             "type": "entities"
                         }
                     ],
-                    "icon": "mdi:youtube",
-                    "path": "yt",
-                    "title": "YouTube"
+                    "icon": "mdi:music",
+                    "panel": false,
+                    "path": "music",
+                    "title": "Muzyka"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
@@ -190,9 +200,9 @@
                             "type": "entities"
                         }
                     ],
-                    "icon": "mdi:audiobook",
+                    "icon": "mdi:book-open-page-variant",
                     "path": "books",
-                    "title": "Books"
+                    "title": "Ksi\u0105\u017cki"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
@@ -211,7 +221,7 @@
                     ],
                     "icon": "mdi:folder-google-drive",
                     "path": "drive",
-                    "title": "Drive"
+                    "title": "Dyski"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
