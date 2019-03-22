@@ -524,43 +524,6 @@
                             "show_header_toggle": false,
                             "title": "Dodawanie nowych urz\u0105dze\u0144",
                             "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [],
-                                    "show_header_toggle": false,
-                                    "title": "Zmiana nazwy hosta bramki",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "### [[ sensor.local_host_name.state ]].local \nz tak\u0105 domy\u015bln\u0105 nazw\u0105 bramki mo\u017cna \u0142\u0105czy\u0107 si\u0119 w sieci lokalnej. \n\nJe\u015bli masz kilka bramek w sieci to mo\u017cesz zmieni\u0107 nazw\u0119 hosta na inn\u0105 ale pami\u0119taj, \u017ceby zmieni\u0107 te\u017c konfiguracj\u0119 urz\u0105dze\u0144 kt\u00f3re \u0142\u0105cz\u0105 si\u0119 z bramk\u0105. \n\n**UWAGA: \u017beby zmiana nazwy hosta bramki by\u0142a widoczna w sieci wymagany jest restart!**\n",
-                                    "type": "custom:useful-markdown-card"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_text.new_host_name"
-                                        },
-                                        {
-                                            "entity": "script.ais_change_host_name"
-                                        }
-                                    ],
-                                    "type": "entities"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                "input_select.folder_name",
-                                "sensor.ais_drives_info",
-                                "input_select.file_player"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Dyski",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:console",
