@@ -25,6 +25,10 @@
                 {
                     "type": "module",
                     "url": "/static/ais_dom/cards/mini-media-player-bundle.js?v=1.0.3"
+                },
+                {
+                    "type": "module",
+                    "url": "/static/ais_dom/cards/button-card.js"
                 }
             ],
             "title": "Asystent domowy",
@@ -98,18 +102,31 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                "input_select.radio_type",
-                                "input_select.radio_station_name",
-                                "input_select.radio_player"
+                            "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.wbudowany_glosnik",
+                                    "hide": {
+                                        "power": true,
+                                        "progress": false,
+                                        "source": true
+                                    },
+                                    "icon": "mdi:radio",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entities": [
+                                        "input_select.radio_type",
+                                        "input_select.radio_station_name",
+                                        "input_select.radio_player"
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Radia",
+                                    "type": "entities"
+                                }
                             ],
                             "show_header_toggle": false,
-                            "title": "Radia Internetowe",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.wbudowany_glosnik",
-                            "type": "media-control"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:radio",
@@ -152,19 +169,32 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                "input_select.podcast_type",
-                                "input_select.podcast_name",
-                                "input_select.podcast_track",
-                                "input_select.podcast_player"
+                            "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.wbudowany_glosnik",
+                                    "hide": {
+                                        "power": true,
+                                        "progress": false,
+                                        "source": true
+                                    },
+                                    "icon": "mdi:podcast",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entities": [
+                                        "input_select.podcast_type",
+                                        "input_select.podcast_name",
+                                        "input_select.podcast_track",
+                                        "input_select.podcast_player"
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Podcasty",
+                                    "type": "entities"
+                                }
                             ],
                             "show_header_toggle": false,
-                            "title": "Podcasty",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.wbudowany_glosnik",
-                            "type": "media-control"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:podcast",
@@ -176,15 +206,32 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                "input_select.book_autor",
-                                "input_select.book_name",
-                                "input_select.book_chapter",
-                                "input_select.book_player"
+                            "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.wbudowany_glosnik",
+                                    "hide": {
+                                        "power": true,
+                                        "progress": false,
+                                        "source": true
+                                    },
+                                    "icon": "mdi:audiobook",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entities": [
+                                        "input_select.book_autor",
+                                        "input_select.book_name",
+                                        "input_select.book_chapter",
+                                        "input_select.book_player"
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Audio Ksi\u0105\u017cki Online",
+                                    "type": "entities"
+                                }
                             ],
                             "show_header_toggle": false,
-                            "title": "Audio Ksi\u0105\u017cki Online",
-                            "type": "entities"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:audiobook",
@@ -196,27 +243,40 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
+                            "cards": [
                                 {
-                                    "entity": "input_select.ais_music_service"
+                                    "artwork": "cover",
+                                    "entity": "media_player.wbudowany_glosnik",
+                                    "hide": {
+                                        "power": true,
+                                        "progress": false,
+                                        "source": true
+                                    },
+                                    "icon": "mdi:radio",
+                                    "type": "custom:mini-media-player"
                                 },
                                 {
-                                    "entity": "input_text.ais_music_query"
-                                },
-                                {
-                                    "entity": "input_select.ais_music_track_name"
-                                },
-                                {
-                                    "entity": "input_select.ais_music_player"
+                                    "entities": [
+                                        {
+                                            "entity": "input_select.ais_music_service"
+                                        },
+                                        {
+                                            "entity": "input_text.ais_music_query"
+                                        },
+                                        {
+                                            "entity": "input_select.ais_music_track_name"
+                                        },
+                                        {
+                                            "entity": "input_select.ais_music_player"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Muzyka",
+                                    "type": "entities"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Muzyka",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.wbudowany_glosnik",
-                            "type": "media-control"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:music",
@@ -230,12 +290,14 @@
                         {
                             "cards": [
                                 {
+                                    "artwork": "cover",
                                     "entity": "media_player.wbudowany_glosnik",
                                     "hide": {
                                         "power": true,
+                                        "progress": false,
                                         "source": true
                                     },
-                                    "icon": "mdi:spotify",
+                                    "icon": "mdi:music",
                                     "type": "custom:mini-media-player"
                                 },
                                 {
@@ -246,6 +308,56 @@
                                 {
                                     "content": "[[ sensor.ais_knowledge_answer.attributes.text ]]\n",
                                     "type": "custom:useful-markdown-card"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "color": "rgb(44, 109, 214)",
+                                    "color_type": "label-card",
+                                    "name": "up",
+                                    "type": "custom:button-card"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.dyski",
+                                            "service": "ais_ai_service.process_code",
+                                            "service_data": {
+                                                "text": "{\"KeyCode\": 21, \"Action\": \"0\"}"
+                                            },
+                                            "tap_action": "call-service",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "color": "rgb(66, 134, 244)",
+                                            "color_type": "label-card",
+                                            "name": "OK",
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "color": "rgb(66, 134, 244)",
+                                            "color_type": "label-card",
+                                            "name": ">",
+                                            "type": "custom:button-card"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "color": "rgb(44, 109, 214)",
+                                    "color_type": "label-card",
+                                    "name": "down",
+                                    "type": "custom:button-card"
+                                },
+                                {
+                                    "color": "rgb(44, 109, 214)",
+                                    "color_type": "label-card",
+                                    "name": "exit",
+                                    "type": "custom:button-card"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -524,6 +636,16 @@
                             "show_header_toggle": false,
                             "title": "Dodawanie nowych urz\u0105dze\u0144",
                             "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                "input_select.folder_name",
+                                "sensor.ais_drives_info",
+                                "input_select.file_player"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Dyski",
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:console",
