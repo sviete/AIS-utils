@@ -230,12 +230,13 @@
                         {
                             "cards": [
                                 {
+                                    "artwork": "cover",
                                     "entity": "media_player.wbudowany_glosnik",
                                     "hide": {
                                         "power": true,
                                         "source": true
                                     },
-                                    "icon": "mdi:spotify",
+                                    "icon": "mdi:book-open-page-variant",
                                     "type": "custom:mini-media-player"
                                 },
                                 {
