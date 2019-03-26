@@ -32,7 +32,7 @@ pip install /sdcard/ais-dom-0.90.2.tar.gz -U &&
 apt update &&
 apt install rclone -y &&
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizcji i restart."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
