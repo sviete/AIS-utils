@@ -100,41 +100,6 @@
                         {
                             "cards": [
                                 {
-                                    "artwork": "cover",
-                                    "entity": "media_player.wbudowany_glosnik",
-                                    "hide": {
-                                        "power": true,
-                                        "source": true
-                                    },
-                                    "icon": "mdi:radio",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "entities": [
-                                        "input_select.radio_type",
-                                        "input_select.radio_station_name",
-                                        "input_select.radio_player"
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Radia Internetowe",
-                                    "type": "entities"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:radio",
-                    "path": "radio",
-                    "title": "Radio"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
                                     "entities": [
                                         "input_select.rss_news_category",
                                         "input_select.rss_news_channel",
@@ -172,99 +137,203 @@
                                         "power": true,
                                         "source": true
                                     },
-                                    "icon": "mdi:podcast",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "entities": [
-                                        "input_select.podcast_type",
-                                        "input_select.podcast_name",
-                                        "input_select.podcast_track",
-                                        "input_select.podcast_player"
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Podcasty",
-                                    "type": "entities"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:podcast",
-                    "path": "podcast",
-                    "title": "Podcast"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "artwork": "cover",
-                                    "entity": "media_player.wbudowany_glosnik",
-                                    "hide": {
-                                        "power": true,
-                                        "source": true
+                                    "icon": "mdi:book-open-page-variant",
+                                    "shortcuts": {
+                                        "buttons": [
+                                            {
+                                                "icon": "mdi:radio",
+                                                "id": "script.ais_set_context_radio",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:podcast",
+                                                "id": "script.ais_set_context_podcast",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:music",
+                                                "id": "script.ais_set_context_music",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:audiobook",
+                                                "id": "script.ais_set_context_audiobooks",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:folder",
+                                                "id": "script.ais_set_context_drives",
+                                                "type": "script"
+                                            }
+                                        ],
+                                        "columns": 3
                                     },
-                                    "icon": "mdi:audiobook",
                                     "type": "custom:mini-media-player"
                                 },
                                 {
-                                    "entities": [
-                                        "input_select.book_autor",
-                                        "input_select.book_name",
-                                        "input_select.book_chapter",
-                                        "input_select.book_player"
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Audio Ksi\u0105\u017cki Online",
-                                    "type": "entities"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:audiobook",
-                    "path": "books",
-                    "title": "Books"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
+                                    "content": "[[ sensor.ais_knowledge_answer.attributes.text ]]\n",
+                                    "type": "custom:useful-markdown-card"
+                                },
                                 {
-                                    "artwork": "cover",
-                                    "entity": "media_player.wbudowany_glosnik",
-                                    "hide": {
-                                        "power": true,
-                                        "source": true
+                                    "card": {
+                                        "entity": "sensor.ais_drives",
+                                        "title": "Dyski",
+                                        "type": "custom:files-card"
                                     },
-                                    "icon": "mdi:music",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "entities": [
+                                    "conditions": [
                                         {
-                                            "entity": "input_select.ais_music_service"
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "podcast_player"
                                         },
                                         {
-                                            "entity": "input_text.ais_music_query"
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "music_player"
                                         },
                                         {
-                                            "entity": "input_select.ais_music_track_name"
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "audiobooks_player"
                                         },
                                         {
-                                            "entity": "input_select.ais_music_player"
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "radio_player"
                                         }
                                     ],
-                                    "show_header_toggle": false,
-                                    "title": "Muzyka",
-                                    "type": "entities"
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "entities": [
+                                            "input_select.radio_type",
+                                            "input_select.radio_station_name",
+                                            "input_select.radio_player"
+                                        ],
+                                        "show_header_toggle": false,
+                                        "title": "Radia Internetowe",
+                                        "type": "entities"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "podcast_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "music_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "audiobooks_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "local_audio"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "entities": [
+                                            "input_select.podcast_type",
+                                            "input_select.podcast_name",
+                                            "input_select.podcast_track",
+                                            "input_select.podcast_player"
+                                        ],
+                                        "show_header_toggle": false,
+                                        "title": "Podkasty",
+                                        "type": "entities"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "radio_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "music_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "audiobooks_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "local_audio"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "entities": [
+                                            {
+                                                "entity": "input_select.ais_music_service"
+                                            },
+                                            {
+                                                "entity": "input_text.ais_music_query"
+                                            },
+                                            {
+                                                "entity": "input_select.ais_music_track_name"
+                                            },
+                                            {
+                                                "entity": "input_select.ais_music_player"
+                                            }
+                                        ],
+                                        "show_header_toggle": false,
+                                        "title": "Muzyka",
+                                        "type": "entities"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "radio_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "podcast_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "audiobooks_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "local_audio"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "entities": [
+                                            "input_select.book_autor",
+                                            "input_select.book_name",
+                                            "input_select.book_chapter",
+                                            "input_select.book_player"
+                                        ],
+                                        "show_header_toggle": false,
+                                        "title": "Audio ksi\u0105\u017cki",
+                                        "type": "entities"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "radio_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "podcast_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "music_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "local_audio"
+                                        }
+                                    ],
+                                    "type": "conditional"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -291,16 +360,7 @@
                                 "sensor.spotifylist"
                             ],
                             "type": "custom:list-card"
-                        }
-                    ],
-                    "icon": "mdi:music",
-                    "path": "music",
-                    "title": "YouTube"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
+                        },
                         {
                             "cards": [
                                 {
@@ -472,172 +532,11 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_text.ais_knowledge_query"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Asystentka",
-                            "type": "entities"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "artwork": "cover",
-                                    "entity": "media_player.wbudowany_glosnik",
-                                    "hide": {
-                                        "power": true,
-                                        "source": true
-                                    },
-                                    "icon": "mdi:book-open-page-variant",
-                                    "shortcuts": {
-                                        "buttons": [
-                                            {
-                                                "icon": "mdi:radio",
-                                                "id": "script.ais_set_context_radio",
-                                                "type": "script"
-                                            },
-                                            {
-                                                "icon": "mdi:podcast",
-                                                "id": "script.ais_set_context_podcast",
-                                                "type": "script"
-                                            },
-                                            {
-                                                "icon": "mdi:music",
-                                                "id": "script.ais_set_context_music",
-                                                "type": "script"
-                                            },
-                                            {
-                                                "icon": "mdi:audiobook",
-                                                "id": "script.ais_set_context_audiobooks",
-                                                "type": "script"
-                                            },
-                                            {
-                                                "icon": "mdi:folder",
-                                                "id": "script.ais_set_context_drives",
-                                                "type": "script"
-                                            }
-                                        ],
-                                        "columns": 3
-                                    },
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "content": "[[ sensor.ais_knowledge_answer.attributes.text ]]\n",
-                                    "type": "custom:useful-markdown-card"
-                                },
-                                {
-                                    "card": {
-                                        "entity": "sensor.ais_drives",
-                                        "title": "Dyski",
-                                        "type": "custom:files-card"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "binary_sensor.selected_entity",
-                                            "state": "sensor.ais_drives"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                },
-                                {
-                                    "card": {
-                                        "entities": [
-                                            "input_select.radio_type",
-                                            "input_select.radio_station_name",
-                                            "input_select.radio_player"
-                                        ],
-                                        "show_header_toggle": false,
-                                        "title": "Radia Internetowe",
-                                        "type": "entities"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "binary_sensor.selected_entity",
-                                            "state": "input_select.radio_type"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                },
-                                {
-                                    "card": {
-                                        "entities": [
-                                            "input_select.podcast_type",
-                                            "input_select.podcast_name",
-                                            "input_select.podcast_track",
-                                            "input_select.podcast_player"
-                                        ],
-                                        "show_header_toggle": false,
-                                        "title": "Podkasty",
-                                        "type": "entities"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "binary_sensor.selected_entity",
-                                            "state": "input_select.podcast_type"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                },
-                                {
-                                    "card": {
-                                        "entities": [
-                                            {
-                                                "entity": "input_select.ais_music_service"
-                                            },
-                                            {
-                                                "entity": "input_text.ais_music_query"
-                                            },
-                                            {
-                                                "entity": "input_select.ais_music_track_name"
-                                            },
-                                            {
-                                                "entity": "input_select.ais_music_player"
-                                            }
-                                        ],
-                                        "show_header_toggle": false,
-                                        "title": "Muzyka",
-                                        "type": "entities"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "binary_sensor.selected_entity",
-                                            "state": "input_select.ais_music_service"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                },
-                                {
-                                    "card": {
-                                        "entities": [
-                                            "input_select.book_autor",
-                                            "input_select.book_name",
-                                            "input_select.book_chapter",
-                                            "input_select.book_player"
-                                        ],
-                                        "show_header_toggle": false,
-                                        "title": "Audio ksi\u0105\u017cki",
-                                        "type": "entities"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "binary_sensor.selected_entity",
-                                            "state": "input_select.book_autor"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "type": "vertical-stack"
                         }
                     ],
-                    "icon": "mdi:folder-google-drive",
-                    "path": "drive",
-                    "title": "Drive"
+                    "icon": "mdi:music",
+                    "path": "audio",
+                    "title": "Audio"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
