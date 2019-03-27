@@ -20,15 +20,11 @@
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/list-card.js?v=0"
+                    "url": "/static/ais_dom/cards/list-card.js?v=1"
                 },
                 {
                     "type": "js",
                     "url": "/static/ais_dom/cards/files-card.js?v=0"
-                },
-                {
-                    "type": "js",
-                    "url": "/static/ais_dom/cards/spotify-playlist-card.js?v=0"
                 },
                 {
                     "type": "module",
@@ -290,7 +286,7 @@
                                     "title": ""
                                 },
                                 {
-                                    "field": "uri",
+                                    "field": "icon",
                                     "title": "",
                                     "type": "icon"
                                 }
@@ -319,6 +315,31 @@
                                         "source": true
                                     },
                                     "icon": "mdi:book-open-page-variant",
+                                    "shortcuts": {
+                                        "buttons": [
+                                            {
+                                                "icon": "mdi:radio",
+                                                "id": "spotify:user:spotify:playlist:37i9dQZF1DZ06evO2O09Hg",
+                                                "type": "playlist"
+                                            },
+                                            {
+                                                "icon": "mdi:podcast",
+                                                "id": "Bathroom",
+                                                "type": "source"
+                                            },
+                                            {
+                                                "icon": "mdi:music",
+                                                "id": "script.script_name",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:folder",
+                                                "id": "script.script_name",
+                                                "type": "script"
+                                            }
+                                        ],
+                                        "columns": 4
+                                    },
                                     "type": "custom:mini-media-player"
                                 },
                                 {
