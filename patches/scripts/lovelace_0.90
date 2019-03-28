@@ -20,11 +20,11 @@
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/list-card.js?v=1"
+                    "url": "/static/ais_dom/cards/list-card.js?v=3"
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/files-card.js?v=0"
+                    "url": "/static/ais_dom/cards/files-card.js?v=3"
                 },
                 {
                     "type": "module",
@@ -92,37 +92,6 @@
                     "icon": "mdi:weather-partlycloudy",
                     "path": "pogoda",
                     "title": "Pogoda"
-                },
-                {
-                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        "input_select.rss_news_category",
-                                        "input_select.rss_news_channel",
-                                        "input_select.rss_news_item",
-                                        "input_select.rss_news_player"
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Wiadomo\u015bci",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "[[ sensor.rss_news_text.attributes.text ]]\n",
-                                    "type": "custom:useful-markdown-card"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Wiadomo\u015bci",
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:newspaper",
-                    "path": "news",
-                    "title": "Wiadomo\u015bci"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
@@ -305,6 +274,54 @@
                                 },
                                 {
                                     "card": {
+                                        "columns": [
+                                            {
+                                                "field": "thumbnail",
+                                                "title": "",
+                                                "type": "image"
+                                            },
+                                            {
+                                                "field": "name",
+                                                "title": ""
+                                            },
+                                            {
+                                                "field": "icon",
+                                                "title": "",
+                                                "type": "icon"
+                                            }
+                                        ],
+                                        "entity": [
+                                            "sensor.spotifylist"
+                                        ],
+                                        "title": "Spotify lista odtwarzania",
+                                        "type": "custom:list-card"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "radio_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "podcast_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "audiobooks_player"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state_not": "local_audio"
+                                        },
+                                        {
+                                            "entity": "input_select.ais_music_service",
+                                            "state": "Spotify"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
                                         "entities": [
                                             "input_select.book_autor",
                                             "input_select.book_name",
@@ -338,28 +355,6 @@
                             ],
                             "show_header_toggle": false,
                             "type": "vertical-stack"
-                        },
-                        {
-                            "columns": [
-                                {
-                                    "field": "thumbnail",
-                                    "title": "",
-                                    "type": "image"
-                                },
-                                {
-                                    "field": "name",
-                                    "title": ""
-                                },
-                                {
-                                    "field": "icon",
-                                    "title": "",
-                                    "type": "icon"
-                                }
-                            ],
-                            "entity": [
-                                "sensor.spotifylist"
-                            ],
-                            "type": "custom:list-card"
                         },
                         {
                             "cards": [
@@ -537,6 +532,37 @@
                     "icon": "mdi:music",
                     "path": "audio",
                     "title": "Audio"
+                },
+                {
+                    "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        "input_select.rss_news_category",
+                                        "input_select.rss_news_channel",
+                                        "input_select.rss_news_item",
+                                        "input_select.rss_news_player"
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Wiadomo\u015bci",
+                                    "type": "entities"
+                                },
+                                {
+                                    "content": "[[ sensor.rss_news_text.attributes.text ]]\n",
+                                    "type": "custom:useful-markdown-card"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Wiadomo\u015bci",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:newspaper",
+                    "path": "news",
+                    "title": "Wiadomo\u015bci"
                 },
                 {
                     "background": "center / cover no-repeat url(\"/static/ais_dom/cards/background-15.jpg\") fixed",
