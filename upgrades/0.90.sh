@@ -18,25 +18,10 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.90 &&
-echo "-----------------------------";
-echo "Downloading aps for AIS dom";
-echo "-----------------------------";
-curl -o "/sdcard/ais-dom-0.90.4.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.90.4.tar.gz &&
-
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje"}' http://localhost:8122/text_to_speech &&
-
-pip install /sdcard/ais-dom-0.90.4.tar.gz -U &&
-
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
 
 apt update &&
 apt install rclone -y &&
-
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
-
-curl -o "/sdcard/AisPanelApp-test.apk" -L https://powiedz.co/ota/android/AisPanelApp-test.apk &&
-su -c "pm install -r /sdcard/AisPanelApp-test.apk" &&
-
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP

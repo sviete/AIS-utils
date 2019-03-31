@@ -24,6 +24,8 @@ echo "Downloading aps for AIS dom";
 echo "-----------------------------";
 curl -o "/sdcard/Spotify.apk" -L https://powiedz.co/ota/android/Spotify.apk &&
 
+apt update &&
+apt install rclone -y &&
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";

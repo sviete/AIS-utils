@@ -89,7 +89,7 @@ echo "-----------------------------"
 echo "-----------------------------";
 echo "Install make and git---------";
 echo "-----------------------------";
-apt -y install make git &&
+apt -y install make git rclone &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Aktualizacja, mamy 5%"}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";
 echo "Install pynacl and webssh----";
