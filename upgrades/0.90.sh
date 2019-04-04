@@ -18,10 +18,13 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.90 &&
+
 
 apt update &&
 apt install rclone -y &&
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
