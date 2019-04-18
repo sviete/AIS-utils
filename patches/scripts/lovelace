@@ -792,46 +792,6 @@
                                 ]
                             },
                             "type": "custom:monster-card"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [],
-                                    "show_header_toggle": false,
-                                    "title": "Dodawanie nowych urz\u0105dze\u0144",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "1. Pod\u0142\u0105cz urz\u0105dzenie do pr\u0105du\n2. Uruchom **Skanuj w poszukiwaniu nowych urz\u0105dze\u0144**\n3. Wybierz wykryte urz\u0105dzenie z listy\n4. Wybierz sie\u0107 WiFi do kt\u00f3rej do\u0142\u0105czasz nowe urz\u0105dzenie\n5. Podaj nazw\u0119 nowego urz\u0105dzenia \n6. \u017beby zatwierdzi\u0107 uruchom **Do\u0142\u0105cz nowe urz\u0105dzenie**\n",
-                                    "type": "markdown"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "script.ais_scan_iot_devices_in_network"
-                                        },
-                                        {
-                                            "entity": "input_select.ais_iot_devices_in_network"
-                                        },
-                                        {
-                                            "entity": "input_select.ais_android_wifi_network"
-                                        },
-                                        {
-                                            "entity": "input_text.ais_iot_device_wifi_password"
-                                        },
-                                        {
-                                            "entity": "input_text.ais_iot_device_name"
-                                        },
-                                        {
-                                            "entity": "script.ais_connect_iot_device_to_network"
-                                        }
-                                    ],
-                                    "type": "entities"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Dodawanie nowych urz\u0105dze\u0144",
-                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:console",

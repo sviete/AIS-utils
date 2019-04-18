@@ -18,7 +18,7 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-# curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.91 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
 echo "-----------------------------";
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";
