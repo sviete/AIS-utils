@@ -23,7 +23,7 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 # echo "-----------------------------";
 
 curl -o "/sdcard/ais-dom-0.91.5.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.91.5.tar.gz &&
-pip install /sdcard/ais-dom-0.92.0.tar.gz -U &&
+pip install /sdcard/ais-dom-0.91.5.tar.gz -U &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 echo "all done"
