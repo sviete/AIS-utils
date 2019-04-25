@@ -13,7 +13,7 @@ echo "-----------------------------"
 echo "AIS dom upgrade to version 0.92.0"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.91.5 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.92.0 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 # echo "-----------------------------";
 # echo "Downloading lovelace json----";
@@ -22,8 +22,8 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 # echo "-----------------------------";
 # echo "-----------------------------";
 
-curl -o "/sdcard/ais-dom-0.91.6.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.91.6.tar.gz &&
-pip install /sdcard/ais-dom-0.91.6.tar.gz -U &&
+curl -o "/sdcard/ais-dom-0.92.0.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.92.0.tar.gz &&
+pip install /sdcard/ais-dom-0.92.0.tar.gz -U &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 echo "all done"
