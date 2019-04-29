@@ -10,17 +10,22 @@ echo "-----------------------------"
 echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M') START
 echo "-----------------------------"
-echo "AIS dom upgrade to version 0.92.1"
+echo "AIS dom upgrade to version 0.92"
 echo "-----------------------------"
 echo "-----------------------------"
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.92.1 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
-# echo "-----------------------------";
-# echo "Downloading lovelace json----";
-# echo "-----------------------------";
-# curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
-# echo "-----------------------------";
-# echo "-----------------------------";
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.92 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+
+# remove the db
+rm /data/data/pl.sviete.dom/files/home/AIS/home-assistant_v2.db
+
+echo "-----------------------------";
+echo "Downloading lovelace json----";
+echo "-----------------------------";
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace_0.92" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
+echo "-----------------------------";
+echo "-----------------------------";
 
 curl -o "/sdcard/ais-dom-0.92.1.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.92.1.tar.gz &&
 pip install /sdcard/ais-dom-0.92.1.tar.gz -U &&
