@@ -356,6 +356,42 @@
                                                 ],
                                                 "show_header_toggle": false,
                                                 "type": "entities"
+                                            },
+                                            {
+                                                "card": {
+                                                    "audio_type": "SpotifySearch",
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.spotifysearchlist"
+                                                    ],
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    },
+                                                    {
+                                                        "entity": "input_select.ais_music_service",
+                                                        "state": "Spotify"
+                                                    }
+                                                ],
+                                                "type": "conditional"
                                             }
                                         ],
                                         "type": "vertical-stack"
@@ -415,42 +451,6 @@
                             ],
                             "show_header_toggle": false,
                             "type": "vertical-stack"
-                        },
-                        {
-                            "card": {
-                                "audio_type": "SpotifySearch",
-                                "columns": [
-                                    {
-                                        "field": "thumbnail",
-                                        "title": "",
-                                        "type": "image"
-                                    },
-                                    {
-                                        "field": "name",
-                                        "title": ""
-                                    },
-                                    {
-                                        "field": "icon",
-                                        "title": "",
-                                        "type": "icon"
-                                    }
-                                ],
-                                "entity": [
-                                    "sensor.spotifysearchlist"
-                                ],
-                                "type": "custom:list-card"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "sensor.ais_player_mode",
-                                    "state": "music_player"
-                                },
-                                {
-                                    "entity": "input_select.ais_music_service",
-                                    "state": "Spotify"
-                                }
-                            ],
-                            "type": "conditional"
                         },
                         {
                             "card": {
@@ -822,6 +822,25 @@
                         {
                             "cards": [
                                 {
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.ais_knowledge_query"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Asystentka",
+                                    "type": "entities"
+                                },
+                                {
+                                    "content": "[[ sensor.ais_knowledge_answer.attributes.text ]]\n",
+                                    "type": "custom:useful-markdown-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
                                     "cards": [
                                         {
                                             "entity": "sensor.ais_drives",
@@ -987,25 +1006,6 @@
                                         }
                                     ],
                                     "type": "horizontal-stack"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_text.ais_knowledge_query"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Asystentka",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "[[ sensor.ais_knowledge_answer.attributes.text ]]\n",
-                                    "type": "custom:useful-markdown-card"
                                 }
                             ],
                             "type": "vertical-stack"
