@@ -93,6 +93,21 @@
                                     },
                                     "icon": "mdi:speaker",
                                     "more_info": true,
+                                    "shortcuts": {
+                                        "buttons": [
+                                            {
+                                                "icon": "mdi:bookmark-music",
+                                                "id": "script.add_item_to_bookmarks",
+                                                "type": "script"
+                                            },
+                                            {
+                                                "icon": "mdi:thumb-up",
+                                                "id": "script.add_item_to_favorites",
+                                                "type": "script"
+                                            }
+                                        ],
+                                        "columns": 2
+                                    },
                                     "tts": {
                                         "platform": "ais_tts"
                                     },
@@ -384,7 +399,7 @@
                                                         "sensor.spotifysearchlist"
                                                     ],
                                                     "image_style": "fanart",
-                                                    "type": "custom:upcoming-media-card"
+                                                    "type": "custom:list-card"
                                                 },
                                                 "conditions": [
                                                     {
@@ -439,12 +454,21 @@
                                         "audio_type": "Bookmark",
                                         "columns": [
                                             {
+                                                "field": "icon_remove",
+                                                "title": "",
+                                                "type": "icon_remove"
+                                            },
+                                            {
                                                 "field": "thumbnail",
                                                 "title": "",
                                                 "type": "image"
                                             },
                                             {
                                                 "field": "name",
+                                                "title": ""
+                                            },
+                                            {
+                                                "field": "media_position",
                                                 "title": ""
                                             },
                                             {
@@ -645,6 +669,11 @@
                                         "audio_type": "Favorite",
                                         "columns": [
                                             {
+                                                "field": "icon_remove",
+                                                "title": "",
+                                                "type": "icon_remove"
+                                            },
+                                            {
                                                 "field": "thumbnail",
                                                 "title": "",
                                                 "type": "image"
@@ -652,6 +681,11 @@
                                             {
                                                 "field": "name",
                                                 "title": ""
+                                            },
+                                            {
+                                                "field": "icon_type",
+                                                "title": "",
+                                                "type": "icon"
                                             },
                                             {
                                                 "field": "icon",
@@ -662,7 +696,7 @@
                                         "entity": [
                                             "sensor.aisfavoriteslist"
                                         ],
-                                        "type": "custom:upcoming-media-card"
+                                        "type": "custom:list-card"
                                     },
                                     "conditions": [
                                         {
