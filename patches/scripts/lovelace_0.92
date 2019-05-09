@@ -124,11 +124,11 @@
                                                     "icon": "mdi:heart",
                                                     "name": " ",
                                                     "show_state": false,
-                                                    "size": "20%",
+                                                    "size": "30%",
                                                     "state": [
                                                         {
                                                             "color": "var(--primary-color)",
-                                                            "value": "bookmarks"
+                                                            "value": "ais_favorites"
                                                         }
                                                     ],
                                                     "tap_action": {
@@ -144,10 +144,33 @@
                                                     "color": "var(--primary-background-color)",
                                                     "color_type": "icon",
                                                     "entity": "sensor.ais_player_mode",
+                                                    "icon": "mdi:bookmark",
+                                                    "name": " ",
+                                                    "show_state": false,
+                                                    "size": "30%",
+                                                    "state": [
+                                                        {
+                                                            "color": "var(--primary-color)",
+                                                            "value": "ais_bookmarks"
+                                                        }
+                                                    ],
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "ais_ai_service.set_context",
+                                                        "service_data": {
+                                                            "text": "zak\u0142adki"
+                                                        }
+                                                    },
+                                                    "type": "custom:button-card"
+                                                },
+                                                {
+                                                    "color": "var(--primary-background-color)",
+                                                    "color_type": "icon",
+                                                    "entity": "sensor.ais_player_mode",
                                                     "icon": "mdi:newspaper",
                                                     "name": " ",
                                                     "show_state": false,
-                                                    "size": "20%",
+                                                    "size": "30%",
                                                     "state": [
                                                         {
                                                             "color": "var(--primary-color)",
@@ -170,7 +193,7 @@
                                                     "icon": "mdi:folder",
                                                     "name": " ",
                                                     "show_state": false,
-                                                    "size": "20%",
+                                                    "size": "30%",
                                                     "state": [
                                                         {
                                                             "color": "var(--primary-color)",
@@ -272,20 +295,6 @@
                                 },
                                 {
                                     "card": {
-                                        "entity": "sensor.ais_drives",
-                                        "title": "Dyski",
-                                        "type": "custom:files-card"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "sensor.ais_player_mode",
-                                            "state": "local_audio"
-                                        }
-                                    ],
-                                    "type": "conditional"
-                                },
-                                {
-                                    "card": {
                                         "entities": [
                                             "input_select.radio_type"
                                         ],
@@ -368,13 +377,58 @@
                                                 "type": "horizontal-stack"
                                             },
                                             {
-                                                "entities": [
+                                                "card": {
+                                                    "cards": [
+                                                        {
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "input_text.ais_music_query"
+                                                                }
+                                                            ],
+                                                            "show_header_toggle": false,
+                                                            "type": "entities"
+                                                        }
+                                                    ],
+                                                    "type": "vertical-stack"
+                                                },
+                                                "conditions": [
                                                     {
-                                                        "entity": "input_text.ais_music_query"
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    },
+                                                    {
+                                                        "entity": "input_select.ais_music_service",
+                                                        "state": "YouTube"
                                                     }
                                                 ],
-                                                "show_header_toggle": false,
-                                                "type": "entities"
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "cards": [
+                                                        {
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "input_text.ais_spotify_query"
+                                                                }
+                                                            ],
+                                                            "show_header_toggle": false,
+                                                            "type": "entities"
+                                                        }
+                                                    ],
+                                                    "type": "vertical-stack"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    },
+                                                    {
+                                                        "entity": "input_select.ais_music_service",
+                                                        "state": "Spotify"
+                                                    }
+                                                ],
+                                                "type": "conditional"
                                             },
                                             {
                                                 "card": {
@@ -398,7 +452,6 @@
                                                     "entity": [
                                                         "sensor.spotifysearchlist"
                                                     ],
-                                                    "image_style": "fanart",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -448,47 +501,6 @@
                                         }
                                     ],
                                     "type": "conditional"
-                                },
-                                {
-                                    "card": {
-                                        "audio_type": "Bookmark",
-                                        "columns": [
-                                            {
-                                                "field": "icon_remove",
-                                                "title": "",
-                                                "type": "icon_remove"
-                                            },
-                                            {
-                                                "field": "thumbnail",
-                                                "title": "",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name",
-                                                "title": ""
-                                            },
-                                            {
-                                                "field": "media_position",
-                                                "title": ""
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "title": "",
-                                                "type": "icon"
-                                            }
-                                        ],
-                                        "entity": [
-                                            "sensor.aisbookmarkslist"
-                                        ],
-                                        "type": "custom:list-card"
-                                    },
-                                    "conditions": [
-                                        {
-                                            "entity": "sensor.ais_player_mode",
-                                            "state": "bookmarks"
-                                        }
-                                    ],
-                                    "type": "conditional"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -498,7 +510,6 @@
                             "cards": [
                                 {
                                     "card": {
-                                        "audio_type": "Spotify",
                                         "columns": [
                                             {
                                                 "field": "thumbnail",
@@ -518,6 +529,7 @@
                                         "entity": [
                                             "sensor.spotifylist"
                                         ],
+                                        "media_source": "Spotify",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
@@ -534,7 +546,6 @@
                                 },
                                 {
                                     "card": {
-                                        "audio_type": "Radio",
                                         "columns": [
                                             {
                                                 "field": "thumbnail",
@@ -554,6 +565,7 @@
                                         "entity": [
                                             "sensor.radiolist"
                                         ],
+                                        "media_source": "Radio",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
@@ -566,7 +578,6 @@
                                 },
                                 {
                                     "card": {
-                                        "audio_type": "Podcast",
                                         "columns": [
                                             {
                                                 "field": "thumbnail",
@@ -586,6 +597,7 @@
                                         "entity": [
                                             "sensor.podcastlist"
                                         ],
+                                        "media_source": "Podcast",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
@@ -598,7 +610,6 @@
                                 },
                                 {
                                     "card": {
-                                        "audio_type": "Music",
                                         "columns": [
                                             {
                                                 "field": "thumbnail",
@@ -618,6 +629,7 @@
                                         "entity": [
                                             "sensor.youtubelist"
                                         ],
+                                        "media_source": "Music",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
@@ -634,7 +646,6 @@
                                 },
                                 {
                                     "card": {
-                                        "audio_type": "News",
                                         "columns": [
                                             {
                                                 "field": "thumbnail",
@@ -654,6 +665,7 @@
                                         "entity": [
                                             "sensor.rssnewslist"
                                         ],
+                                        "media_source": "News",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
@@ -666,7 +678,6 @@
                                 },
                                 {
                                     "card": {
-                                        "audio_type": "Favorite",
                                         "columns": [
                                             {
                                                 "field": "icon_remove",
@@ -696,15 +707,243 @@
                                         "entity": [
                                             "sensor.aisfavoriteslist"
                                         ],
+                                        "media_source": "Favorite",
                                         "type": "custom:list-card"
                                     },
                                     "conditions": [
                                         {
                                             "entity": "sensor.ais_player_mode",
-                                            "state": "bookmarks"
+                                            "state": "ais_favorites"
                                         }
                                     ],
                                     "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "columns": [
+                                            {
+                                                "field": "icon_remove",
+                                                "title": "",
+                                                "type": "icon_remove"
+                                            },
+                                            {
+                                                "field": "thumbnail",
+                                                "title": "",
+                                                "type": "image"
+                                            },
+                                            {
+                                                "field": "name",
+                                                "title": ""
+                                            },
+                                            {
+                                                "field": "media_position",
+                                                "title": ""
+                                            },
+                                            {
+                                                "field": "icon",
+                                                "title": "",
+                                                "type": "icon"
+                                            }
+                                        ],
+                                        "entity": [
+                                            "sensor.aisbookmarkslist"
+                                        ],
+                                        "media_source": "Bookmark",
+                                        "type": "custom:list-card"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state": "ais_bookmarks"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                },
+                                {
+                                    "card": {
+                                        "entity": "sensor.ais_drives",
+                                        "title": "Dyski",
+                                        "type": "custom:files-card"
+                                    },
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.ais_player_mode",
+                                            "state": "local_audio"
+                                        }
+                                    ],
+                                    "type": "conditional"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "icon": "mdi:mouse",
+                                            "name": " ",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 19, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:arrow-up-bold",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 19, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "icon": "mdi:menu",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 82, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 21, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:arrow-left-bold",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 21, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 23, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:circle",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 23, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 22, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:arrow-right-bold",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 22, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 190, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:home",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 190, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "hold_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 20, \"Action\": \"0\", \"RepeatCount\": 1}"
+                                                }
+                                            },
+                                            "icon": "mdi:arrow-down-bold",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 20, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.ais_drives",
+                                            "icon": "mdi:backup-restore",
+                                            "name": " ",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_ai_service.process_code",
+                                                "service_data": {
+                                                    "text": "{\"KeyCode\": 4, \"Action\": \"0\"}"
+                                                }
+                                            },
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -1105,178 +1344,6 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "icon": "mdi:mouse",
-                                            "name": " ",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 19, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:arrow-up-bold",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 19, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "icon": "mdi:menu",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 82, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 21, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:arrow-left-bold",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 21, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 23, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:circle",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 23, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 22, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:arrow-right-bold",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 22, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 190, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:home",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 190, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "hold_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 20, \"Action\": \"0\", \"RepeatCount\": 1}"
-                                                }
-                                            },
-                                            "icon": "mdi:arrow-down-bold",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 20, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "sensor.ais_drives",
-                                            "icon": "mdi:backup-restore",
-                                            "name": " ",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_ai_service.process_code",
-                                                "service_data": {
-                                                    "text": "{\"KeyCode\": 4, \"Action\": \"0\"}"
-                                                }
-                                            },
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:console",
@@ -1288,25 +1355,17 @@
                     "cards": [
                         {
                             "audio_type": "SpotifySearch",
-                            "columns": [
-                                {
-                                    "field": "thumbnail",
-                                    "title": "",
-                                    "type": "image"
-                                },
-                                {
-                                    "field": "name",
-                                    "title": ""
-                                },
-                                {
-                                    "field": "icon",
-                                    "title": "",
-                                    "type": "icon"
-                                }
-                            ],
                             "entity": [
                                 "sensor.spotifysearchlist"
                             ],
+                            "type": "custom:upcoming-media-card"
+                        },
+                        {
+                            "audio_type": "Spotify",
+                            "entity": [
+                                "sensor.spotifylist"
+                            ],
+                            "image_style": "fanart",
                             "type": "custom:upcoming-media-card"
                         }
                     ],
