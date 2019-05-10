@@ -20,23 +20,23 @@
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/list-card.js?v=2.1"
+                    "url": "/static/ais_dom/cards/list-card.js?v=2.2"
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/files-card.js?v=2.1"
+                    "url": "/static/ais_dom/cards/files-card.js?v=2.2"
                 },
                 {
                     "type": "module",
-                    "url": "/static/ais_dom/cards/mini-media-player-bundle.js?v=1.0.3"
+                    "url": "/static/ais_dom/cards/mini-media-player-bundle.js?v=2.2"
                 },
                 {
                     "type": "module",
-                    "url": "/static/ais_dom/cards/button-card.js?v=0"
+                    "url": "/static/ais_dom/cards/button-card.js?v=2.2"
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/upcoming-media-card.js?v=0.3.4"
+                    "url": "/static/ais_dom/cards/upcoming-media-card.js?v=2.2"
                 }
             ],
             "title": "Asystent domowy",
