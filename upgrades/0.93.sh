@@ -10,12 +10,12 @@ echo "-----------------------------"
 echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M') START
 echo "-----------------------------"
-echo "AIS dom upgrade to version 0.92.6"
+echo "AIS dom upgrade to version 0.93.x"
 echo "-----------------------------"
 echo "-----------------------------"
 
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.92.6 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.93.0 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
@@ -24,8 +24,12 @@ echo "-----------------------------";
 echo "-----------------------------";
 echo "-----------------------------";
 
-curl -o "/sdcard/ais-dom-0.92.6.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.92.6.tar.gz &&
-pip install /sdcard/ais-dom-0.92.6.tar.gz -U &&
+# remove the db and spotifycache
+rm /data/data/pl.sviete.dom/files/home/AIS/home-assistant_v2.db
+rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
+
+curl -o "/sdcard/ais-dom-0.93.0.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.0.tar.gz &&
+pip install /sdcard/ais-dom-0.93.0.tar.gz -U &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Zainstalowane, poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 echo "all done"
