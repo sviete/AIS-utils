@@ -20,19 +20,19 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_93 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.93 &&
 echo "-----------------------------";
 echo "-----------------------------";
 
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja PIP"}' http://localhost:8122/text_to_speech &&
 curl -o "/sdcard/ais-dom-0.93.1.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.1.tar.gz &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja pakietów Asystenta domowego"}' http://localhost:8122/text_to_speech &&
 pip install /sdcard/ais-dom-0.93.1.tar.gz -U &&
 
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja Android"}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja aplikacji Android"}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";
 echo "Install .apk----------";
 echo "-----------------------------";
