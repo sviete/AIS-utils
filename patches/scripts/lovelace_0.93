@@ -1379,6 +1379,9 @@
                                             "device_class": "humidity"
                                         },
                                         "domain": "sensor"
+                                    },
+                                    {
+                                        "entity_id": "sensor.*_status"
                                     }
                                 ]
                             },
