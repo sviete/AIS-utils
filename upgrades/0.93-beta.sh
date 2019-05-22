@@ -47,8 +47,8 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Install .apk----------";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/usr/tmp/AisPanelApp-0.93.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/AisPanelApp-0.93.apk &&
-su -c "pm install -r /data/data/pl.sviete.dom/files/usr/tmp/AisPanelApp-0.93.apk"
+curl -o "/sdcard/AisPanelApp-0.93.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/AisPanelApp-0.93.apk &&
+su -c "pm install -r /sdcard/AisPanelApp-0.93.apk"
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
