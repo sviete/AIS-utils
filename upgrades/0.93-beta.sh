@@ -38,9 +38,9 @@ echo "inception... go back"
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
-curl -o "/sdcard/ais-dom-0.93.1.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.1.tar.gz &&
+curl -o "/sdcard/ais-dom-0.93.2.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.2.tar.gz &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja systemu Asystent domowy"}' http://localhost:8122/text_to_speech &&
-pip install /sdcard/ais-dom-0.93.1.tar.gz -U &&
+pip install /sdcard/ais-dom-0.93.2.tar.gz -U &&
 
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja aplikacji Android"}' http://localhost:8122/text_to_speech &&
