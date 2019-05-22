@@ -488,11 +488,6 @@
                                                             "field": "icon",
                                                             "title": "",
                                                             "type": "icon"
-                                                        },
-                                                        {
-                                                            "field": "icon",
-                                                            "title": "",
-                                                            "type": "icon"
                                                         }
                                                     ],
                                                     "entity": [
