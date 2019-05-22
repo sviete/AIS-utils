@@ -43,6 +43,10 @@
                     "url": "/static/ais_dom/cards/ais-tts.js?v=0.1"
                 },
                 {
+                    "type": "js",
+                    "url": "/static/ais_dom/cards/lovelace-swipe-navigation.js?v=0.1"
+                },
+                {
                     "type": "module",
                     "url": "/static/ais_dom/cards/compact-custom-header.js?v=0.1"
                 }
