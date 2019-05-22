@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/list-card.js?v=2.3"
+                    "url": "/static/ais_dom/cards/list-card.js?v=2.4"
                 },
                 {
                     "type": "js",
@@ -66,13 +66,6 @@
                         {
                             "cards": [
                                 {
-                                    "clock_am_pm": false,
-                                    "clock_date": true,
-                                    "main_config": true,
-                                    "notifications": "clock",
-                                    "type": "custom:compact-custom-header"
-                                },
-                                {
                                     "entities": [
                                         {
                                             "entity": "input_text.ais_knowledge_query"
@@ -99,13 +92,6 @@
                     "cards": [
                         {
                             "cards": [
-                                {
-                                    "clock_am_pm": false,
-                                    "clock_date": true,
-                                    "main_config": true,
-                                    "notifications": "clock",
-                                    "type": "custom:compact-custom-header"
-                                },
                                 {
                                     "artwork": "cover",
                                     "entity": "media_player.wbudowany_glosnik",
@@ -497,6 +483,11 @@
                                                         {
                                                             "field": "name",
                                                             "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
                                                         },
                                                         {
                                                             "field": "icon",
@@ -1024,22 +1015,31 @@
                     "badges": [],
                     "cards": [
                         {
-                            "clock_am_pm": false,
-                            "clock_date": true,
-                            "main_config": true,
-                            "notifications": "clock",
-                            "type": "custom:compact-custom-header"
-                        },
-                        {
                             "entities": [
-                                "sensor.local_host_name",
-                                "sensor.internal_ip_address",
-                                "sensor.ais_android_wifi_current_network_info",
-                                "script.ais_scan_android_wifi_network",
-                                "input_select.ais_android_wifi_network",
-                                "input_text.ais_android_wifi_password",
-                                "script.ais_connect_android_wifi_network",
-                                "input_boolean.ais_android_wifi_changes_notify"
+                                {
+                                    "entity": "sensor.local_host_name"
+                                },
+                                {
+                                    "entity": "sensor.internal_ip_address"
+                                },
+                                {
+                                    "entity": "sensor.ais_android_current_network_info"
+                                },
+                                {
+                                    "entity": "script.ais_scan_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_select.ais_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_text.ais_android_wifi_password"
+                                },
+                                {
+                                    "entity": "script.ais_connect_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_boolean.ais_android_wifi_changes_notify"
+                                }
                             ],
                             "show_header_toggle": false,
                             "title": "Ustawienia sieci",
@@ -1113,13 +1113,6 @@
                 {
                     "badges": [],
                     "cards": [
-                        {
-                            "clock_am_pm": false,
-                            "clock_date": true,
-                            "main_config": true,
-                            "notifications": "clock",
-                            "type": "custom:compact-custom-header"
-                        },
                         {
                             "entities": [
                                 "sensor.version_info",
@@ -1325,13 +1318,6 @@
                 {
                     "badges": [],
                     "cards": [
-                        {
-                            "clock_am_pm": false,
-                            "clock_date": true,
-                            "main_config": true,
-                            "notifications": "clock",
-                            "type": "custom:compact-custom-header"
-                        },
                         {
                             "cards": [
                                 {

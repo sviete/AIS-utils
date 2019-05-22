@@ -15,7 +15,7 @@ echo "-----------------------------"
 echo "-----------------------------"
 
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.93.0 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.93.2 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
@@ -23,6 +23,17 @@ echo "-----------------------------";
 curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.93 &&
 echo "-----------------------------";
 echo "-----------------------------";
+
+echo "-----------------------------------";
+echo "fix webssh in pm service ----------";
+echo "-----------------------------------";
+echo "inception... go deeper..."
+ssh localhost -o StrictHostKeyChecking=no -p 8022 -i /data/data/pl.sviete.dom/files/home/AIS/www/id_rsa_ais << EOF
+pm2 delete webssh
+pm2 start wssh --name webssh --interpreter=python -- --xsrf=False
+pm2 save
+EOF
+echo "inception... go back"
 
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
