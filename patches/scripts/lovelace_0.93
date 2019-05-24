@@ -97,14 +97,16 @@
                         {
                             "cards": [
                                 {
-                                    "artwork": "cover",
+                                    "artwork": "full-cover",
                                     "entity": "media_player.wbudowany_glosnik",
                                     "hide": {
                                         "power": true,
+                                        "shuffle": false,
                                         "source": true
                                     },
                                     "icon": "mdi:speaker",
                                     "more_info": false,
+                                    "name": " ",
                                     "shortcuts": {
                                         "buttons": [
                                             {
