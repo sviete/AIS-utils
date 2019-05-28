@@ -63,11 +63,6 @@
                     ],
                     "cards": [
                         {
-                            "entity": "weather.openweathermap",
-                            "name": "Pogoda",
-                            "type": "weather-forecast"
-                        },
-                        {
                             "cards": [
                                 {
                                     "entities": [
@@ -85,6 +80,11 @@
                                 }
                             ],
                             "type": "vertical-stack"
+                        },
+                        {
+                            "entity": "weather.openweathermap",
+                            "name": "Pogoda",
+                            "type": "weather-forecast"
                         }
                     ],
                     "icon": "mdi:home-outline",
@@ -1024,7 +1024,7 @@
                                     "entity": "sensor.internal_ip_address"
                                 },
                                 {
-                                    "entity": "sensor.ais_android_current_network_info"
+                                    "entity": "sensor.ais_wifi_service_current_network_info"
                                 },
                                 {
                                     "entity": "script.ais_scan_android_wifi_network"
