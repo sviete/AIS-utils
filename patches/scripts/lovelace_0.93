@@ -1076,45 +1076,6 @@
                             "type": "entities"
                         },
                         {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_number.media_player_speed"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Odtwarzacze",
-                                    "type": "entities"
-                                },
-                                {
-                                    "card": {
-                                        "show_header_toggle": false,
-                                        "type": "entities"
-                                    },
-                                    "filter": {
-                                        "include": [
-                                            {
-                                                "domain": "media_player"
-                                            }
-                                        ]
-                                    },
-                                    "type": "custom:monster-card"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Dodawanie nowych urz\u0105dze\u0144",
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:settings",
-                    "path": "settings",
-                    "title": "Ustawienia"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
                             "entities": [
                                 "sensor.version_info",
                                 "script.ais_update_system",
@@ -1132,7 +1093,15 @@
                             "show_header_toggle": false,
                             "title": "System",
                             "type": "entities"
-                        },
+                        }
+                    ],
+                    "icon": "mdi:settings",
+                    "path": "settings",
+                    "title": "Ustawienia"
+                },
+                {
+                    "badges": [],
+                    "cards": [
                         {
                             "cards": [
                                 {
@@ -1409,18 +1378,30 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "input_text.ais_knowledge_query"
+                                            "entity": "input_number.media_player_speed"
                                         }
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "Asystentka",
+                                    "title": "Odtwarzacze",
                                     "type": "entities"
                                 },
                                 {
-                                    "content": "[[ sensor.aisknowledgeanswer.attributes.text ]]\n",
-                                    "type": "custom:useful-markdown-card"
+                                    "card": {
+                                        "show_header_toggle": false,
+                                        "type": "entities"
+                                    },
+                                    "filter": {
+                                        "include": [
+                                            {
+                                                "domain": "media_player"
+                                            }
+                                        ]
+                                    },
+                                    "type": "custom:monster-card"
                                 }
                             ],
+                            "show_header_toggle": false,
+                            "title": "Dodawanie nowych urz\u0105dze\u0144",
                             "type": "vertical-stack"
                         }
                     ],
