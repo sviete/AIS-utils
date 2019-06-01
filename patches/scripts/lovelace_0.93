@@ -4,19 +4,19 @@
             "resources": [
                 {
                     "type": "module",
-                    "url": "/static/ais_dom/cards/useful-markdown-card.js"
+                    "url": "/static/ais_dom/cards/useful-markdown-card.js?v=1.0"
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/card-tools.js"
+                    "url": "/static/ais_dom/cards/card-tools.js?v=1.0"
                 },
                 {
                     "type": "js",
-                    "url": "/static/ais_dom/cards/browser-commander.js"
+                    "url": "/static/ais_dom/cards/browser-commander.js?v=1.0"
                 },
                 {
                     "type": "module",
-                    "url": "/static/ais_dom/cards/monster-card.js"
+                    "url": "/static/ais_dom/cards/monster-card.js?v=1.0"
                 },
                 {
                     "type": "js",
@@ -53,6 +53,10 @@
                 {
                     "type": "js",
                     "url": "/static/ais_dom/cards/card-loader.js?v=1"
+                },
+                {
+                    "type": "js",
+                    "url": "/static/ais_dom/cards/layout-card.js?v=1"
                 }
             ],
             "title": "Asystent domowy",
@@ -99,764 +103,769 @@
                     "badges": [],
                     "cards": [
                         {
-                            "card": {
-                                "cards": [
-                                    {
-                                        "artwork": "full-cover",
-                                        "entity": "media_player.wbudowany_glosnik",
-                                        "hide": {
-                                            "power": true,
-                                            "shuffle": false,
-                                            "source": true
-                                        },
-                                        "icon": "mdi:speaker",
-                                        "more_info": false,
-                                        "name": " ",
-                                        "shortcuts": {
-                                            "buttons": [
-                                                {
-                                                    "icon": "mdi:bookmark-music",
-                                                    "id": "script.add_item_to_bookmarks",
-                                                    "type": "script"
-                                                },
-                                                {
-                                                    "icon": "mdi:thumb-up",
-                                                    "id": "script.add_item_to_favorites",
-                                                    "type": "script"
-                                                }
-                                            ],
-                                            "columns": 2
-                                        },
-                                        "show_progress": true,
-                                        "type": "custom:mini-media-player"
-                                    },
-                                    {
+                            "cards": [
+                                {
+                                    "card": {
                                         "cards": [
                                             {
-                                                "cards": [
-                                                    {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:heart",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "30%",
-                                                        "state": [
-                                                            {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "ais_favorites"
-                                                            }
-                                                        ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "ulubione"
-                                                            }
+                                                "artwork": "full-cover",
+                                                "entity": "media_player.wbudowany_glosnik",
+                                                "hide": {
+                                                    "power": true,
+                                                    "shuffle": false,
+                                                    "source": true
+                                                },
+                                                "icon": "mdi:speaker",
+                                                "more_info": false,
+                                                "name": " ",
+                                                "shortcuts": {
+                                                    "buttons": [
+                                                        {
+                                                            "icon": "mdi:bookmark-music",
+                                                            "id": "script.add_item_to_bookmarks",
+                                                            "type": "script"
                                                         },
-                                                        "type": "custom:button-card"
-                                                    },
-                                                    {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:bookmark",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "30%",
-                                                        "state": [
-                                                            {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "ais_bookmarks"
-                                                            }
-                                                        ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "zak\u0142adki"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
-                                                    },
-                                                    {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:newspaper",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "30%",
-                                                        "state": [
-                                                            {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "ais_rss_news_remote"
-                                                            }
-                                                        ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "wiadomo\u015bci"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
-                                                    },
-                                                    {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:folder",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "30%",
-                                                        "state": [
-                                                            {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "local_audio"
-                                                            }
-                                                        ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "dyski"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
-                                                    }
-                                                ],
-                                                "type": "horizontal-stack"
+                                                        {
+                                                            "icon": "mdi:thumb-up",
+                                                            "id": "script.add_item_to_favorites",
+                                                            "type": "script"
+                                                        }
+                                                    ],
+                                                    "columns": 2
+                                                },
+                                                "show_progress": true,
+                                                "type": "custom:mini-media-player"
                                             },
                                             {
                                                 "cards": [
                                                     {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:radio",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "20%",
-                                                        "state": [
+                                                        "cards": [
                                                             {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "radio_player"
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:heart",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "30%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "ais_favorites"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "ulubione"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:bookmark",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "30%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "ais_bookmarks"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "zak\u0142adki"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:newspaper",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "30%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "ais_rss_news_remote"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "wiadomo\u015bci"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:folder",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "30%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "local_audio"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "dyski"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
                                                             }
                                                         ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "radio"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
+                                                        "type": "horizontal-stack"
                                                     },
                                                     {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:podcast",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "20%",
-                                                        "state": [
+                                                        "cards": [
                                                             {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "podcast_player"
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:radio",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "20%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "radio_player"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "radio"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:podcast",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "20%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "podcast_player"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "podcast"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:music",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "20%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "music_player"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "muzyka"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
                                                             }
                                                         ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "podcast"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
-                                                    },
-                                                    {
-                                                        "color": "var(--primary-background-color)",
-                                                        "color_type": "icon",
-                                                        "entity": "sensor.ais_player_mode",
-                                                        "icon": "mdi:music",
-                                                        "name": " ",
-                                                        "show_state": false,
-                                                        "size": "20%",
-                                                        "state": [
-                                                            {
-                                                                "color": "var(--primary-color)",
-                                                                "value": "music_player"
-                                                            }
-                                                        ],
-                                                        "tap_action": {
-                                                            "action": "call-service",
-                                                            "service": "ais_ai_service.set_context",
-                                                            "service_data": {
-                                                                "text": "muzyka"
-                                                            }
-                                                        },
-                                                        "type": "custom:button-card"
+                                                        "type": "horizontal-stack"
                                                     }
                                                 ],
-                                                "type": "horizontal-stack"
+                                                "type": "vertical-stack"
+                                            },
+                                            {
+                                                "content": "[[ sensor.aisknowledgeanswer.state ]]\n",
+                                                "type": "custom:useful-markdown-card"
+                                            },
+                                            {
+                                                "card": {
+                                                    "entities": [
+                                                        "input_select.radio_type"
+                                                    ],
+                                                    "show_header_toggle": false,
+                                                    "title": "Przegl\u0105danie Stacji Radiowych",
+                                                    "type": "entities"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "radio_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "entities": [
+                                                        "input_select.podcast_type"
+                                                    ],
+                                                    "show_header_toggle": false,
+                                                    "title": "Przegl\u0105danie Podkast\u00f3w",
+                                                    "type": "entities"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "podcast_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.podcastnamelist"
+                                                    ],
+                                                    "media_source": "PodcastName",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "podcast_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "cards": [
+                                                        {
+                                                            "cards": [
+                                                                {
+                                                                    "color": "var(--primary-background-color)",
+                                                                    "color_type": "icon",
+                                                                    "entity": "input_select.ais_music_service",
+                                                                    "icon": "mdi:youtube",
+                                                                    "name": " ",
+                                                                    "show_state": false,
+                                                                    "size": "12%",
+                                                                    "state": [
+                                                                        {
+                                                                            "color": "var(--primary-color)",
+                                                                            "value": "YouTube"
+                                                                        }
+                                                                    ],
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "ais_cloud.change_audio_service"
+                                                                    },
+                                                                    "type": "custom:button-card"
+                                                                },
+                                                                {
+                                                                    "color": "var(--primary-background-color)",
+                                                                    "color_type": "icon",
+                                                                    "entity": "input_select.ais_music_service",
+                                                                    "icon": "mdi:spotify",
+                                                                    "name": " ",
+                                                                    "show_state": false,
+                                                                    "size": "12%",
+                                                                    "state": [
+                                                                        {
+                                                                            "color": "var(--primary-color)",
+                                                                            "value": "Spotify"
+                                                                        }
+                                                                    ],
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "ais_cloud.change_audio_service"
+                                                                    },
+                                                                    "type": "custom:button-card"
+                                                                }
+                                                            ],
+                                                            "type": "horizontal-stack"
+                                                        },
+                                                        {
+                                                            "card": {
+                                                                "cards": [
+                                                                    {
+                                                                        "entities": [
+                                                                            {
+                                                                                "entity": "input_text.ais_music_query"
+                                                                            }
+                                                                        ],
+                                                                        "show_header_toggle": false,
+                                                                        "title": "Wyszukiwanie Muzyki",
+                                                                        "type": "entities"
+                                                                    }
+                                                                ],
+                                                                "type": "vertical-stack"
+                                                            },
+                                                            "conditions": [
+                                                                {
+                                                                    "entity": "sensor.ais_player_mode",
+                                                                    "state": "music_player"
+                                                                },
+                                                                {
+                                                                    "entity": "input_select.ais_music_service",
+                                                                    "state": "YouTube"
+                                                                }
+                                                            ],
+                                                            "type": "conditional"
+                                                        },
+                                                        {
+                                                            "card": {
+                                                                "cards": [
+                                                                    {
+                                                                        "entities": [
+                                                                            {
+                                                                                "entity": "input_text.ais_spotify_query"
+                                                                            }
+                                                                        ],
+                                                                        "show_header_toggle": false,
+                                                                        "title": "Wyszukiwanie Muzyki",
+                                                                        "type": "entities"
+                                                                    }
+                                                                ],
+                                                                "type": "vertical-stack"
+                                                            },
+                                                            "conditions": [
+                                                                {
+                                                                    "entity": "sensor.ais_player_mode",
+                                                                    "state": "music_player"
+                                                                },
+                                                                {
+                                                                    "entity": "input_select.ais_music_service",
+                                                                    "state": "Spotify"
+                                                                }
+                                                            ],
+                                                            "type": "conditional"
+                                                        },
+                                                        {
+                                                            "card": {
+                                                                "columns": [
+                                                                    {
+                                                                        "field": "thumbnail",
+                                                                        "title": "",
+                                                                        "type": "image"
+                                                                    },
+                                                                    {
+                                                                        "field": "name",
+                                                                        "title": ""
+                                                                    },
+                                                                    {
+                                                                        "field": "icon",
+                                                                        "title": "",
+                                                                        "type": "icon"
+                                                                    }
+                                                                ],
+                                                                "entity": [
+                                                                    "sensor.spotifysearchlist"
+                                                                ],
+                                                                "media_source": "SpotifySearch",
+                                                                "type": "custom:list-card"
+                                                            },
+                                                            "conditions": [
+                                                                {
+                                                                    "entity": "sensor.ais_player_mode",
+                                                                    "state": "music_player"
+                                                                },
+                                                                {
+                                                                    "entity": "input_select.ais_music_service",
+                                                                    "state": "Spotify"
+                                                                }
+                                                            ],
+                                                            "type": "conditional"
+                                                        }
+                                                    ],
+                                                    "type": "vertical-stack"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "cards": [
+                                                        {
+                                                            "entities": [
+                                                                "input_select.rss_news_category",
+                                                                "input_select.rss_news_channel"
+                                                            ],
+                                                            "show_header_toggle": false,
+                                                            "title": "Przegl\u0105danie Wiadomo\u015bci",
+                                                            "type": "entities"
+                                                        },
+                                                        {
+                                                            "card": {
+                                                                "columns": [
+                                                                    {
+                                                                        "field": "thumbnail",
+                                                                        "title": "",
+                                                                        "type": "image"
+                                                                    },
+                                                                    {
+                                                                        "field": "name",
+                                                                        "title": ""
+                                                                    },
+                                                                    {
+                                                                        "field": "icon",
+                                                                        "title": "",
+                                                                        "type": "icon"
+                                                                    }
+                                                                ],
+                                                                "entity": [
+                                                                    "sensor.rssnewslist"
+                                                                ],
+                                                                "media_source": "News",
+                                                                "type": "custom:list-card"
+                                                            },
+                                                            "conditions": [
+                                                                {
+                                                                    "entity": "sensor.ais_player_mode",
+                                                                    "state": "ais_rss_news_remote"
+                                                                }
+                                                            ],
+                                                            "type": "conditional"
+                                                        }
+                                                    ],
+                                                    "type": "vertical-stack"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "ais_rss_news_remote"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            }
+                                        ],
+                                        "show_header_toggle": false,
+                                        "type": "vertical-stack"
+                                    },
+                                    "type": "custom:card-loader",
+                                    "wait": [
+                                        "mini-media-player",
+                                        "list-card",
+                                        "button-card",
+                                        "useful-markdown-card"
+                                    ]
+                                },
+                                {
+                                    "card": {
+                                        "cards": [
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.spotifylist"
+                                                    ],
+                                                    "media_source": "Spotify",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    },
+                                                    {
+                                                        "entity": "input_select.ais_music_service",
+                                                        "state": "Spotify"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.radiolist"
+                                                    ],
+                                                    "media_source": "Radio",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "radio_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.podcastlist"
+                                                    ],
+                                                    "media_source": "Podcast",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "podcast_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.youtubelist"
+                                                    ],
+                                                    "media_source": "Music",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "music_player"
+                                                    },
+                                                    {
+                                                        "entity": "input_select.ais_music_service",
+                                                        "state": "YouTube"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "content": "[[ sensor.rssnewstext.attributes.text ]]\n",
+                                                    "type": "custom:useful-markdown-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "ais_rss_news_remote"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "icon_remove",
+                                                            "title": "",
+                                                            "type": "icon_remove"
+                                                        },
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon_type",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.aisfavoriteslist"
+                                                    ],
+                                                    "media_source": "Favorite",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "ais_favorites"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "icon_remove",
+                                                            "title": "",
+                                                            "type": "icon_remove"
+                                                        },
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "media_position",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.aisbookmarkslist"
+                                                    ],
+                                                    "media_source": "Bookmark",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "ais_bookmarks"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "entity": "sensor.ais_drives",
+                                                    "title": "Przegl\u0105danie Dysk\u00f3w",
+                                                    "type": "custom:files-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "local_audio"
+                                                    }
+                                                ],
+                                                "type": "conditional"
                                             }
                                         ],
                                         "type": "vertical-stack"
                                     },
-                                    {
-                                        "content": "[[ sensor.aisknowledgeanswer.state ]]\n",
-                                        "type": "custom:useful-markdown-card"
-                                    },
-                                    {
-                                        "card": {
-                                            "entities": [
-                                                "input_select.radio_type"
-                                            ],
-                                            "show_header_toggle": false,
-                                            "title": "Przegl\u0105danie Stacji Radiowych",
-                                            "type": "entities"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "radio_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "entities": [
-                                                "input_select.podcast_type"
-                                            ],
-                                            "show_header_toggle": false,
-                                            "title": "Przegl\u0105danie Podkast\u00f3w",
-                                            "type": "entities"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "podcast_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.podcastnamelist"
-                                            ],
-                                            "media_source": "PodcastName",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "podcast_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "cards": [
-                                                {
-                                                    "cards": [
-                                                        {
-                                                            "color": "var(--primary-background-color)",
-                                                            "color_type": "icon",
-                                                            "entity": "input_select.ais_music_service",
-                                                            "icon": "mdi:youtube",
-                                                            "name": " ",
-                                                            "show_state": false,
-                                                            "size": "12%",
-                                                            "state": [
-                                                                {
-                                                                    "color": "var(--primary-color)",
-                                                                    "value": "YouTube"
-                                                                }
-                                                            ],
-                                                            "tap_action": {
-                                                                "action": "call-service",
-                                                                "service": "ais_cloud.change_audio_service"
-                                                            },
-                                                            "type": "custom:button-card"
-                                                        },
-                                                        {
-                                                            "color": "var(--primary-background-color)",
-                                                            "color_type": "icon",
-                                                            "entity": "input_select.ais_music_service",
-                                                            "icon": "mdi:spotify",
-                                                            "name": " ",
-                                                            "show_state": false,
-                                                            "size": "12%",
-                                                            "state": [
-                                                                {
-                                                                    "color": "var(--primary-color)",
-                                                                    "value": "Spotify"
-                                                                }
-                                                            ],
-                                                            "tap_action": {
-                                                                "action": "call-service",
-                                                                "service": "ais_cloud.change_audio_service"
-                                                            },
-                                                            "type": "custom:button-card"
-                                                        }
-                                                    ],
-                                                    "type": "horizontal-stack"
-                                                },
-                                                {
-                                                    "card": {
-                                                        "cards": [
-                                                            {
-                                                                "entities": [
-                                                                    {
-                                                                        "entity": "input_text.ais_music_query"
-                                                                    }
-                                                                ],
-                                                                "show_header_toggle": false,
-                                                                "title": "Wyszukiwanie Muzyki",
-                                                                "type": "entities"
-                                                            }
-                                                        ],
-                                                        "type": "vertical-stack"
-                                                    },
-                                                    "conditions": [
-                                                        {
-                                                            "entity": "sensor.ais_player_mode",
-                                                            "state": "music_player"
-                                                        },
-                                                        {
-                                                            "entity": "input_select.ais_music_service",
-                                                            "state": "YouTube"
-                                                        }
-                                                    ],
-                                                    "type": "conditional"
-                                                },
-                                                {
-                                                    "card": {
-                                                        "cards": [
-                                                            {
-                                                                "entities": [
-                                                                    {
-                                                                        "entity": "input_text.ais_spotify_query"
-                                                                    }
-                                                                ],
-                                                                "show_header_toggle": false,
-                                                                "title": "Wyszukiwanie Muzyki",
-                                                                "type": "entities"
-                                                            }
-                                                        ],
-                                                        "type": "vertical-stack"
-                                                    },
-                                                    "conditions": [
-                                                        {
-                                                            "entity": "sensor.ais_player_mode",
-                                                            "state": "music_player"
-                                                        },
-                                                        {
-                                                            "entity": "input_select.ais_music_service",
-                                                            "state": "Spotify"
-                                                        }
-                                                    ],
-                                                    "type": "conditional"
-                                                },
-                                                {
-                                                    "card": {
-                                                        "columns": [
-                                                            {
-                                                                "field": "thumbnail",
-                                                                "title": "",
-                                                                "type": "image"
-                                                            },
-                                                            {
-                                                                "field": "name",
-                                                                "title": ""
-                                                            },
-                                                            {
-                                                                "field": "icon",
-                                                                "title": "",
-                                                                "type": "icon"
-                                                            }
-                                                        ],
-                                                        "entity": [
-                                                            "sensor.spotifysearchlist"
-                                                        ],
-                                                        "media_source": "SpotifySearch",
-                                                        "type": "custom:list-card"
-                                                    },
-                                                    "conditions": [
-                                                        {
-                                                            "entity": "sensor.ais_player_mode",
-                                                            "state": "music_player"
-                                                        },
-                                                        {
-                                                            "entity": "input_select.ais_music_service",
-                                                            "state": "Spotify"
-                                                        }
-                                                    ],
-                                                    "type": "conditional"
-                                                }
-                                            ],
-                                            "type": "vertical-stack"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "music_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "cards": [
-                                                {
-                                                    "entities": [
-                                                        "input_select.rss_news_category",
-                                                        "input_select.rss_news_channel"
-                                                    ],
-                                                    "show_header_toggle": false,
-                                                    "title": "Przegl\u0105danie Wiadomo\u015bci",
-                                                    "type": "entities"
-                                                },
-                                                {
-                                                    "card": {
-                                                        "columns": [
-                                                            {
-                                                                "field": "thumbnail",
-                                                                "title": "",
-                                                                "type": "image"
-                                                            },
-                                                            {
-                                                                "field": "name",
-                                                                "title": ""
-                                                            },
-                                                            {
-                                                                "field": "icon",
-                                                                "title": "",
-                                                                "type": "icon"
-                                                            }
-                                                        ],
-                                                        "entity": [
-                                                            "sensor.rssnewslist"
-                                                        ],
-                                                        "media_source": "News",
-                                                        "type": "custom:list-card"
-                                                    },
-                                                    "conditions": [
-                                                        {
-                                                            "entity": "sensor.ais_player_mode",
-                                                            "state": "ais_rss_news_remote"
-                                                        }
-                                                    ],
-                                                    "type": "conditional"
-                                                }
-                                            ],
-                                            "type": "vertical-stack"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "ais_rss_news_remote"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    }
-                                ],
-                                "show_header_toggle": false,
-                                "type": "vertical-stack"
-                            },
-                            "type": "custom:card-loader",
-                            "wait": [
-                                "mini-media-player",
-                                "list-card",
-                                "button-card",
-                                "useful-markdown-card"
-                            ]
-                        },
-                        {
-                            "card": {
-                                "cards": [
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.spotifylist"
-                                            ],
-                                            "media_source": "Spotify",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "music_player"
-                                            },
-                                            {
-                                                "entity": "input_select.ais_music_service",
-                                                "state": "Spotify"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.radiolist"
-                                            ],
-                                            "media_source": "Radio",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "radio_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.podcastlist"
-                                            ],
-                                            "media_source": "Podcast",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "podcast_player"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.youtubelist"
-                                            ],
-                                            "media_source": "Music",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "music_player"
-                                            },
-                                            {
-                                                "entity": "input_select.ais_music_service",
-                                                "state": "YouTube"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "content": "[[ sensor.rssnewstext.attributes.text ]]\n",
-                                            "type": "custom:useful-markdown-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "ais_rss_news_remote"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "icon_remove",
-                                                    "title": "",
-                                                    "type": "icon_remove"
-                                                },
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon_type",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.aisfavoriteslist"
-                                            ],
-                                            "media_source": "Favorite",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "ais_favorites"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "columns": [
-                                                {
-                                                    "field": "icon_remove",
-                                                    "title": "",
-                                                    "type": "icon_remove"
-                                                },
-                                                {
-                                                    "field": "thumbnail",
-                                                    "title": "",
-                                                    "type": "image"
-                                                },
-                                                {
-                                                    "field": "name",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "media_position",
-                                                    "title": ""
-                                                },
-                                                {
-                                                    "field": "icon",
-                                                    "title": "",
-                                                    "type": "icon"
-                                                }
-                                            ],
-                                            "entity": [
-                                                "sensor.aisbookmarkslist"
-                                            ],
-                                            "media_source": "Bookmark",
-                                            "type": "custom:list-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "ais_bookmarks"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    },
-                                    {
-                                        "card": {
-                                            "entity": "sensor.ais_drives",
-                                            "title": "Przegl\u0105danie Dysk\u00f3w",
-                                            "type": "custom:files-card"
-                                        },
-                                        "conditions": [
-                                            {
-                                                "entity": "sensor.ais_player_mode",
-                                                "state": "local_audio"
-                                            }
-                                        ],
-                                        "type": "conditional"
-                                    }
-                                ],
-                                "type": "vertical-stack"
-                            },
-                            "type": "custom:card-loader",
-                            "wait": [
-                                "mini-media-player",
-                                "list-card",
-                                "files-card",
-                                "useful-markdown-card"
-                            ]
+                                    "type": "custom:card-loader",
+                                    "wait": [
+                                        "mini-media-player",
+                                        "list-card",
+                                        "files-card",
+                                        "useful-markdown-card"
+                                    ]
+                                }
+                            ],
+                            "type": "custom:layout-card"
                         }
                     ],
                     "icon": "mdi:music",
-                    "panel": false,
+                    "panel": true,
                     "path": "audio",
                     "title": "Audio"
                 },
@@ -864,87 +873,9 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                {
-                                    "entity": "sensor.local_host_name"
-                                },
-                                {
-                                    "entity": "sensor.internal_ip_address"
-                                },
-                                {
-                                    "entity": "sensor.ais_wifi_service_current_network_info"
-                                },
-                                {
-                                    "entity": "script.ais_scan_android_wifi_network"
-                                },
-                                {
-                                    "entity": "input_select.ais_android_wifi_network"
-                                },
-                                {
-                                    "entity": "input_text.ais_android_wifi_password"
-                                },
-                                {
-                                    "entity": "script.ais_connect_android_wifi_network"
-                                },
-                                {
-                                    "entity": "input_boolean.ais_android_wifi_changes_notify"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Ustawienia sieci",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "input_select.assistant_voice",
-                                "input_number.assistant_rate",
-                                "input_number.assistant_tone",
-                                "input_select.tts_player"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Zamiana tekstu na mow\u0119",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.version_info"
-                                },
-                                {
-                                    "entity": "script.ais_update_system"
-                                },
-                                {
-                                    "entity": "camera.remote_access"
-                                },
-                                {
-                                    "entity": "input_boolean.ais_remote_access"
-                                },
-                                {
-                                    "entity": "script.ais_cloud_sync"
-                                },
-                                {
-                                    "entity": "script.ais_restart_system"
-                                },
-                                {
-                                    "entity": "script.ais_stop_system"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "System",
-                            "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:settings",
-                    "path": "settings",
-                    "title": "Ustawienia"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
                             "cards": [
                                 {
-                                    "content": "Pe\u0142na dokumentacja dost\u0119pna jest pod adresem [https://sviete.github.io/AIS-docs](https://sviete.github.io/AIS-docs). \n\nPopularne tematy z dokumentacji:",
+                                    "content": "Pe\u0142na dokumentacja dost\u0119pna jest pod adresem [https://sviete.github.io/AIS-docs](https://sviete.github.io/AIS-docs).\n\nPopularne tematy z dokumentacji:",
                                     "title": "Instrukcja",
                                     "type": "markdown"
                                 },
@@ -1110,19 +1041,97 @@
                                 {
                                     "content": "[[ sensor.aisrsshelptext.attributes.text ]]\n",
                                     "type": "custom:useful-markdown-card"
-                                },
-                                {
-                                    "content": "## Przydatne Linki: \n-------------------------------\n### Aplikacja w przegl\u0105darce\nAplikacja dost\u0119pna jest w sieci lokalnej pod adresem: http://[[sensor.internal_ip_address.state]]:8180 i/lub http://[[sensor.local_host_name.state ]].local:8180\n### FTP\nNa urz\u0105dzeniu dzia\u0142a serwer ftp dost\u0119pny pod adresem:\nftp://[[sensor.internal_ip_address.state]]:1024 i/lub ftp://[[sensor.local_host_name.state ]].local:1024   \n### Konsola SSH\npobierz [autoryzowany klucz ssh](http://[[sensor.internal_ip_address.state]]:8180/local/id_rsa_ais)\n\n```ssh [[sensor.internal_ip_address.state]] -p 8022 -i <\u015bcie\u017cka do klucza ssh> ``` \n### Dost\u0119p z internetu\n**Gdy w\u0142\u0105czysz dost\u0119p z Internetu** to aplikacja b\u0119dzie osi\u0105galna pod adresem https://[[sensor.ais_secure_android_id_dom.state]].paczka.pro\n### Konfiguracja tre\u015bci i us\u0142ug\nW tym miejscu mo\u017cna dodawa\u0107 w\u0142asne stacje radiowe, podcasty oraz konfigurowa\u0107 inne sk\u0142adowe systemu <a href=\"https://ai-speaker.com/ords/f?p=100\" target=\"_blank\">Przejdz do konfiguracji</a>\n\n-------------------------------\n#### Pobierz [logi aktualizacji](/local/upgrade_log.txt)",
-                                    "type": "custom:useful-markdown-card"
                                 }
                             ],
                             "show_header_toggle": false,
                             "type": "vertical-stack"
+                        },
+                        {
+                            "content": "## Przydatne Linki:\n-------------------------------\n\n### Aplikacja w przegl\u0105darce\nAplikacja dost\u0119pna jest w sieci lokalnej pod adresem: http://[[ sensor.internal_ip_address.state ]]:8180\n### FTP\nNa urz\u0105dzeniu dzia\u0142a serwer ftp dost\u0119pny pod adresem:\nftp://[[ sensor.internal_ip_address.state ]]:1024\n### Konsola SSH\npobierz [autoryzowany klucz ssh](http://[[ sensor.internal_ip_address.state ]]:8180/local/id_rsa_ais)\n\n```ssh [[ sensor.internal_ip_address.state ]] -p 8022 -i <\u015bcie\u017cka do klucza ssh> ```\n### Dost\u0119p z internetu\n**Gdy w\u0142\u0105czysz dost\u0119p z Internetu** to aplikacja b\u0119dzie osi\u0105galna pod adresem https://[[ sensor.ais_secure_android_id_dom.state ]].paczka.pro\n### Konfiguracja tre\u015bci i us\u0142ug\nW tym miejscu mo\u017cna dodawa\u0107 w\u0142asne stacje radiowe, podcasty oraz konfigurowa\u0107 inne sk\u0142adowe systemu <a href=\"https://ai-speaker.com/ords/f?p=100\" target=\"_blank\">Przejdz do konfiguracji</a>\n\n-------------------------------\n#### Pobierz [logi aktualizacji](/local/upgrade_log.txt)",
+                            "type": "custom:useful-markdown-card"
                         }
                     ],
                     "icon": "mdi:help",
                     "path": "pomoc",
                     "title": "Pomoc"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.local_host_name"
+                                },
+                                {
+                                    "entity": "sensor.internal_ip_address"
+                                },
+                                {
+                                    "entity": "sensor.ais_wifi_service_current_network_info"
+                                },
+                                {
+                                    "entity": "script.ais_scan_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_select.ais_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_text.ais_android_wifi_password"
+                                },
+                                {
+                                    "entity": "script.ais_connect_android_wifi_network"
+                                },
+                                {
+                                    "entity": "input_boolean.ais_android_wifi_changes_notify"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Ustawienia sieci",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_select.assistant_voice",
+                                "input_number.assistant_rate",
+                                "input_number.assistant_tone",
+                                "input_select.tts_player"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Zamiana tekstu na mow\u0119",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.version_info"
+                                },
+                                {
+                                    "entity": "script.ais_update_system"
+                                },
+                                {
+                                    "entity": "camera.remote_access"
+                                },
+                                {
+                                    "entity": "input_boolean.ais_remote_access"
+                                },
+                                {
+                                    "entity": "script.ais_cloud_sync"
+                                },
+                                {
+                                    "entity": "script.ais_restart_system"
+                                },
+                                {
+                                    "entity": "script.ais_stop_system"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "System",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:settings",
+                    "path": "settings",
+                    "title": "Ustawienia"
                 },
                 {
                     "badges": [],
@@ -1136,11 +1145,11 @@
                                     "type": "entities"
                                 },
                                 {
-                                    "content": "Po wykryciu urz\u0105dzenia mo\u017cesz klikn\u0105\u0107 w jego link by przej\u015b\u0107 do ustawie\u0144 urz\u0105dzenia. \n",
+                                    "content": "Po wykryciu urz\u0105dzenia mo\u017cesz klikn\u0105\u0107 w jego link by przej\u015b\u0107 do ustawie\u0144 urz\u0105dzenia.\n",
                                     "type": "markdown"
                                 },
                                 {
-                                    "content": "[[ sensor.network_devices_info_value.attributes.text]]\n",
+                                    "content": "[[ sensor.network_devices_info_value.attributes.text ]]\n",
                                     "type": "custom:useful-markdown-card"
                                 },
                                 {

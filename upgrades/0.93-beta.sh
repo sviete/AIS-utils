@@ -15,7 +15,7 @@ echo "-----------------------------"
 echo "-----------------------------"
 
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.93.4 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.93.5 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";
@@ -28,9 +28,9 @@ echo "-----------------------------";
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
-curl -o "/sdcard/ais-dom-0.93.4.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.4.tar.gz &&
+curl -o "/sdcard/ais-dom-0.93.5.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.93.5.tar.gz &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instalacja systemu Asystent domowy"}' http://localhost:8122/text_to_speech &&
-pip install /sdcard/ais-dom-0.93.4.tar.gz -U &&
+pip install /sdcard/ais-dom-0.93.5.tar.gz -U &&
 
 
 echo "-----------------------------------";
