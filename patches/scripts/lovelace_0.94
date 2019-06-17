@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "module",
-                    "url": "/static/ais_dom/cards/mini-media-player-bundle.js?v=2.3"
+                    "url": "/static/ais_dom/cards/mini-media-player-bundle.js?v=2.4"
                 },
                 {
                     "type": "module",
@@ -112,6 +112,7 @@
                                                 "entity": "media_player.wbudowany_glosnik",
                                                 "hide": {
                                                     "power": true,
+                                                    "runtime": false,
                                                     "shuffle": false,
                                                     "source": true
                                                 },
@@ -244,7 +245,7 @@
                                                                 "icon": "mdi:radio",
                                                                 "name": " ",
                                                                 "show_state": false,
-                                                                "size": "20%",
+                                                                "size": "30%",
                                                                 "state": [
                                                                     {
                                                                         "color": "var(--primary-color)",
@@ -267,7 +268,7 @@
                                                                 "icon": "mdi:podcast",
                                                                 "name": " ",
                                                                 "show_state": false,
-                                                                "size": "20%",
+                                                                "size": "30%",
                                                                 "state": [
                                                                     {
                                                                         "color": "var(--primary-color)",
@@ -287,10 +288,33 @@
                                                                 "color": "var(--primary-background-color)",
                                                                 "color_type": "icon",
                                                                 "entity": "sensor.ais_player_mode",
+                                                                "icon": "mdi:audiobook",
+                                                                "name": " ",
+                                                                "show_state": false,
+                                                                "size": "30%",
+                                                                "state": [
+                                                                    {
+                                                                        "color": "var(--primary-color)",
+                                                                        "value": "audiobooks_player"
+                                                                    }
+                                                                ],
+                                                                "tap_action": {
+                                                                    "action": "call-service",
+                                                                    "service": "ais_ai_service.set_context",
+                                                                    "service_data": {
+                                                                        "text": "audiobook"
+                                                                    }
+                                                                },
+                                                                "type": "custom:button-card"
+                                                            },
+                                                            {
+                                                                "color": "var(--primary-background-color)",
+                                                                "color_type": "icon",
+                                                                "entity": "sensor.ais_player_mode",
                                                                 "icon": "mdi:music",
                                                                 "name": " ",
                                                                 "show_state": false,
-                                                                "size": "20%",
+                                                                "size": "30%",
                                                                 "state": [
                                                                     {
                                                                         "color": "var(--primary-color)",
@@ -587,6 +611,60 @@
                                                     }
                                                 ],
                                                 "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "cards": [
+                                                        {
+                                                            "entities": [
+                                                                "input_select.book_autor"
+                                                            ],
+                                                            "show_header_toggle": false,
+                                                            "title": "Audiobooki",
+                                                            "type": "entities"
+                                                        },
+                                                        {
+                                                            "card": {
+                                                                "columns": [
+                                                                    {
+                                                                        "field": "thumbnail",
+                                                                        "title": "",
+                                                                        "type": "image"
+                                                                    },
+                                                                    {
+                                                                        "field": "name",
+                                                                        "title": ""
+                                                                    },
+                                                                    {
+                                                                        "field": "icon",
+                                                                        "title": "",
+                                                                        "type": "icon"
+                                                                    }
+                                                                ],
+                                                                "entity": [
+                                                                    "sensor.audiobookslist"
+                                                                ],
+                                                                "media_source": "AudioBooks",
+                                                                "type": "custom:list-card"
+                                                            },
+                                                            "conditions": [
+                                                                {
+                                                                    "entity": "sensor.ais_player_mode",
+                                                                    "state": "audiobooks_player"
+                                                                }
+                                                            ],
+                                                            "type": "conditional"
+                                                        }
+                                                    ],
+                                                    "type": "vertical-stack"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "audiobooks_player"
+                                                    }
+                                                ],
+                                                "type": "conditional"
                                             }
                                         ],
                                         "show_header_toggle": false,
@@ -735,6 +813,38 @@
                                                     {
                                                         "entity": "input_select.ais_music_service",
                                                         "state": "YouTube"
+                                                    }
+                                                ],
+                                                "type": "conditional"
+                                            },
+                                            {
+                                                "card": {
+                                                    "columns": [
+                                                        {
+                                                            "field": "thumbnail",
+                                                            "title": "",
+                                                            "type": "image"
+                                                        },
+                                                        {
+                                                            "field": "name",
+                                                            "title": ""
+                                                        },
+                                                        {
+                                                            "field": "icon",
+                                                            "title": "",
+                                                            "type": "icon"
+                                                        }
+                                                    ],
+                                                    "entity": [
+                                                        "sensor.audiobookschapterslist"
+                                                    ],
+                                                    "media_source": "AudioBookChapter",
+                                                    "type": "custom:list-card"
+                                                },
+                                                "conditions": [
+                                                    {
+                                                        "entity": "sensor.ais_player_mode",
+                                                        "state": "audiobooks_player"
                                                     }
                                                 ],
                                                 "type": "conditional"
