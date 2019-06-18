@@ -347,7 +347,7 @@
                                             {
                                                 "card": {
                                                     "entity": "input_select.radio_type",
-                                                    "title": "Stacje radiowe",
+                                                    "title": "Typ radia",
                                                     "type": "custom:ais-easy-picker"
                                                 },
                                                 "conditions": [
@@ -361,7 +361,7 @@
                                             {
                                                 "card": {
                                                     "entity": "input_select.podcast_type",
-                                                    "title": "Podcasty",
+                                                    "title": "Typ podcasta",
                                                     "type": "custom:ais-easy-picker"
                                                 },
                                                 "conditions": [
@@ -394,6 +394,7 @@
                                                         "sensor.podcastnamelist"
                                                     ],
                                                     "media_source": "PodcastName",
+                                                    "title": "Audycje",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -560,11 +561,12 @@
                                                     "cards": [
                                                         {
                                                             "entity": "input_select.rss_news_category",
-                                                            "title": "Wiadomo\u015bci",
+                                                            "title": "Kategoria wiadomo\u015bci",
                                                             "type": "custom:ais-easy-picker"
                                                         },
                                                         {
                                                             "entity": "input_select.rss_news_channel",
+                                                            "title": "Kana\u0142 wiadomo\u015bci",
                                                             "type": "custom:ais-easy-picker"
                                                         },
                                                         {
@@ -589,6 +591,7 @@
                                                                     "sensor.rssnewslist"
                                                                 ],
                                                                 "media_source": "News",
+                                                                "title": "Artyku\u0142y",
                                                                 "type": "custom:list-card"
                                                             },
                                                             "conditions": [
@@ -640,6 +643,7 @@
                                                                     "sensor.audiobookslist"
                                                                 ],
                                                                 "media_source": "AudioBook",
+                                                                "title": "Ksi\u0105\u017cki",
                                                                 "type": "custom:list-card"
                                                             },
                                                             "conditions": [
@@ -733,6 +737,7 @@
                                                         "sensor.radiolist"
                                                     ],
                                                     "media_source": "Radio",
+                                                    "title": "Stacje radiowe",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -765,6 +770,7 @@
                                                         "sensor.podcastlist"
                                                     ],
                                                     "media_source": "Podcast",
+                                                    "title": "Odcinki audycji",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -797,6 +803,7 @@
                                                         "sensor.youtubelist"
                                                     ],
                                                     "media_source": "Music",
+                                                    "title": "Lista utwor\u00f3w z YouTube",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -833,6 +840,7 @@
                                                         "sensor.audiobookschapterslist"
                                                     ],
                                                     "media_source": "AudioBookChapter",
+                                                    "title": "Rozdzia\u0142y",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -846,6 +854,7 @@
                                             {
                                                 "card": {
                                                     "content": "[[ sensor.rssnewstext.attributes.text ]]\n",
+                                                    "title": "Tre\u015b\u0107 artyku\u0142u",
                                                     "type": "markdown"
                                                 },
                                                 "conditions": [
@@ -888,6 +897,7 @@
                                                         "sensor.aisfavoriteslist"
                                                     ],
                                                     "media_source": "Favorite",
+                                                    "title": "Lista ulubionych audio",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
@@ -929,6 +939,7 @@
                                                         "sensor.aisbookmarkslist"
                                                     ],
                                                     "media_source": "Bookmark",
+                                                    "title": "Lista zak\u0142adek",
                                                     "type": "custom:list-card"
                                                 },
                                                 "conditions": [
