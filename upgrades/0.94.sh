@@ -44,13 +44,13 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 
 
 
-echo "-----------------------------";
-echo "Downloading aps for AIS dom";
-echo "-----------------------------";
-curl -o "/sdcard/AisPanelApp.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/AisPanelApp-0.94.apk &&
+#echo "-----------------------------";
+#echo "Downloading aps for AIS dom";
+#echo "-----------------------------";
+#curl -o "/sdcard/AisPanelApp.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/AisPanelApp-0.94.apk &&
 
 
-#curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje Spotify."}' http://localhost:8122/text_to_speech &&
+#curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje android."}' http://localhost:8122/text_to_speech &&
 # echo "-----------------------------";
 # echo "Install AisPanelApp.apk----------";
 #echo "-----------------------------";
