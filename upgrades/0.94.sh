@@ -28,7 +28,7 @@ echo "-----------------------------";
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-# curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.94 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.94 &&
 echo "-----------------------------";
 echo "-----------------------------";
 
