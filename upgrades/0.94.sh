@@ -37,24 +37,24 @@ echo "-----------------------------";
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
 # pip
-curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.94.4.tar.gz &&
+curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.94.5.tar.gz &&
 pip install /sdcard/ais-dom.tar.gz -U &&
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 
 
-#echo "-----------------------------";
-#echo "Downloading aps for AIS dom";
-#echo "-----------------------------";
-#curl -o "/sdcard/AisPanelApp.apk" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/android/apks/AisPanelApp-0.94.apk &&
+echo "-----------------------------";
+echo "Downloading aps for AIS dom";
+echo "-----------------------------";
+curl -o "/sdcard/AisPanelApp.apk" -L https://powiedz.co/ota/android/AisPanelApp-test.apk &&
 
 
-#curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje android."}' http://localhost:8122/text_to_speech &&
-# echo "-----------------------------";
-# echo "Install AisPanelApp.apk----------";
-#echo "-----------------------------";
-#su -c "pm install -r /sdcard/AisPanelApp.apk" &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje Android beta."}' http://localhost:8122/text_to_speech &&
+echo "---------------------------------";
+echo "Install AisPanelApp.apk----------";
+echo "---------------------------------";
+su -c "pm install -r /sdcard/AisPanelApp.apk" &&
 
 
 echo "all done"
