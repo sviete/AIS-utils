@@ -1315,12 +1315,50 @@
                                         }
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "Odtwarzacze",
+                                    "title": "Ustawienia g\u0142o\u015bnika",
                                     "type": "entities"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "color": "var(--primary-background-color)",
+                                            "color_type": "icon",
+                                            "icon": "mdi:speaker-bluetooth",
+                                            "name": "Tryb BT",
+                                            "show_state": false,
+                                            "size": "15%",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_amplifier_service.change_work_mode",
+                                                "service_data": {
+                                                    "mode": "BT"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        },
+                                        {
+                                            "color": "var(--primary-background-color)",
+                                            "color_type": "icon",
+                                            "icon": "mdi:speaker",
+                                            "name": "Tryb AUX",
+                                            "show_state": false,
+                                            "size": "15%",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "ais_amplifier_service.change_work_mode",
+                                                "service_data": {
+                                                    "mode": "AX"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 },
                                 {
                                     "card": {
                                         "show_header_toggle": false,
+                                        "title": "Odtwarzacze",
                                         "type": "entities"
                                     },
                                     "filter": {
@@ -1334,7 +1372,6 @@
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Dodawanie nowych urz\u0105dze\u0144",
                             "type": "vertical-stack"
                         },
                         {
@@ -1502,43 +1539,6 @@
                                                 }
                                             },
                                             "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "color": "var(--primary-background-color)",
-                                            "color_type": "icon",
-                                            "icon": "mdi:music-note-bluetooth",
-                                            "name": " ",
-                                            "show_state": false,
-                                            "size": "15%",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_amplifier_service.change_work_mode",
-                                                "service_data": {
-                                                    "mode": "BT"
-                                                }
-                                            },
-                                            "type": "custom:button-card"
-                                        },
-                                        {
-                                            "color": "var(--primary-background-color)",
-                                            "color_type": "icon",
-                                            "icon": "mdi:music-note-bluetooth-off",
-                                            "name": " ",
-                                            "show_state": false,
-                                            "size": "15%",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "ais_amplifier_service.change_work_mode",
-                                                "service_data": {
-                                                    "mode": "AX"
-                                                }
-                                            },
-                                            "type": "custom:button-card"
                                         }
                                     ],
                                     "type": "horizontal-stack"
