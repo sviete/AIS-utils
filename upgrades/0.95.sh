@@ -44,17 +44,17 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 
 
 
-# echo "-----------------------------";
-# echo "Downloading aps for AIS dom";
-# echo "-----------------------------";
-# curl -o "/sdcard/AisPanelApp.apk" -L https://powiedz.co/ota/android/AisPanelApp-test.apk &&
-#
-#
-# curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje Android beta. Poczekaj 10 minut i wykonaj restart."}' http://localhost:8122/text_to_speech &&
-# echo "---------------------------------";
-# echo "Install AisPanelApp.apk----------";
-# echo "---------------------------------";
-# su -c "pm install -r /sdcard/AisPanelApp.apk" &&
+echo "-----------------------------";
+echo "Downloading aps for AIS dom";
+echo "-----------------------------";
+curl -o "/sdcard/AisPanelApp.apk" -L https://powiedz.co/ota/android/AisPanelApp-test.apk &&
+
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje Android beta. Poczekaj 10 minut i wykonaj restart."}' http://localhost:8122/text_to_speech &&
+echo "---------------------------------";
+echo "Install AisPanelApp.apk----------";
+echo "---------------------------------";
+su -c "pm install -r /sdcard/AisPanelApp.apk" &&
 
 
 echo "all done"
