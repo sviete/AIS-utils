@@ -21,7 +21,7 @@ rm /data/data/pl.sviete.dom/files/home/AIS/home-assistant_v2.db
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.90 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
 
 
 apt update &&
