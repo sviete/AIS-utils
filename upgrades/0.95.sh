@@ -18,19 +18,19 @@ echo "-----------------------------"
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.95 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 
-# echo "-----------------------------";
-# echo "Enable config from UI -------";
-# echo "-----------------------------";
-# sed -i '/homeassistant:/,/frontend:/c\homeassistant:\n  customize: !include customize.yaml\n\nfrontend:' /data/data/pl.sviete.dom/files/home/AIS/configuration.yaml
-# echo "-----------------------------";
-# echo "-----------------------------";
-#
-# echo "-----------------------------";
-# echo "Downloading lovelace json----";
-# echo "-----------------------------";
-# curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.94 &&
-# echo "-----------------------------";
-# echo "-----------------------------";
+echo "-----------------------------";
+echo "Enable config from UI -------";
+echo "-----------------------------";
+sed -i '/homeassistant:/,/frontend:/c\homeassistant:\n  customize: !include customize.yaml\n\nfrontend:' /data/data/pl.sviete.dom/files/home/AIS/configuration.yaml
+echo "-----------------------------";
+echo "-----------------------------";
+
+echo "-----------------------------";
+echo "Downloading lovelace json----";
+echo "-----------------------------";
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
+echo "-----------------------------";
+echo "-----------------------------";
 
 
 # remove the  spotify cache
