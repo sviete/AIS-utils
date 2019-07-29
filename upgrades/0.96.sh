@@ -36,5 +36,17 @@ pip install /sdcard/ais-dom.tar.gz -U &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
 
+echo "-----------------------------";
+echo "Downloading aps for AIS dom";
+echo "-----------------------------";
+curl -o "/sdcard/AisLauncher.apk" -L https://powiedz.co/ota/android/AisLauncher.apk &&
+
+
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje aplikacje Android."}' http://localhost:8122/text_to_speech &&
+echo "---------------------------------";
+echo "Install AisLauncher.apk----------";
+echo "---------------------------------";
+su -c "pm install -r /sdcard/AisLauncher.apk" &&
+
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
