@@ -15,7 +15,7 @@ echo "-----------------------------"
 echo "-----------------------------"
 
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji do wersji 0.96 To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
+curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji. To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
 
 echo "-----------------------------";
