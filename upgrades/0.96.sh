@@ -21,7 +21,7 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 echo "-----------------------------";
 echo "Downloading lovelace json----";
 echo "-----------------------------";
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.96 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace &&
 echo "-----------------------------";
 echo "-----------------------------";
 
@@ -29,12 +29,8 @@ echo "-----------------------------";
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
-# pip
-curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.96.10.tar.gz &&
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"pobieram, poczekaj"}' http://localhost:8122/text_to_speech &&
-pip install /sdcard/ais-dom.tar.gz -U &&
 
-curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"instaluje, poczekaj"}' http://localhost:8122/text_to_speech &&
 echo "-----------------------------";
 echo "Downloading aps for AIS dom";
 echo "-----------------------------";

@@ -1059,6 +1059,9 @@
                                     "entity": "script.ais_update_system"
                                 },
                                 {
+                                    "entity": "group.internet_status"
+                                },
+                                {
                                     "entity": "sensor.local_host_name"
                                 },
                                 {
@@ -1301,6 +1304,9 @@
                                     "entities": [
                                         {
                                             "entity": "script.ais_scan_network_devices"
+                                        },
+                                        {
+                                            "entity": "group.ais_add_iot_device"
                                         }
                                     ],
                                     "type": "entities"
