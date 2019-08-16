@@ -6,6 +6,8 @@ if [ "x${SSH_CLIENT}" = "x" ]; then
  # run pm2
  pm2 flush;
  pm2 resurrect;
+ # start activity
+ am start -n pl.sviete.dom/pl.sviete.dom.WelcomeActivity
 fi
 
 # run sshd
