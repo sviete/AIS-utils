@@ -6,6 +6,7 @@ curl -o "/sdcard/libandroid-support.deb" -L http://powiedz.co/apt/dists/dom/stab
 curl -o "/sdcard/dpkg.deb" -L http://powiedz.co/apt/dists/dom/stable/binary-arm/dpkg_1.19.7-9_arm.deb
 curl -o "/sdcard/diffutils.deb" -L http://powiedz.co/apt/dists/dom/stable/binary-arm/diffutils_3.7-2_arm.deb
 curl -o "/sdcard/libiconv.deb" -L http://powiedz.co/apt/dists/dom/stable/binary-arm/libiconv_1.16-2_arm.deb
+curl -o "/sdcard/coreutils.deb" -L  http://powiedz.co/apt/dists/dom/stable/binary-arm/coreutils_8.31-7_arm.deb
 echo " "
 echo "Remove Python"
 rm /data/data/pl.sviete.dom/files/usr/var/lib/dpkg/info/python.prerm
@@ -34,6 +35,8 @@ apt install -y clang
 
 echo " "
 echo "dpkg force"
+
+dpkg -i --force-all /sdcard/coreutils.deb
 
 # TERMUX_PKG_REPLACES="libandroid-support (<= 24), libiconv-dev"
 dpkg -i --force-all /sdcard/libiconv.deb
