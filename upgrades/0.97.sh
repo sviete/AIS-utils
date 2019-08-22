@@ -27,7 +27,7 @@ curl -o "/data/data/pl.sviete.dom/files/home/.bash_profile" -L  https://raw.gith
 chmod +x /data/data/pl.sviete.dom/files/home/.bash_profile
 
 # pip
-curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.97.2.tar.gz &&
+curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.97.3.tar.gz &&
 pip install /sdcard/ais-dom.tar.gz -U &&
 
 
