@@ -24,14 +24,14 @@ rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
 
 # pip
-curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.98.1.tar.gz &&
+curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.98.5.tar.gz &&
 pip install /sdcard/ais-dom.tar.gz -U &&
 
 
 # echo "-----------------------------";
 # echo "Downloading lovelace json----";
 # echo "-----------------------------";
-# curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.98 &&
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/lovelace_0.98 &&
 # echo "-----------------------------";
 # echo "-----------------------------";
 
