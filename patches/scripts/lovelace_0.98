@@ -498,19 +498,6 @@
                                             },
                                             {
                                                 "card": {
-                                                    "columns": [
-                                                        {
-                                                            "field": "thumbnail",
-                                                            "type": "image"
-                                                        },
-                                                        {
-                                                            "field": "name"
-                                                        },
-                                                        {
-                                                            "field": "icon",
-                                                            "type": "icon"
-                                                        }
-                                                    ],
                                                     "entity": [
                                                         "sensor.rssnewslist"
                                                     ],
@@ -539,30 +526,11 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "icon_remove",
-                                                "type": "icon_remove"
-                                            },
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "media_position"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.aisbookmarkslist"
                                         ],
                                         "media_source": "Bookmark",
+                                        "show_delete_icon": true,
                                         "title": "Lista zak\u0142adek",
                                         "type": "ais-list"
                                     },
@@ -576,31 +544,11 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "icon_remove",
-                                                "type": "icon_remove"
-                                            },
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon_type",
-                                                "type": "icon"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.aisfavoriteslist"
                                         ],
                                         "media_source": "Favorite",
+                                        "show_delete_icon": true,
                                         "title": "Lista ulubionych audio",
                                         "type": "ais-list"
                                     },
@@ -614,19 +562,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.youtubelist"
                                         ],
@@ -648,19 +583,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.spotifysearchlist"
                                         ],
@@ -710,19 +632,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.podcastnamelist"
                                         ],
@@ -740,19 +649,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.audiobookslist"
                                         ],
@@ -775,19 +671,6 @@
                             "cards": [
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.spotifylist"
                                         ],
@@ -809,19 +692,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.radiolist"
                                         ],
@@ -839,19 +709,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.podcastlist"
                                         ],
@@ -869,19 +726,6 @@
                                 },
                                 {
                                     "card": {
-                                        "columns": [
-                                            {
-                                                "field": "thumbnail",
-                                                "type": "image"
-                                            },
-                                            {
-                                                "field": "name"
-                                            },
-                                            {
-                                                "field": "icon",
-                                                "type": "icon"
-                                            }
-                                        ],
                                         "entity": [
                                             "sensor.audiobookschapterslist"
                                         ],
@@ -1237,8 +1081,8 @@
                     "badges": [],
                     "cards": [
                         {
-                            "content": "Witaj [[ {user} ]] . Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce od wersji 0.98, nie b\u0119dziemy ju\u017c nadpisywali widok\u00f3w tworzonych przez Ciebie. B\u0119dziemy jedynie aktualizowa\u0107, trzy pierwsze widoki (dom, audio i urz\u0105dzenia). Reszta nale\u017cy do Ciebie, nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142 kontrol\u0119 nad konfiguracj\u0105 interfejsu.\n\n <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon>  \n\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html)\n\nW FAQ dodali\u015bmy przyk\u0142ad jak doda\u0107 w\u0142asna [kart\u0119 z wykresem temperatury procesora](https://sviete.github.io/AIS-docs/docs/en/ais_gate_faq_config_yaml.html). \n\nW ten sam spos\u00f3b mo\u017cesz doda\u0107 karty wy\u015bwietlaj\u0105ce status urz\u0105dze\u0144 w znajduj\u0105cych si\u0119\u00a0w Twoim domu.  \n\nPozdrawiamy, zesp\u00f3\u0142  AI-Speaker\n",
-                            "title": "Przejmij kontrol\u0119 nad interfejsem",
+                            "content": "Witaj [[ {user} ]]. Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce od wersji 0.98 nie b\u0119dziemy ju\u017c nadpisywali widok\u00f3w tworzonych przez Ciebie. B\u0119dziemy jedynie aktualizowa\u0107 trzy pierwsze widoki (dom, audio i urz\u0105dzenia). Reszta nale\u017cy do Ciebie- nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142/przej\u0119\u0142a kontrol\u0119 nad konfiguracj\u0105 interfejsu!\n\n <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon>  \n\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html).\n\nW FAQ dodali\u015bmy przyk\u0142ad, jak doda\u0107 [w\u0142asn\u0105 kart\u0119 z wykresem temperatury procesora](https://sviete.github.io/AIS-docs/docs/en/ais_gate_faq_config_yaml.html). \n\nW ten sam spos\u00f3b mo\u017cesz doda\u0107 karty wy\u015bwietlaj\u0105ce status urz\u0105dze\u0144 znajduj\u0105cych si\u0119 w Twoim domu.\n\nPozdrawiamy, zesp\u00f3\u0142 AI-Speaker\n",
+                            "title": "Przejmij kontrol\u0119 nad interfejsem!",
                             "type": "markdown"
                         }
                     ],
