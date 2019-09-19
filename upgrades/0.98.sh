@@ -37,8 +37,8 @@ curl -o "/data/data/pl.sviete.dom/files/home/AIS/.storage/lovelace" -L  https://
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
-echo "Grants for storage to domlauncherapp";
-su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE"
+echo "Grants for storage to domlauncherapp" &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE" &&
 
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
