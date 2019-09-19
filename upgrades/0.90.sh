@@ -29,5 +29,10 @@ apt install rclone -y &&
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Poczekaj na koniec aktualizacji i restart."}' http://localhost:8122/text_to_speech &&
 
+echo "Grants for storage to domlauncherapp" &&
+echo "We need both read & write permission, then saving to getExternalStorageDirectory works." &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.READ_EXTERNAL_STORAGE" &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE" &&
+
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP

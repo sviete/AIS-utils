@@ -41,5 +41,10 @@ pm2 save
 EOF
 echo "inception... go back"
 
+echo "Grants for storage to domlauncherapp" &&
+echo "We need both read & write permission, then saving to getExternalStorageDirectory works." &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.READ_EXTERNAL_STORAGE" &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE" &&
+
 echo "all done"
 echo $(date '+%Y %b %d %H:%M') STOP
