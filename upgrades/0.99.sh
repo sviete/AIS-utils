@@ -22,6 +22,10 @@ curl --header "Content-Type: application/json" --max-time 2 --request POST --dat
 # remove the  spotify cache
 rm -rf /sdcard/Android/data/com.spotify.music/files/spotifycache
 
+echo "apt update"
+apt update &&
+apt upgade -y &&
+echo "19.10.09" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt &&
 
 # pip
 curl -o "/sdcard/ais-dom.tar.gz" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/ais-dom-0.99.6.tar.gz &&
