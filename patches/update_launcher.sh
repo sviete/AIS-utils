@@ -13,7 +13,7 @@ curl -o "/sdcard/AisLauncher.apk" -L https://powiedz.co/ota/android/AisLauncher.
 
 
 echo "---------------------------------";
-echo "Install AisPanelApp.apk----------";
+echo "Install AisLauncher.apk----------";
 echo "---------------------------------";
 su -c "pm install -r /sdcard/AisLauncher.apk" &&
 
