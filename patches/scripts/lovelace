@@ -14,63 +14,9 @@
                     ],
                     "cards": [
                         {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_text.ais_knowledge_query"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Asystentka",
-                                    "type": "entities"
-                                },
-                                {
-                                    "content": "<ha-icon icon=\"mdi:speaker-wireless\"></ha-icon> [[ sensor.aisknowledgeanswer.attributes.text ]]\n",
-                                    "type": "markdown"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entity": "weather.openweathermap",
-                            "name": "Pogoda",
-                            "type": "weather-forecast"
-                        },
-                        {
-                            "card": {
-                                "show_header_toggle": false,
-                                "title": "Osoby",
-                                "type": "entities"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "domain": "person"
-                                    }
-                                ]
-                            },
-                            "type": "ais-monster"
-                        },
-                        {
-                            "card": {
-                                "show_header_toggle": false,
-                                "title": "Automatyzacje",
-                                "type": "entities"
-                            },
-                            "filter": {
-                                "exclude": [
-                                    {
-                                        "entity_id": "automation.ais_*"
-                                    }
-                                ],
-                                "include": [
-                                    {
-                                        "domain": "automation"
-                                    }
-                                ]
-                            },
-                            "type": "ais-monster"
+                            "content": "**Witaj [[ {user} ]]**. Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce mo\u017cesz dostosowa\u0107 wygl\u0105d aplikacji. \n\nMy obecnie dostarczamy i aktualizujemy dwa widoki \n- <ha-icon icon=\"mdi:music\"></ha-icon> Audio\n- <ha-icon icon=\"mdi:google-circles-extended\"></ha-icon> Jednostki\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html).\n\nW widoku **Audio** dostarczamy odtwarzacz oraz darmow\u0105 kolekcj\u0119 tre\u015bci audio  <ha-icon icon=\"mdi:radio\"></ha-icon> <ha-icon icon=\"mdi:podcast\"></ha-icon> <ha-icon icon=\"mdi:audiobook\"></ha-icon>  <ha-icon icon=\"mdi:newspaper\"></ha-icon>  </ha-icon> <ha-icon icon=\"mdi:bookmark-music\"></ha-icon> <ha-icon icon=\"mdi:youtube\"></ha-icon> </ha-icon> <ha-icon icon=\"mdi:spotify\"></ha-icon>\n\nW widoku **Jednostki** automatycznie wype\u0142niamy karty pozycjami spe\u0142niaj\u0105cymi okre\u015blone kryteria, w ten spos\u00f3b podpowiadamy jak mo\u017cesz tworzy\u0107 w\u0142asne karty <ha-icon icon=\"mdi:cat\"></ha-icon> <ha-icon icon=\"mdi:auto-fix\"></ha-icon>. Sprawdz konfiguracj\u0119 kart na tym widoku i j\u0105 kopiuj do w\u0142asnych widok\u00f3w <ha-icon icon=\"mdi:certificate\"></ha-icon>  \n\nReszta nale\u017cy do Ciebie- nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142/przej\u0119\u0142a kontrol\u0119 nad konfiguracj\u0105 interfejsu!\n\n\n<p>\nPozdrawiamy, zesp\u00f3\u0142 AI-Speaker\n<img src=\"/static/icons/favicon-50x50.png\">\n</p>\n\n\n",
+                            "title": "Dostosuj sw\u00f3j interfejs!",
+                            "type": "markdown"
                         }
                     ],
                     "icon": "mdi:home-outline",
@@ -78,7 +24,13 @@
                     "title": "Dom"
                 },
                 {
-                    "badges": [],
+                    "badges": [
+                        "sensor.time",
+                        "sensor.daytodisplay",
+                        "sensor.dark_sky_hourly_summary",
+                        "sensor.dark_sky_daily_summary",
+                        "sun.sun"
+                    ],
                     "cards": [
                         {
                             "cards": [
@@ -107,9 +59,13 @@
                                                 "type": "script"
                                             }
                                         ],
-                                        "columns": 2
+                                        "columns": 2,
+                                        "list": []
                                     },
                                     "show_progress": true,
+                                    "tts": {
+                                        "platform": "ais"
+                                    },
                                     "type": "ais-mini-media-player"
                                 },
                                 {
@@ -435,7 +391,6 @@
                                         "cards": [
                                             {
                                                 "entity": "input_select.rss_news_category",
-                                                "title": "Kategoria wiadomo\u015bci",
                                                 "type": "ais-easy-picker"
                                             }
                                         ],
@@ -454,7 +409,6 @@
                                         "cards": [
                                             {
                                                 "entity": "input_select.book_autor",
-                                                "title": "Autor",
                                                 "type": "ais-easy-picker"
                                             }
                                         ],
@@ -493,7 +447,6 @@
                                         "cards": [
                                             {
                                                 "entity": "input_select.rss_news_channel",
-                                                "title": "Kana\u0142 wiadomo\u015bci",
                                                 "type": "ais-easy-picker"
                                             },
                                             {
@@ -502,7 +455,6 @@
                                                         "sensor.rssnewslist"
                                                     ],
                                                     "media_source": "News",
-                                                    "title": "Artyku\u0142y",
                                                     "type": "ais-list"
                                                 },
                                                 "conditions": [
@@ -531,7 +483,6 @@
                                         ],
                                         "media_source": "Bookmark",
                                         "show_delete_icon": true,
-                                        "title": "Lista zak\u0142adek",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -549,7 +500,6 @@
                                         ],
                                         "media_source": "Favorite",
                                         "show_delete_icon": true,
-                                        "title": "Lista ulubionych audio",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -567,7 +517,6 @@
                                         ],
                                         "media_source": "Music",
                                         "show_delete_icon": true,
-                                        "title": "Lista utwor\u00f3w z YouTube",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -589,7 +538,6 @@
                                         ],
                                         "media_source": "SpotifySearch",
                                         "show_delete_icon": true,
-                                        "title": "Wynik wyszukania na Spotify",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -607,7 +555,6 @@
                                 {
                                     "card": {
                                         "entity": "input_select.radio_type",
-                                        "title": "Typ radia",
                                         "type": "ais-easy-picker"
                                     },
                                     "conditions": [
@@ -621,7 +568,6 @@
                                 {
                                     "card": {
                                         "entity": "input_select.podcast_type",
-                                        "title": "Typ podcasta",
                                         "type": "ais-easy-picker"
                                     },
                                     "conditions": [
@@ -638,7 +584,6 @@
                                             "sensor.podcastnamelist"
                                         ],
                                         "media_source": "PodcastName",
-                                        "title": "Audycje",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -655,7 +600,6 @@
                                             "sensor.audiobookslist"
                                         ],
                                         "media_source": "AudioBook",
-                                        "title": "Ksi\u0105\u017cki",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -678,7 +622,6 @@
                                         ],
                                         "media_source": "Spotify",
                                         "show_delete_icon": true,
-                                        "title": "Lista utwor\u00f3w na Spotify",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -699,7 +642,6 @@
                                             "sensor.radiolist"
                                         ],
                                         "media_source": "Radio",
-                                        "title": "Stacje radiowe",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -716,7 +658,6 @@
                                             "sensor.podcastlist"
                                         ],
                                         "media_source": "Podcast",
-                                        "title": "Odcinki audycji",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -733,7 +674,6 @@
                                             "sensor.audiobookschapterslist"
                                         ],
                                         "media_source": "AudioBookChapter",
-                                        "title": "Rozdzia\u0142y",
                                         "type": "ais-list"
                                     },
                                     "conditions": [
@@ -767,34 +707,56 @@
                     "title": "Audio"
                 },
                 {
-                    "badges": [],
+                    "badges": [
+                        "sensor.time",
+                        "sensor.daytodisplay",
+                        "binary_sensor.dzien_pracujacy",
+                        "sun.sun"
+                    ],
                     "cards": [
                         {
                             "cards": [
                                 {
-                                    "entities": [],
-                                    "show_header_toggle": false,
-                                    "title": "Urz\u0105dzenia w Twojej sieci",
-                                    "type": "entities"
+                                    "entity": "weather.openweathermap",
+                                    "name": "Pogoda",
+                                    "type": "weather-forecast"
                                 },
                                 {
-                                    "content": "Po wykryciu urz\u0105dzenia mo\u017cesz klikn\u0105\u0107 w jego link by przej\u015b\u0107 do ustawie\u0144 urz\u0105dzenia.\n",
-                                    "type": "markdown"
+                                    "card": {
+                                        "show_header_toggle": false,
+                                        "title": "Osoby",
+                                        "type": "entities"
+                                    },
+                                    "filter": {
+                                        "include": [
+                                            {
+                                                "domain": "person"
+                                            }
+                                        ]
+                                    },
+                                    "type": "ais-auto-entities"
                                 },
                                 {
-                                    "content": "[[ sensor.network_devices_info_value.attributes.text ]]\n",
-                                    "type": "markdown"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "script.ais_scan_network_devices"
-                                        }
-                                    ],
-                                    "type": "entities"
+                                    "card": {
+                                        "show_header_toggle": false,
+                                        "title": "Automatyzacje",
+                                        "type": "entities"
+                                    },
+                                    "filter": {
+                                        "exclude": [
+                                            {
+                                                "entity_id": "automation.ais_*"
+                                            }
+                                        ],
+                                        "include": [
+                                            {
+                                                "domain": "automation"
+                                            }
+                                        ]
+                                    },
+                                    "type": "ais-auto-entities"
                                 }
                             ],
-                            "title": "Urz\u0105dzenia w Twojej sieci",
                             "type": "vertical-stack"
                         },
                         {
@@ -810,7 +772,7 @@
                                     }
                                 ]
                             },
-                            "type": "ais-monster"
+                            "type": "ais-auto-entities"
                         },
                         {
                             "card": {
@@ -833,11 +795,41 @@
                                         "domain": "sensor"
                                     },
                                     {
+                                        "attributes": {
+                                            "device_class": "timestamp"
+                                        },
+                                        "domain": "sensor"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "device_class": "battery"
+                                        },
+                                        "domain": "sensor"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "device_class": "illuminance"
+                                        },
+                                        "domain": "sensor"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "device_class": "power"
+                                        },
+                                        "domain": "sensor"
+                                    },
+                                    {
+                                        "attributes": {
+                                            "device_class": "pressure"
+                                        },
+                                        "domain": "sensor"
+                                    },
+                                    {
                                         "entity_id": "sensor.*_status"
                                     }
                                 ]
                             },
-                            "type": "ais-monster"
+                            "type": "ais-auto-entities"
                         },
                         {
                             "card": {
@@ -852,7 +844,7 @@
                                     }
                                 ]
                             },
-                            "type": "ais-monster"
+                            "type": "ais-auto-entities"
                         },
                         {
                             "cards": [
@@ -881,11 +873,10 @@
                                             }
                                         ]
                                     },
-                                    "type": "ais-monster"
+                                    "type": "ais-auto-entities"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Dodawanie nowych urz\u0105dze\u0144",
                             "type": "vertical-stack"
                         },
                         {
@@ -1062,37 +1053,25 @@
                         },
                         {
                             "card": {
-                                "show_header_toggle": false,
-                                "title": "Kamery",
-                                "type": "entities"
+                                "show_icon": true,
+                                "show_name": true,
+                                "show_state": false,
+                                "title": "Urz\u0105dzenia",
+                                "type": "glance"
                             },
                             "filter": {
                                 "include": [
                                     {
-                                        "domain": "camera"
+                                        "device": "/^.*"
                                     }
                                 ]
                             },
-                            "type": "ais-monster"
+                            "type": "ais-auto-entities"
                         }
                     ],
                     "icon": "mdi:google-circles-extended",
                     "path": "dev",
-                    "title": "Urz\u0105dzenia"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "content": "Witaj [[ {user} ]]. Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce od wersji 0.98 nie b\u0119dziemy ju\u017c nadpisywali widok\u00f3w tworzonych przez Ciebie. B\u0119dziemy jedynie aktualizowa\u0107 trzy pierwsze widoki (dom, audio i urz\u0105dzenia). Reszta nale\u017cy do Ciebie- nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142/przej\u0119\u0142a kontrol\u0119 nad konfiguracj\u0105 interfejsu!\n\n <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon>  \n\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html).\n\nW FAQ dodali\u015bmy przyk\u0142ad, jak doda\u0107 [w\u0142asn\u0105 kart\u0119 z wykresem temperatury procesora](https://sviete.github.io/AIS-docs/docs/en/ais_gate_faq_config_yaml.html). \n\nW ten sam spos\u00f3b mo\u017cesz doda\u0107 karty wy\u015bwietlaj\u0105ce status urz\u0105dze\u0144 znajduj\u0105cych si\u0119 w Twoim domu.\n\nPozdrawiamy, zesp\u00f3\u0142 AI-Speaker\n\n\n",
-                            "title": "Przejmij kontrol\u0119 nad interfejsem!",
-                            "type": "markdown"
-                        }
-                    ],
-                    "icon": "mdi:new-box",
-                    "panel": false,
-                    "path": "prywatna",
-                    "title": "Twoja karta"
+                    "title": "Jednostki"
                 }
             ]
         }
