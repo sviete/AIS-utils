@@ -84,10 +84,10 @@ pm2 delete ais
 pm2 delete webssh
 pm2 delete ftp
 pm2 delete mqtt
-pm2 start hass --name ais --interpreter=python --restart-delay=30000 -- --config /data/data/pl.sviete.dom/files/home/AIS
-pm2 start ttyd --name webssh --restart-delay=30000 -- -p 8888 bash
-pm2 start tcpsvd --name ftp --restart-delay=30000 -- -vE 0.0.0.0 1024 ftpd -w /sdcard
-pm2 start mosquitto --name mqtt --restart-delay=30000 -- -c /data/data/pl.sviete.dom/files/usr/etc/mosquitto/mosquitto.conf
+pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/pl.sviete.dom/files/home/AIS
+pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 bash
+pm2 start tcpsvd --name ftp --output NULL --error NULL --restart-delay=30000 -- -vE 0.0.0.0 1024 ftpd -w /sdcard
+pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/pl.sviete.dom/files/usr/etc/mosquitto/mosquitto.conf
 
 
 pm2 save

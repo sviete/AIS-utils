@@ -17,6 +17,10 @@ echo "-----------------------------"
 
 curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Start aktualizacji. To potrwa 20 minut. Poczekaj."}' http://localhost:8122/text_to_speech &&
 
+echo "Grants for storage to domlauncherapp" &&
+echo "We need both read & write permission, then saving to getExternalStorageDirectory works." &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.READ_EXTERNAL_STORAGE" &&
+su -c "pm grant launcher.sviete.pl.domlauncherapp android.permission.WRITE_EXTERNAL_STORAGE" &&
 
 echo "-----------------------------";
 echo "Downloading lovelace json----";

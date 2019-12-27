@@ -566,6 +566,7 @@
                                             "sensor.youtubelist"
                                         ],
                                         "media_source": "Music",
+                                        "show_delete_icon": true,
                                         "title": "Lista utwor\u00f3w z YouTube",
                                         "type": "ais-list"
                                     },
@@ -587,6 +588,7 @@
                                             "sensor.spotifysearchlist"
                                         ],
                                         "media_source": "SpotifySearch",
+                                        "show_delete_icon": true,
                                         "title": "Wynik wyszukania na Spotify",
                                         "type": "ais-list"
                                     },
@@ -675,6 +677,7 @@
                                             "sensor.spotifylist"
                                         ],
                                         "media_source": "Spotify",
+                                        "show_delete_icon": true,
                                         "title": "Lista utwor\u00f3w na Spotify",
                                         "type": "ais-list"
                                     },
@@ -1081,7 +1084,7 @@
                     "badges": [],
                     "cards": [
                         {
-                            "content": "Witaj [[ {user} ]]. Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce od wersji 0.98 nie b\u0119dziemy ju\u017c nadpisywali widok\u00f3w tworzonych przez Ciebie. B\u0119dziemy jedynie aktualizowa\u0107 trzy pierwsze widoki (dom, audio i urz\u0105dzenia). Reszta nale\u017cy do Ciebie- nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142/przej\u0119\u0142a kontrol\u0119 nad konfiguracj\u0105 interfejsu!\n\n <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon>  \n\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html).\n\nW FAQ dodali\u015bmy przyk\u0142ad, jak doda\u0107 [w\u0142asn\u0105 kart\u0119 z wykresem temperatury procesora](https://sviete.github.io/AIS-docs/docs/en/ais_gate_faq_config_yaml.html). \n\nW ten sam spos\u00f3b mo\u017cesz doda\u0107 karty wy\u015bwietlaj\u0105ce status urz\u0105dze\u0144 znajduj\u0105cych si\u0119 w Twoim domu.\n\nPozdrawiamy, zesp\u00f3\u0142 AI-Speaker\n",
+                            "content": "Witaj [[ {user} ]]. Mi\u0142o nam Ci\u0119 poinformowa\u0107, \u017ce od wersji 0.98 nie b\u0119dziemy ju\u017c nadpisywali widok\u00f3w tworzonych przez Ciebie. B\u0119dziemy jedynie aktualizowa\u0107 trzy pierwsze widoki (dom, audio i urz\u0105dzenia). Reszta nale\u017cy do Ciebie- nadszed\u0142 czas, \u017ceby\u015b przej\u0105\u0142/przej\u0119\u0142a kontrol\u0119 nad konfiguracj\u0105 interfejsu!\n\n <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon> <ha-icon style=\"color:blue\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:yellow\" icon=\"mdi:party-popper\"></ha-icon>  <ha-icon style=\"color:red\" icon=\"mdi:party-popper\"></ha-icon>  \n\n\nW instrukcji wyja\u015bniamy [jak w\u0142\u0105czy\u0107 tryb konfiguracji](https://sviete.github.io/AIS-docs/docs/en/ais_app_ui_config.html).\n\nW FAQ dodali\u015bmy przyk\u0142ad, jak doda\u0107 [w\u0142asn\u0105 kart\u0119 z wykresem temperatury procesora](https://sviete.github.io/AIS-docs/docs/en/ais_gate_faq_config_yaml.html). \n\nW ten sam spos\u00f3b mo\u017cesz doda\u0107 karty wy\u015bwietlaj\u0105ce status urz\u0105dze\u0144 znajduj\u0105cych si\u0119 w Twoim domu.\n\nPozdrawiamy, zesp\u00f3\u0142 AI-Speaker\n\n\n",
                             "title": "Przejmij kontrol\u0119 nad interfejsem!",
                             "type": "markdown"
                         }
