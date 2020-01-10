@@ -11,6 +11,11 @@
 ################################################
 set -e
 
+echo "-----------------------------"
+echo $(date '+%Y %b %d %H:%M')
+echo "----ADD ZIGBEE START ----"
+echo "-----------------------------"
+
 # bash
 echo "1. replace bash profile"
 curl -o "/data/data/pl.sviete.dom/files/home/.bash_profile" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/scripts/.bash_profile
