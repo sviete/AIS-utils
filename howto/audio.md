@@ -21,3 +21,8 @@ ctl	type	num	name                                     value
 
 
 # /sys/bus/usb/devices/
+
+# chmod 755 tinycap
+# chmod 755 tinymix
+# chmod 755 tinypcminfo
+# chmod 755 tinyplay
