@@ -24,7 +24,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/deps
 echo "2. install fusermount"
 apt -y update
 apt -y upgrade
-apt install fusermount -y
+apt install libfuse -y
 
 echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M')
