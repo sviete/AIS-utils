@@ -27,9 +27,8 @@ apt -y upgrade
 apt install libfuse -y
 
 # allow to write <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+echo "3. allow to write on external storage"
 curl -o "/data/data/pl.sviete.dom/.ais/platform.xml" -L  https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/platform.xml
-
 su -c "mount -o rw,remount,rw /system && cp /data/data/pl.sviete.dom/.ais/platform.xml /system/etc/permissions/platform.xml"
 
 echo "-----------------------------"
