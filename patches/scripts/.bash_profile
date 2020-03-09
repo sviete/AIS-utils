@@ -17,7 +17,7 @@ alias ll="ls -l"
 
 # start activity
 if [ "x${SSH_CLIENT}" = "x" ]; then
- su -c "am start -n pl.sviete.dom/pl.sviete.dom.WelcomeActivity"
+  am start -n pl.sviete.dom/pl.sviete.dom.WelcomeActivity --es BROADCAST_REDIRECT_ME_TO_ACTIVITY 1
 
   # we  are able to call iptables only as root
   if ! su -c "/system/bin/iptables -L PREROUTING -t nat -n |grep -q 8022"; then
