@@ -17,7 +17,5 @@ pm2 start /data/data/pl.sviete.dom/files/usr/bin/hass --name ais --output /dev/n
 ## PM2 dynamic services
 ```
 pm2 restart tunnel || pm2 start /data/data/pl.sviete.dom/files/usr/bin/lt --name tunnel --output /dev/null --error /dev/null --restart-delay=150000 -- -h http://paczka.pro -p 8180 -s dom-xxxxxx
-
-```
 pm2 restart zigbee || pm2 start /data/data/pl.sviete.dom/files/home/zigbee2mqtt/index.js --name zigbee --output /dev/null --error /dev/null --restart-delay=150000
 ```
