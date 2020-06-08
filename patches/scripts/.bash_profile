@@ -45,3 +45,11 @@ if [ "x${SSH_CLIENT}" = "x" ]; then
   su -c "chmod 777 /dev/ttyACM0";
   su -c "mount -o ro,remount,r0 /";
 fi
+
+# install ais dom if not installed
+if [ "x${SSH_CLIENT}" = "x" ]; then
+  if [ ! -f /data/data/pl.sviete.dom/files/usr/bin/hass ]; then
+    echo "AIS dom not found! installing..."
+    pip install ais-dom -U
+  fi
+fi
