@@ -49,8 +49,8 @@ fi
 # install ais dom if not installed
 if [ "x${SSH_CLIENT}" = "x" ]; then
   if [ ! -f /data/data/pl.sviete.dom/files/usr/bin/hass ]; then
-    echo "AIS dom not found! installing..." &&
-    curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Instaluje system, poczekaj."}' http://localhost:8122/text_to_speech &&
-    pip install ais-dom -U
+    echo "AIS dom not found! installing...";
+    curl --header "Content-Type: application/json" --max-time 2 --request POST --data '{"text":"Coś poszło nie tak. Przywracam system, poczekaj."}' http://localhost:8122/text_to_speech;
+    pip install --upgrade --force-reinstall ais-dom;
   fi
 fi
