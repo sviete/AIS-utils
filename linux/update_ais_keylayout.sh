@@ -12,12 +12,5 @@
 echo "AIS Download Generic.kl START"
 curl -o "/sdcard/Generic.kl" -L https://raw.githubusercontent.com/sviete/AIS-utils/master/patches/Generic.kl
 echo " "
-echo "mount /system to rw"
-su -c "mount -o rw,remount,rw /system"
-echo "replace keylayout"
-su -c "cp /sdcard/Generic.kl /system/usr/keylayout/Generic.kl"
-echo "rm Generic.kl from sdcard"
-su -c "rm /sdcard/Generic.kl"
-echo "mount /system to ro"
-su -c "mount -o ro,remount,ro /system"
+su -c "mount -o rw,remount,rw /system && cp /sdcard/Generic.kl /system/usr/keylayout/Generic.kl && rm /sdcard/Generic.kl && mount -o ro,remount,ro /system && echo done"
 echo "AIS Download Generic.kl DONE"
