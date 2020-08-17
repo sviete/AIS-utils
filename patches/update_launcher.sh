@@ -11,11 +11,15 @@ echo "Downloading launcher apk     ";
 echo "-----------------------------";
 curl -o "/sdcard/AisLauncher.apk" -L https://powiedz.co/ota/android/AisLauncher.apk &&
 
+echo "---------------------------------";
+echo "Uninstall AisLauncher.apk----------";
+echo "---------------------------------";
+su -c "pm uninstall launcher.sviete.pl.domlauncherapp" &&
 
 echo "---------------------------------";
 echo "Install AisLauncher.apk----------";
 echo "---------------------------------";
-su -c "pm install -r /sdcard/AisLauncher.apk" &&
+su -c "pm install /sdcard/AisLauncher.apk" &&
 
 echo "---------------------------------";
 echo "Remove AisLauncher.apk-----------";
