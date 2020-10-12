@@ -22,6 +22,7 @@ apt install nodejs-lts
 
 apt install neofetch
 
+
 pip install ais-dom
 pip install bcrypt==3.1.7
 pip install sqlalchemy==1.3.19
