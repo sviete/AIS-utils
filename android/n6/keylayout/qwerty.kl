@@ -52,7 +52,9 @@ key 105   DPAD_LEFT
 key 106   DPAD_RIGHT
 key 115   VOLUME_UP
 key 114   VOLUME_DOWN
-key 116   POWER
+# AIS
+# key 116   POWER
+key 116   BREAK
 key 212   CAMERA
 
 key 16    Q
@@ -65,7 +67,9 @@ key 22    U
 key 23    I
 key 24    O
 key 25    P
-key 26    LEFT_BRACKET
+# AIS
+# key 26    LEFT_BRACKET
+key 26    CALL
 key 27    RIGHT_BRACKET
 key 43    BACKSLASH
 
