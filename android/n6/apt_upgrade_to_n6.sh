@@ -21,6 +21,7 @@ apt remove nodejs
 apt install nodejs-lts
 
 apt install neofetch
+apt install w3m
 
 
 pip install ais-dom
