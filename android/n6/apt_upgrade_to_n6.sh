@@ -20,6 +20,7 @@ apt install python
 apt remove nodejs
 apt install nodejs-lts
 
+apt install neofetch
 
 pip install ais-dom
 pip install bcrypt==3.1.7
