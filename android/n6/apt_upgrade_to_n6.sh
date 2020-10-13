@@ -30,4 +30,8 @@ pip install sqlalchemy==1.3.19
 pip install --upgrade pip
 
 
+# PRO only
 apt install neofetch
+apt install postgresql
+pip install psycopg2
+pm2 start postgres --name db --output  /dev/null --error  /dev/null --restart-delay=150000 -- -D /data/data/pl.sviete.dom/files/usr/var/lib/postgresql 
