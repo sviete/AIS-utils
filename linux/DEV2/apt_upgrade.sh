@@ -21,13 +21,13 @@ apt install -y apt
 apt install -y clang
 curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20j%C4%99zyka%20C
 apt install -y ldc
+apt remove -y python
+rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
 http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pozosta%C5%82e%20pakiety%20binarne
 apt upgrade -y
 apt install -y libusb
 echo "Python upgrade"
 curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20j%C4%99zyka%20python
-apt remove -y python
-rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
 apt install -y python
 echo "Nodejs uprgrade"
 curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20node%20js
@@ -41,6 +41,7 @@ pm2 save
 echo "ais-dom install"
 curl http://localhost:8122/text_to_speech?text=Instalacja%20Asystenta%20domowego
 pip install --upgrade pip
+pip install wheel
 pip install ais-dom
 pip install bcrypt==3.1.7
 pip install sqlalchemy==1.3.19
