@@ -35,9 +35,9 @@ apt remove -y python
 rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
 apt install -y python
 echo "Nodejs uprgrade"
-curl http://localhost:8122/text_to_speech?text=Aktualizacja%20nodejs
-apt remove nodejs
-apt install nodejs-lts
+curl http://localhost:8122/text_to_speech?text=Aktualizacja%20node%20js
+apt remove -y nodejs
+apt install -y nodejs-lts
 echo "ais-dom install"
 curl http://localhost:8122/text_to_speech?text=Instalacja%20Asystenta%20domowego
 pip install --upgrade pip
