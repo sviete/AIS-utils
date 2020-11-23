@@ -24,20 +24,20 @@ apt install -y ldc
 http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pozosta%C5%82e%20pakiety%20binarne
 apt upgrade -y
 apt install -y libusb
+echo "Python upgrade"
+curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20j%C4%99zyka%20python
+apt remove -y python
+rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
+apt install -y python
+echo "Nodejs uprgrade"
+curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20node%20js
+apt remove -y nodejs
+apt install -y nodejs-lts
 echo "Fix FTP serwer"
 curl http://localhost:8122/text_to_speech?text=Zmiana%20serwera%20FTP
 pm2 delete ftp
 pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard
 pm2 save
-echo "Python upgrade"
-curl http://localhost:8122/text_to_speech?text=Aktualizacja%20python
-apt remove -y python
-rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
-apt install -y python
-echo "Nodejs uprgrade"
-curl http://localhost:8122/text_to_speech?text=Aktualizacja%20node%20js
-apt remove -y nodejs
-apt install -y nodejs-lts
 echo "ais-dom install"
 curl http://localhost:8122/text_to_speech?text=Instalacja%20Asystenta%20domowego
 pip install --upgrade pip
