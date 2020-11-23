@@ -13,10 +13,10 @@ echo "deb [trusted=yes] https://powiedz.co/apt dom stable" >> /data/data/pl.svie
 echo "deb [trusted=yes] https://powiedz.co/apt python 3.9" >> /data/data/pl.sviete.dom/files/usr/etc/apt/sources.list
 echo " "
 apt update
-apt install libacl
 echo " "
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20binarnych%20pakiet%C3%B3w
 echo "APT install"
+apt install -y libacl
 apt install -y apt
 apt install -y clang
 apt install -y ldc
