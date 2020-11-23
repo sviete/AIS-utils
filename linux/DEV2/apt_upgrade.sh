@@ -19,7 +19,9 @@ echo "APT install"
 apt install -y libacl
 apt install -y apt
 apt install -y clang
+curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20j%C4%99zyka%20C
 apt install -y ldc
+http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pozosta%C5%82e%20pakiety%20binarne
 apt upgrade -y
 apt install -y libusb
 echo "Fix FTP serwer"
@@ -29,9 +31,9 @@ pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-de
 pm2 save
 echo "Python upgrade"
 curl http://localhost:8122/text_to_speech?text=Aktualizacja%20python
-apt remove python
+apt remove -y python
 rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
-apt install python
+apt install -y python
 echo "Nodejs uprgrade"
 curl http://localhost:8122/text_to_speech?text=Aktualizacja%20nodejs
 apt remove nodejs
