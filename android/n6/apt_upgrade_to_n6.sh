@@ -33,4 +33,19 @@ pip install --upgrade pip
 # PRO only...
 apt install postgresql
 pip install psycopg2
+mkdir -p $PREFIX/var/lib/postgresql
+initdb $PREFIX/var/lib/postgresql
+
+# start db
+pg_ctl -D $PREFIX/var/lib/postgresql start
+# create user ha with pass ais
+createuser --superuser --pwprompt ha
+# create database db
+createdb db
+# open db
+psql db
+# stop db
+pg_ctl -D $PREFIX/var/lib/postgresql stop
+
+# start db from pm2
 pm2 start postgres --name db --output  /dev/null --error  /dev/null --restart-delay=150000 -- -D /data/data/pl.sviete.dom/files/usr/var/lib/postgresql
