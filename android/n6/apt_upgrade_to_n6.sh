@@ -38,13 +38,13 @@ initdb $PREFIX/var/lib/postgresql
 
 # start db
 pg_ctl -D $PREFIX/var/lib/postgresql start
-# create user ha with pass ais
-createuser --superuser --pwprompt ha
-# create database db
-createdb db
-# open db
-psql db
-# stop db
+# create user ais with pass dom
+createuser --superuser --pwprompt ais
+# create database ha
+createdb ha
+# open ha database
+psql ha
+# stop server
 pg_ctl -D $PREFIX/var/lib/postgresql stop
 
 # start db from pm2
