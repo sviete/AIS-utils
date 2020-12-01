@@ -45,6 +45,7 @@ pip install wheel
 pip install ais-dom
 pip install bcrypt==3.1.7
 pip install sqlalchemy==1.3.20
+pip install pyinotify==0.9.6
 echo "PM2 restart AIS"
 curl http://localhost:8122/text_to_speech?text=Ponowne%20uruchomienie%20us%C5%82ugi%20Asystent%20domowy
 pm2 restart ais
