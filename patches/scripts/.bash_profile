@@ -45,7 +45,7 @@ if [ "x${SSH_CLIENT}" = "x" ]; then
   if [ -f "/dev/ttyACM0" ]; then
     su -c "chmod 777 /dev/ttyACM0";
   fi
-  su -c "mount -o ro,remount,r0 /";
+  su -c "mount -o ro,remount,ro /";
 fi
 
 # install ais dom if not installed
