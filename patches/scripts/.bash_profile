@@ -42,7 +42,9 @@ if [ "x${SSH_CLIENT}" = "x" ]; then
   su -c "echo  '/dev/ttyACM0                 0777   root       root' >> /ueventd.rc";
   # restart ueventd service
   su -c "pkill ueventd";
-  su -c "chmod 777 /dev/ttyACM0";
+  if [ -f "/dev/ttyACM0" ]; then
+    su -c "chmod 777 /dev/ttyACM0";
+  fi
   su -c "mount -o ro,remount,r0 /";
 fi
 
