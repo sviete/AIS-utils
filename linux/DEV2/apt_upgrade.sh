@@ -23,7 +23,7 @@ curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pakiety%20j%C4%9
 apt install -y ldc
 apt remove -y python
 rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.7
-http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pozosta%C5%82e%20pakiety%20binarne
+curl http://localhost:8122/text_to_speech?text=Instaluj%C4%99%20pozosta%C5%82e%20pakiety%20binarne
 apt upgrade -y
 apt install -y libusb
 echo "Python upgrade"
@@ -43,8 +43,6 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20Asystenta%20domowego
 pip install --upgrade pip
 pip install wheel
 pip install ais-dom
-pip install bcrypt==3.1.7
-pip install sqlalchemy==1.3.20
 pip install pyinotify==0.9.6
 echo "PM2 restart AIS"
 curl http://localhost:8122/text_to_speech?text=Ponowne%20uruchomienie%20us%C5%82ugi%20Asystent%20domowy
