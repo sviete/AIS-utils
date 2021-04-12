@@ -13,7 +13,7 @@ set -e
 
 echo "-----------------------------"
 echo $(date '+%Y %b %d %H:%M')
-echo "----ADD ZIGBEE FRONTEND START ----"
+echo "----ADD HACS START ----"
 echo "-----------------------------"
 
 RED_COLOR='\033[0;31m'
