@@ -4,6 +4,7 @@
 ################################################
 # Install ais-dom 2021.10...
 # run it by executiong in AIS dom console:
+getprop | grep AIS
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/ais-dom==2021.10.sh | bash
 #
 SECONDS=0
@@ -25,9 +26,9 @@ curl http://localhost:8122/text_to_speech?text=Instaluje
 cd /data/data/pl.sviete.dom/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links wheels/
 
+echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m' $SECONDS 'sekund \e[0m'
+curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
+
 echo -e '\e[38;5;27m Restartuje usługę ais ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20AIS
 pm2 restart ais
-
-echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m' $SECONDS 'sekund \e[0m'
-curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
