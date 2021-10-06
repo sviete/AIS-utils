@@ -9,8 +9,6 @@ getprop | grep AIS
 #
 SECONDS=0
 
-curl http://localhost:8122/text_to_speech?text=TEST
-
 echo -e '\e[40;38;5;82m START instalacji wersji \e[30;48;5;82m AIS 2021.10 \e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%202021.10
 sleep 3
@@ -33,6 +31,7 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 
 echo "21.10.04" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 
+sleep 4
 echo -e '\e[38;5;27m Restartuje usługę ais ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20AIS
 pm2 restart ais
