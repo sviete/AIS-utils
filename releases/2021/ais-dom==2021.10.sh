@@ -31,5 +31,3 @@ pm2 restart ais
 
 echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m' $SECONDS 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
-
-return 0
