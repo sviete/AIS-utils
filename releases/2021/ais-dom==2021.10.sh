@@ -4,15 +4,15 @@
 ################################################
 # Install ais-dom 2021.10...
 # run it by executiong in AIS dom console:
-getprop | grep AIS
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/ais-dom==2021.10.sh | bash
 #
-SECONDS=0
+
 
 echo -e '\e[40;38;5;82m START instalacji wersji \e[30;48;5;82m AIS 2021.10 \e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%202021.10
-sleep 3
+sleep 5
 
+SECONDS=0
 echo -e '\e[38;5;11m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -o "/data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/2021/2021.10_wheelhouse.tar.7z?raw=true
