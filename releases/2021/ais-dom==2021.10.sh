@@ -27,4 +27,4 @@ pip install -r wheels/requirements.txt --no-index --find-links wheels/
 
 echo -e '\e[38;5;27m Restartuje usługę ais ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20ais
-echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m $SECONDS sekund \e[0m'
+echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m' $SECONDS 'sekund \e[0m'
