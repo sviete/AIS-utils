@@ -13,7 +13,7 @@ cp requirements.txt wheels
 cd ~
 git clone --depth=1 https://github.com/sviete/AIS-utils.git
 cd AIS-utils
-cp ~/AIS-home-assistant/2021.10_wheelhouse.tar.7z wheels releases/2021
+cp ~/AIS-home-assistant/2021.10_wheelhouse.tar.7z releases/2021
 git add --all
 git commit -m '2021.10_wheelhouse.tar.7z'
 git push
