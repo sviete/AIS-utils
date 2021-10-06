@@ -9,7 +9,7 @@
 SECONDS=0
 
 echo -e '\e[40;38;5;82m START instalacji wersji \e[30;48;5;82m AIS 2021.10 \e[0m'
-curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20instalacji%20wersji%202021.10
+curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%202021.10
 sleep 3
 
 echo -e '\e[38;5;11m Pobieram ... \e[0m'
@@ -30,6 +30,6 @@ curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20A
 pm2 restart ais
 
 echo -e '\e[40;38;5;82m Wszystko OK. Instalacja trwała \e[30;48;5;82m' $SECONDS 'sekund \e[0m'
-curl http://localhost:8122/text_to_speech?text=Wszystko%20OK.%20Instalacja%20trwa%C5%82a%20$SECONDS%20sekund
+curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
 
 return 0
