@@ -10,6 +10,7 @@ export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
 cp requirements.txt wheels
 sed -i '1d' wheels/requirements.txt
+echo \ >> wheels/requirements.txt
 echo ais-dom==2021.10.0b9 >> wheels/requirements.txt
 7za a -m0=lzma2 2021.10_wheelhouse.tar.7z wheels
 cd ~

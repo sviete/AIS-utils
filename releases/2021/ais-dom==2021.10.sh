@@ -4,7 +4,7 @@
 ################################################
 # Install ais-dom 2021.10...
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/ais-dom==2021.10.sh | bash
+# curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/ais-dom==2021.10.sh | bash
 #
 
 
@@ -15,7 +15,7 @@ sleep 5
 SECONDS=0
 echo -e '\e[38;5;11m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/2021/2021.10_wheelhouse.tar.7z?raw=true
+curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/2021/2021.10_wheelhouse.tar.7z?raw=true&v=1
 
 echo -e '\e[38;5;214m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
@@ -32,7 +32,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z
 
 echo -e '\e[38;5;11m Pobieram Zigbee ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L http://powiedz.co/ota/zigbee_beta.zip
+curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L http://powiedz.co/ota/zigbee_beta.zip
 cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
 rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
 
