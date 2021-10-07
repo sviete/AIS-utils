@@ -4,7 +4,7 @@
 ################################################
 # Install ais-dom 2021.10...
 # run it by executiong in AIS dom console:
-# curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/ais-dom==2021.10.sh | bash
+# curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/2021/alfa.sh | bash
 #
 
 
