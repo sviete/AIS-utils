@@ -4,7 +4,7 @@
 ################################################
 # Install ais-dom on ALPHA chanel
 # run it by executiong in AIS dom console:
-# curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh | bash
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh | bash
 #
 
 
