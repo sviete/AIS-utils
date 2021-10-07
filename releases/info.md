@@ -9,9 +9,13 @@ cd AIS-home-assistant
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
 cp requirements.txt wheels
-sed -i '1d' wheels/requirements.txt
-echo \ >> wheels/requirements.txt
-echo ais-dom==2021.10.0b9 >> wheels/requirements.txt
+cd wheels
+rename cp39-cp39-linux_armv7l py3-none-any *
+
+sed -i '1d' requirements.txt
+echo \ >> requirements.txt
+echo ais-dom==2021.10.0b9 >> requirements.txt
+cd ..
 7za a -m0=lzma2 2021.10_wheelhouse.tar.7z wheels
 cd ~
 git clone --depth=1 https://github.com/sviete/AIS-utils.git
