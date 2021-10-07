@@ -24,7 +24,7 @@ curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
 echo -e '\e[38;5;202m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 cd /data/data/pl.sviete.dom/files/home/AIS
-PIP_PLATFORM="linux_armv7l" pip install ais-dom==2021.10.b09 --no-index --find-links wheels
+PIP_PLATFORM="linux_armv7l" PIP_ONLY_BINARY=":all:" pip install ais-dom==2021.10.b09 --no-index --find-links wheels
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z
 
