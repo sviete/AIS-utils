@@ -39,7 +39,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
 echo -e '\e[38;5;214m Rozpakowuje Zigbee ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20Zigbee
 7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/zigbee2mqtt /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip -y
-rm -rf /data/data/pl.sviete.dom/files/home/zigbee_update.zip
+rm -rf /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip
 cp -R /data/data/pl.sviete.dom/files/home/data-backup/* /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data
 rm -rf /data/data/pl.sviete.dom/files/home/data-backup
 
