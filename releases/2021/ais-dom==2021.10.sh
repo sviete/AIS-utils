@@ -26,7 +26,7 @@ curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 cd /data/data/pl.sviete.dom/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links wheels/
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels/data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z
+rm -rf /data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z
 
 
 
