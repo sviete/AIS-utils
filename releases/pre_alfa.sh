@@ -12,6 +12,12 @@ echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA \e[0m
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%202021.10
 sleep 5
 
+curl -H 'Cache-Control: no-cache' -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
+apt install -y w3m
+apt install -y neofetch
+
+neofetch --source  ~/AIS/logo.txt
+
 SECONDS=0
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
