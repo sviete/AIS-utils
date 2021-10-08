@@ -25,7 +25,7 @@ curl -o "/data/data/pl.sviete.dom/files/home/AIS/alfa_wheelhous.tar.7z" -L  http
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
-7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/2021.pre_alfa_wheelhouse.tar.7z -y
+7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z -y
 
 echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS

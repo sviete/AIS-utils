@@ -30,5 +30,12 @@ echo -e '\e[38;5;220m Packing AIS ... \e[0m'
 cd ..
 7za a -m0=lzma2 pre_alfa_wheelhouse.tar.7z wheels
 
+echo -e '\e[38;5;220m Uploading AIS ... \e[0m'
+cd ~/AIS-utils
+git pull
+cp ~/AIS-home-assistant/pre_alfa_wheelhouse.tar.7z releases/
+git add releases/pre_alfa_wheelhouse.tar.7z
+git commit -m 'pre_alfa_wheelhouse 2021.10.1b0'
+git push
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
