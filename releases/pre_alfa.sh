@@ -35,19 +35,23 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 
+if  grep -q '"version": "1.21.2",' '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
+  echo -e '\e[38;5;220m Zigbee OK... \e[0m'
+else
+  echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
+  curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
+  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L http://powiedz.co/ota/zigbee_beta.zip
+  cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
+  rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
 
-echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
-curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L http://powiedz.co/ota/zigbee_beta.zip
-cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
-rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
+  echo -e '\e[38;5;220m Rozpakowuje Zigbee ... \e[0m'
+  curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20Zigbee
+  7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/zigbee2mqtt /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip -y
+  rm -rf /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip
+  cp -R /data/data/pl.sviete.dom/files/home/data-backup/* /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data
+  rm -rf /data/data/pl.sviete.dom/files/home/data-backup
+fi
 
-echo -e '\e[38;5;220m Rozpakowuje Zigbee ... \e[0m'
-curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20Zigbee
-7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/zigbee2mqtt /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip -y
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip
-cp -R /data/data/pl.sviete.dom/files/home/data-backup/* /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data
-rm -rf /data/data/pl.sviete.dom/files/home/data-backup
 
 
 echo -e '\e[40;38;5;220m Wszystko OK. Instalacja trwała \e[30;48;5;208m' $SECONDS 'sekund \e[0m'
