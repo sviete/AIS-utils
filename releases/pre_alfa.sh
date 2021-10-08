@@ -21,7 +21,7 @@ neofetch --source  ~/AIS/logo.txt
 SECONDS=0
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/alfa_wheelhous.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
