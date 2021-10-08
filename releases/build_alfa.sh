@@ -4,7 +4,7 @@
 ################################################
 # Install ais-dom on ALPHA chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_alfa.sh | bash
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/buils_alfa.sh | bash
 #
 
 
@@ -27,7 +27,7 @@ echo ais-dom==2021.10.1b0 >> requirements.txt
 
 echo -e '\e[38;5;220m Packing AIS ... \e[0m'
 cd ..
-7za a -m0=lzma2 alfa.tar.7z wheels
+7za a -m0=lzma2 alfa_wheelhouse.tar.7z wheels
 
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'

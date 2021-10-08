@@ -12,7 +12,7 @@ echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA \e[0m
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%202021.10
 sleep 5
 
-curl -H 'Cache-Control: no-cache' -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
+curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
 apt install -y w3m
 apt install -y neofetch
 
@@ -21,18 +21,18 @@ neofetch --source  ~/AIS/logo.txt
 SECONDS=0
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
-curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/pre_alfa.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/2021/2021.10_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/alfa_wheelhous.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
-7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/2021.10_wheelhouse.tar.7z -y
+7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/2021.pre_alfa_wheelhouse.tar.7z -y
 
 echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 cd /data/data/pl.sviete.dom/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links wheels -U
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa.tar.7z
+rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 
 

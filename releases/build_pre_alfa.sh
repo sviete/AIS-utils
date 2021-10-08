@@ -28,7 +28,7 @@ echo ais-dom==2021.10.1b0 >> requirements.txt
 
 echo -e '\e[38;5;220m Packing AIS ... \e[0m'
 cd ..
-7za a -m0=lzma2 pre_alfa.tar.7z wheels
+7za a -m0=lzma2 pre_alfa_wheelhouse.tar.7z wheels
 
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
