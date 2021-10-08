@@ -4,12 +4,14 @@
 ################################################
 # Install ais-dom on ALPHA chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/buil_pre_alfa.sh | bash
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
 
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA \e[0m'
 SECONDS=0
+cd ~/AIS-home-assistant
+rm -rf wheels/
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
 git checkout beta
 git pull
