@@ -7,7 +7,8 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-
+apt install -y w3m
+apt install -y neofetch
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA \e[0m'
 SECONDS=0
 cd ~/AIS-home-assistant
