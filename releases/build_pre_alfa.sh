@@ -12,6 +12,7 @@ SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
 cd ~/AIS-home-assistant
 rm -rf wheels
+rm -rf pre_alfa_wheelhouse.tar.7z
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
 git checkout beta
 git pull
@@ -28,7 +29,7 @@ echo \ >> requirements.txt
 echo ais-dom==2021.10.1b0 >> requirements.txt
 
 echo -e '\e[38;5;220m Packing AIS ... \e[0m'
-cd ..
+cd ~/AIS-home-assistant
 7za a -m0=lzma2 pre_alfa_wheelhouse.tar.7z wheels
 
 echo -e '\e[38;5;220m Uploading AIS ... \e[0m'
