@@ -7,7 +7,8 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA \e[0m'
+AIS_VERSSION=21.10.05
+echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
 
 apt update
@@ -62,7 +63,7 @@ fi
 echo -e '\e[40;38;5;220m Wszystko OK. Instalacja trwała \e[30;48;5;208m' $SECONDS 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
 
-echo "21.10.05" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
+echo $AIS_VERSSION > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 
 sleep 6
 echo -e '\e[38;5;220m Restartuje usługę ais ... \e[0m'
