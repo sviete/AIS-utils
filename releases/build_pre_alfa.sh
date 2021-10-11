@@ -7,7 +7,8 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA \e[0m'
+AIS_VERSSION=2021.10.3b1
+echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
 cd ~/AIS-home-assistant
@@ -26,7 +27,7 @@ cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
 sed -i '1d' requirements.txt
 echo \ >> requirements.txt
-echo ais-dom==2021.10.1b0 >> requirements.txt
+echo ais-dom==$AIS_VERSSION >> requirements.txt
 
 echo -e '\e[38;5;220m Packing AIS ... \e[0m'
 cd ~/AIS-home-assistant
@@ -37,7 +38,7 @@ cd ~/AIS-utils
 git pull
 cp ~/AIS-home-assistant/pre_alfa_wheelhouse.tar.7z releases/
 git add releases/pre_alfa_wheelhouse.tar.7z
-git commit -m 'pre_alfa_wheelhouse 2021.10.1b0'
+git commit -m 'pre_alfa_wheelhouse'
 git push
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
