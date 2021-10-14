@@ -9,8 +9,9 @@
 
 # AIS VERSIONS
 AIS_VERSSION=21.10.06
-AIS_ANDROID_VERSSION=$(su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]')
-# AIS_ZIGBEE_VERSION=
+# AIS_ANDROID_VERSSION=$(su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]')
+AIS_ANDROID_VERSSION="versionName=3.0.0"
+AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
@@ -46,7 +47,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 # AIS ZIGBEE APP
 
-if  grep -q '"version": "1.21.2",' '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
+if  grep -q $AIS_ZIGBEE_VERSION '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
   echo -e '\e[38;5;220m Zigbee OK... \e[0m'
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
