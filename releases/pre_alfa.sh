@@ -45,7 +45,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 # AIS ZIGBEE APP
 
-if  grep -q '"version": "1.21.2",' '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
+if  grep -q $AIS_ZIGBEE_VERSION '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
   echo -e '\e[38;5;220m Zigbee OK... \e[0m'
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
