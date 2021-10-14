@@ -1,6 +1,6 @@
 #!/data/data/pl.sviete.dom/files/usr/bin/bash
 # AIS
-# omepage: https://ai-speaker.com
+# Homepage: https://ai-speaker.com
 ################################################
 # Install ais-dom on PRE ALPHA chanel
 # run it by executiong in AIS dom console:
@@ -9,8 +9,7 @@
 
 # AIS VERSIONS
 AIS_VERSSION=21.10.06
-# AIS_ANDROID_VERSSION=$(su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]')
-AIS_ANDROID_VERSSION="versionName=3.0.0"
+AIS_ANDROID_VERSSION=`su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]'`
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
@@ -65,7 +64,7 @@ else
 fi
 
 
-echo -e '\e[40;38;5;220m Wszystko OK. Instalacja trwała \e[30;48;5;208m' $SECONDS 'sekund \e[0m'
+echo -e '\e[40;38;5;220m OK. Instalacja trwała \e[30;48;5;208m' $SECONDS 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
 
 echo $AIS_VERSSION > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
