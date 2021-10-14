@@ -9,7 +9,9 @@
 
 # AIS VERSIONS
 AIS_VERSSION=21.10.06
-AIS_ANDROID_VERSSION=$(su -c "dumpsys package pl.sviete.dom | grep versionName")
+su
+AIS_ANDROID_VERSSION=$(dumpsys package pl.sviete.dom | grep versionName)
+exit
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
