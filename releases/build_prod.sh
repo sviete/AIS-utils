@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_prod.sh | bash
 #
 
-AIS_VERSSION=2021.10.3b1
+AIS_VERSSION=2021.9.8
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PROD ' $AIS_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
@@ -21,7 +21,6 @@ git pull
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
-pip wheel python-miio==0.5.8 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
