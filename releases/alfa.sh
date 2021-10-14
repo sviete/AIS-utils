@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh | bash
 #
 
-AIS_VERSSION=21.10.05
+AIS_VERSSION=21.10.06
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS ALFA ' $AIS_VERSSION '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
 

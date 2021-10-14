@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_alfa.sh | bash
 #
 
-AIS_VERSSION=2021.10.3b1
+AIS_VERSSION=2021.10.4b0
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS ALFA ' $AIS_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'

@@ -2,12 +2,12 @@
 # AIS
 # omepage: https://ai-speaker.com
 ################################################
-# Install ais-dom on ALPHA chanel
+# Install ais-dom on PRE ALPHA chanel
 # run it by executiong in AIS dom console:
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh | bash
 #
 
-AIS_VERSSION=21.10.05
+AIS_VERSSION=21.10.06
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
 
