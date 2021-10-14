@@ -8,7 +8,7 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION=21.10.06
+AIS_VERSSION="21.10.06"
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 AIS_ANDROID_VERSSION="versionName=3.0.0"
 
@@ -45,7 +45,7 @@ rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 
 # AIS ZIGBEE APP
-
+echo -e '\e[38;5;220m ZIGBEE \e[30;48;5;208m ' $AIS_ZIGBEE_VERSION '\e[0m'
 if  grep -q $AIS_ZIGBEE_VERSION '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
   echo -e '\e[38;5;220m Zigbee OK... \e[0m'
 else
@@ -72,7 +72,7 @@ echo $AIS_VERSSION > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 sleep 6
 
 # AIS ANDROID APP
-
+echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' $AIS_ANDROID_VERSSION '\e[0m'
 if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]'` != $AIS_ANDROID_VERSSION ]; then
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
