@@ -9,10 +9,8 @@
 
 # AIS VERSIONS
 AIS_VERSSION=21.10.06
-su
-AIS_ANDROID_VERSSION=$(dumpsys package pl.sviete.dom | grep versionName)
-exit
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
+AIS_ANDROID_VERSSION="versionName=3.0.0"
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
@@ -75,7 +73,7 @@ sleep 6
 
 # AIS ANDROID APP
 
-if [ "$AIS_ANDROID_VERSSION" != "versionName=3.0.0" ]; then
+if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]'` != $AIS_ANDROID_VERSSION ]; then
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
