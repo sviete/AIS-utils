@@ -34,7 +34,7 @@ if [ $AIS_CURR_VERSION -ge $AIS_VERSSION_PRE ]
     echo -e '\e[38;5;220m PRE VERSION \e[30;48;5;208m OK\e[0m'
   else
     curl http://localhost:8122/text_to_speech?text=Stop%20niezgodno%C5%9B%C4%87%20wersji
-    curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "unknown"}'
+    curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "outdated"}'
     echo -e '\e[38;5;220m Niezgodność wersji \e[30;48;5;208m EXIT\e[0m'
     echo -e '\e[38;5;220m PRE VERSION NOK \e[30;48;5;208m STOP\e[0m'
     echo -e '\e[38;5;220m PRE VERSION NOK \e[30;48;5;208m STOP\e[0m'
