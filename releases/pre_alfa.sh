@@ -12,6 +12,7 @@ AIS_VERSSION="21.10.06"
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 AIS_ANDROID_VERSSION="versionName=3.0.0"
 AIS_VERSSION_OLD="210919"
+# AIS VERSIONS
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' "$AIS_VERSSION" '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
@@ -20,11 +21,9 @@ apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
 apt install -y w3m
 apt install -y neofetch
-
 neofetch --source  ~/AIS/logo.txt
 
 # TEST requirements
-
 AIS_CURR_VERSION=`cat /data/data/pl.sviete.dom/files/home/AIS/.ais_apt`
 echo -e '\e[38;5;220m Aktualizacja AIS z wersji ' "$AIS_CURR_VERSION" ' \e[0m'
 AIS_CURR_VERSION="${AIS_CURR_VERSION//.}"
@@ -46,7 +45,6 @@ fi
 
 
 SECONDS=0
-
 # AIS PYTHON APP
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
