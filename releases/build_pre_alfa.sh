@@ -7,8 +7,11 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-AIS_VERSSION=2021.10.4b0
-echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_VERSSION '\e[0m'
+# AIS VERSIONS
+AIS_HA_VERSSION=2021.10.5b0
+# AIS VERSIONS
+
+echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_HA_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
 cd ~/AIS-home-assistant
@@ -27,7 +30,7 @@ cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
 sed -i '1d' requirements.txt
 echo \ >> requirements.txt
-echo ais-dom==$AIS_VERSSION >> requirements.txt
+echo ais-dom==$AIS_HA_VERSSION >> requirements.txt
 
 echo -e '\e[38;5;220m Packing AIS ... \e[0m'
 cd ~/AIS-home-assistant
