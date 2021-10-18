@@ -108,5 +108,6 @@ else
     echo "pm2 restart ais" >> /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
     chmod +x /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
     daemonize /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
+fi
 
 exit 0
