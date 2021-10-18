@@ -104,10 +104,7 @@ else
     echo -e '\e[38;5;220m Restartuje usługę ais ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    echo "sleep 5" >> /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
-    echo "pm2 restart ais" >> /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
-    chmod +x /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
-    daemonize /data/data/pl.sviete.dom/files/home/AIS/ais_daemonize.sh
+    # pm2 restart ais
 fi
 
 exit 0
