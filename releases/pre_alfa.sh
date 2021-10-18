@@ -9,7 +9,7 @@
 
 # AIS VERSIONS
 AIS_VERSSION="21.10.07"
-AIS_HA_VERSSION="2021.10.5b0"
+AIS_HA_VERSSION="2021.10.6b0"
 AIS_ZIGBEE_VERSION='"version": "1.21.2",'
 AIS_ANDROID_VERSSION="versionName=3.0.0"
 AIS_VERSSION_OLD="210919"
@@ -104,7 +104,7 @@ else
     echo -e '\e[38;5;220m Restartuje usługę ais ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    pm2 restart ais
+    pm2 update
 fi
 
 exit 0
