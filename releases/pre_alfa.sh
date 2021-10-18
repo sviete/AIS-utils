@@ -104,7 +104,8 @@ else
     echo -e '\e[38;5;220m Restartuje usługę ais ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Restartuje%20us%C5%82ug%C4%99%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    # pm2 restart ais
+    # restart ais
+    pkill -9 python
 fi
 
 exit 0
