@@ -8,9 +8,8 @@
 #
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2021.9.8
+AIS_HA_VERSSION=2021.10.6b2
 # AIS VERSIONS
-
 
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS BETA ' $AIS_HA_VERSSION '\e[0m'
 SECONDS=0
@@ -25,6 +24,7 @@ git pull
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
+pip wheel python-miio==0.5.8 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
@@ -41,7 +41,7 @@ cd ~/AIS-utils
 git pull
 cp ~/AIS-home-assistant/beta_wheelhouse.tar.7z releases/
 git add releases/beta_wheelhouse.tar.7z
-git commit -m 'beta_wheelhouse'
+git commit -m 'beta_wheelhouse $AIS_HA_VERSSION'
 git push
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
