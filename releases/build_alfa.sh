@@ -8,7 +8,7 @@
 #
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2021.10.7b0
+AIS_HA_VERSSION=2021.11.0b0
 # AIS VERSIONS
 
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS ALFA ' $AIS_HA_VERSSION '\e[0m'
@@ -18,7 +18,7 @@ cd ~/AIS-home-assistant
 rm -rf wheels
 rm -rf alfa_wheelhouse.tar.7z
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
-git checkout beta
+git checkout alfa
 git pull
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
