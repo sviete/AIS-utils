@@ -29,7 +29,7 @@ apt install -y zstd
 apt install -y libseccomp
 apt install -y libgsasl
 apt install -y daemonize
-apt install -y cloudflared 
+apt install -y cloudflared
 DEBIAN_FRONTEND=noninteractive apt -y upgrade
 cp /sdcard/mosquitto.conf /data/data/pl.sviete.dom/files/usr/etc/mosquitto/mosquitto.conf
 pip uninstall -y cffi
