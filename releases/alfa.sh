@@ -2,7 +2,7 @@
 # AIS
 # Homepage: https://ai-speaker.com
 ################################################
-# Install ais-dom on ALPHA chanel
+# Install ais-dom on ALFA chanel
 # run it by executiong in AIS dom console:
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh | bash
 #

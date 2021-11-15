@@ -27,6 +27,7 @@ cd ~/AIS-utils
 git pull
 cp releases/pre_alfa.sh releases/alfa.sh
 sed -i "s/pre_alfa/alfa/" releases/alfa.sh
+sed -i "s/pre_alfa/alfa/" releases/alfa.sh
 sed -i "s/PRE ALFA/ALFA/" releases/alfa.sh
 git commit -m 'bump alfa script'
 git add releases/alfa.sh
@@ -46,4 +47,4 @@ read -s AUTH
 curl -d '{"branch":"alfa"}' -H "Content-Type: application/json" -H "Authorization: Bearer $AUTH" -X POST  https://powiedz.co/ords/dom/dom/bump_version
 
 
-echo -e '\e[40;38;5;220m All OK. The releasing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
+echo -e '\e[40;38;5;220m Koniec, skrypt trwał \e[30;48;5;208m' $SECONDS ' sekund \e[0m'
