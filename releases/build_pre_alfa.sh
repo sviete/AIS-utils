@@ -11,7 +11,7 @@
 AIS_HA_VERSSION=2021.11.3b1
 # AIS VERSIONS
 
-if [ -d "~/AIS-home-assistant" ]
+if [ -d ~/AIS-home-assistant ]
 then
     echo -e '\e[38;5;220m OK AIS repo exists \e[0m'
 else
