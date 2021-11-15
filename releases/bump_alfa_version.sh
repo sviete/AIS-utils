@@ -1,4 +1,4 @@
-#!/data/data/pl.sviete.dom/files/usr/bin/bash
+#
 # AIS
 # homepage: https://ai-speaker.com
 ################################################
@@ -17,6 +17,9 @@ else
     echo -e '\e[38;5;220m Klonowanie repozytorium ... \e[0m'
     cd ~
     git clone --depth 1 https://github.com/sviete/AIS-utils.git
+    cd ~/AIS-utils
+    git config user.email "stravinci@gmail.com"
+    git config user.name "stravinci"
 fi
 
 echo -e '\e[38;5;220m Przygotowanie skryptu instalacji wersji... \e[0m'
@@ -40,11 +43,7 @@ echo -e '\e[38;5;220m Wysyłanie informacji o nowej wersji do serwisu AIS... \e[
 echo -n AIS AUTH token:
 read -s AUTH
 
-curl \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Basic $AUTH" \
-  --request POST \
-  --data  '{"branch":"alfa"}' \
-  https://powiedz.co/ords/dom/dom/bump_version
+curl -d '{"branch":"alfa"}' -H "Content-Type: application/json" -H "Authorization: Bearer $AUTH" -X POST  https://powiedz.co/ords/dom/dom/bump_version
+
 
 echo -e '\e[40;38;5;220m All OK. The releasing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
