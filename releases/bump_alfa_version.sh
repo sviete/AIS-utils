@@ -42,7 +42,6 @@ git push
 echo -e '\e[38;5;220m Wysyłanie informacji o nowej wersji do serwisu AIS... \e[0m'
 
 echo -n AIS AUTH token:
-read -s AUTH
 
 curl -d '{"branch":"alfa"}' -H "Content-Type: application/json" -H "Authorization: Bearer $AUTH" -X POST  https://powiedz.co/ords/dom/dom/bump_version
 
