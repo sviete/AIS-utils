@@ -8,8 +8,8 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="21.11.08"
-AIS_HA_VERSSION="2021.11.3b1"
+AIS_VERSSION="21.11.07"
+AIS_HA_VERSSION="2021.11.3b0"
 AIS_ZIGBEE_VERSION='"version": "1.22.0",'
 AIS_ANDROID_VERSSION="versionName=3.0.0"
 AIS_VERSSION_OLD="210919"
@@ -17,6 +17,10 @@ AIS_VERSSION_OLD="210919"
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' "$AIS_VERSSION" '\e[0m'
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
+
+# fix for not dispatching media key event because user setup is in progress
+su -c "settings put secure user_setup_complete 1"
+
 
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
@@ -88,7 +92,7 @@ else
   cp -R /data/data/pl.sviete.dom/files/home/data-backup/* /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data
   rm -rf /data/data/pl.sviete.dom/files/home/data-backup
 fi
-curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.9:0.95"}'
+curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.9:0.92"}'
 
 
 echo -e '\e[40;38;5;220m OK. Instalacja trwała \e[30;48;5;208m' "$SECONDS" 'sekund \e[0m'
@@ -103,9 +107,13 @@ echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
 if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
+    curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.95:0.95"}'
+    curl -H 'Cache-Control: no-cache' -o "/sdcard/AisPanelApp.apk" -L http://powiedz.co/ota/android/AisPanelApp-pre_alfa.apk
+    su -c "pm install -r /sdcard/AisPanelApp.apk"
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-beta'
-    curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.95"}'
+    # su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-beta'
+
+    curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.97"}'
 else
     echo -e '\e[38;5;220m Android OK... \e[0m'
     echo -e '\e[38;5;220m Restartuje usługę ais ... \e[0m'
