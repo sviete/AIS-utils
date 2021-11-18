@@ -8,10 +8,10 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="21.11.07"
-AIS_HA_VERSSION="2021.11.3b0"
+AIS_VERSSION="21.11.08"
+AIS_HA_VERSSION="2021.11.4b0"
 AIS_ZIGBEE_VERSION='"version": "1.22.0",'
-AIS_ANDROID_VERSSION="versionName=3.0.0"
+AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
 # AIS VERSIONS
 
@@ -108,11 +108,8 @@ if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.95:0.95"}'
-    curl -H 'Cache-Control: no-cache' -o "/sdcard/AisPanelApp.apk" -L http://powiedz.co/ota/android/AisPanelApp-alfa.apk
-    su -c "pm install -r /sdcard/AisPanelApp.apk"
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    # su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-beta'
-
+    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-beta'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.97"}'
 else
     echo -e '\e[38;5;220m Android OK... \e[0m'
