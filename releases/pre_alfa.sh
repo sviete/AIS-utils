@@ -19,7 +19,7 @@ echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' "$A
 curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20ALFA
 
 # fix for not dispatching media key event because user setup is in progress
-su -c "settings put secure user_setup_complete 1"
+su -c 'settings put secure user_setup_complete 1'
 
 
 apt update
