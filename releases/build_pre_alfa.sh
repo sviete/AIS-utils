@@ -8,7 +8,7 @@
 #
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2021.11.4b1
+AIS_HA_VERSSION=2021.11.5b0
 # AIS VERSIONS
 
 if [ -d ~/AIS-home-assistant ]
