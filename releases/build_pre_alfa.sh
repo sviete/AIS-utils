@@ -2,7 +2,7 @@
 # AIS
 # omepage: https://ai-speaker.com
 ################################################
-# Install ais-dom on PRE-ALPHA chanel
+# Build ais-dom for PRE-ALPHA chanel
 # run it by executiong in AIS dom console:
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
