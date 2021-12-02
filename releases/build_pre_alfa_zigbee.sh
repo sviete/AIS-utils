@@ -16,7 +16,7 @@ else
     git clone --depth 1 https://github.com/sviete/AIS-utils.git
 fi
 
-
+cd ~
 echo -e '\e[38;5;220m STOP zigbee \e[0m'
 pm2 stop zigbee
 
