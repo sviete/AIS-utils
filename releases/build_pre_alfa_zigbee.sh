@@ -16,6 +16,7 @@ else
     git clone --depth 1 https://github.com/sviete/AIS-utils.git
 fi
 
+cd ~
 echo -e '\e[38;5;220m STOP zigbee \e[0m'
 pm2 stop zigbee
 
@@ -36,7 +37,7 @@ echo -e '\e[38;5;220m configuration.yaml \e[0m'
 echo "homeassistant: true" > data/configuration.yaml
 echo "permit_join: false" >> data/configuration.yaml
 echo "mqtt:" >> data/configuration.yaml
-echo "base_topic: zigbee2mqtt" >> data/configuration.yaml
+echo "  base_topic: zigbee2mqtt" >> data/configuration.yaml
 echo "  server: mqtt://localhost" >> data/configuration.yaml
 echo "serial:" >> data/configuration.yaml
 echo "  port: /dev/ttyACM0" >> data/configuration.yaml
