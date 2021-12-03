@@ -55,6 +55,9 @@ echo "  channel: 11" >> data/configuration.yaml
 echo -e '\e[38;5;220m START node, Ctrl+c after test... \e[0m'
 node index.js
 
+echo -e '\e[38;5;220m CLEANUP after test... \e[0m'
+rm ./data/{*.json,*.db}
+
 echo -e '\e[38;5;220m ZIP ... \e[0m'
 cd ~
 7za a -mmt=2 ~/zigbee_pre_alfa.zip ~/zigbee2mqtt/.
