@@ -35,8 +35,10 @@ git add releases/alfa.sh
 echo -e '\e[38;5;220m Wysyłanie wersji do Github... \e[0m'
 
 cp releases/pre_alfa_wheelhouse.tar.7z releases/alfa_wheelhouse.tar.7z
+cp releases/zigbee_pre_alfa.zip releases/zigbee_alfa.zip
 git add releases/alfa_wheelhouse.tar.7z
-git commit -m 'bump alfa wheelhouse'
+git add releases/zigbee_alfa.zip
+git commit -m 'bump alfa version'
 git push
 
 echo -e '\e[38;5;220m Wysyłanie informacji o nowej wersji do serwisu AIS... \e[0m'
