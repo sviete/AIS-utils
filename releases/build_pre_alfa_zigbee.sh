@@ -16,7 +16,6 @@ else
     git clone --depth 1 https://github.com/sviete/AIS-utils.git
 fi
 
-
 echo -e '\e[38;5;220m STOP zigbee \e[0m'
 pm2 stop zigbee
 
@@ -59,6 +58,7 @@ cd ~
 
 echo -e '\e[38;5;220m Wysyłanie wersji do Github... \e[0m'
 cd ~/AIS-utils
+git pull
 mv ~/zigbee_pre_alfa.zip releases/zigbee_pre_alfa.zip
 git add releases/zigbee_pre_alfa.zip
 git commit -m 'bump zigbee_pre_alfa'
