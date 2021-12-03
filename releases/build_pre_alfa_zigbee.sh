@@ -14,6 +14,8 @@ else
     echo -e '\e[38;5;220m Klonowanie repozytorium ... \e[0m'
     cd ~
     git clone --depth 1 https://github.com/sviete/AIS-utils.git
+    git config user.email "g3n3zyp@i.wroclaw.pl"
+    git config user.name "g3n3zyp"
 fi
 
 cd ~
