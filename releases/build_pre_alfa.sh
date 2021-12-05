@@ -33,7 +33,7 @@ fi
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_HA_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
-cd ~/AIS-home-assistantconfig
+cd ~/AIS-home-assistant
 rm -rf wheels
 rm -rf pre_alfa_wheelhouse.tar.7z
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
