@@ -34,7 +34,7 @@ git pull
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
-pip wheel python-miio==0.5.8 -w wheels
+pip wheel python-miio==0.5.9.1 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
