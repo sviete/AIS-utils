@@ -15,13 +15,11 @@ cd ~
 
 if [ -d ~/AIS-home-assistant ]
 then
-    echo -e '\e[38;5;220m OK AIS-home-assistant repo exists - remove \e[0m'
-    rm -rf ~/AIS-home-assistant 
+    echo -e '\e[38;5;220m OK AIS-home-assistant repo exists \e[0m'
+else
+    echo -e '\e[38;5;220m Clone AIS-home-assistant repo ... \e[0m'
+    git clone -b alfa --depth 1 https://github.com/sviete/AIS-home-assistant.git
 fi
-
-echo -e '\e[38;5;220m Clone AIS-home-assistant repo ... \e[0m'
-git clone -b alfa --depth 1 https://github.com/sviete/AIS-home-assistant.git
-
 
 if [ -d ~/AIS-utils ]
 then
@@ -42,8 +40,12 @@ echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
 git checkout alfa
 git pull
 
+echo -e '\e[38;5;220m Rust ... \e[0m'
+apt install -y rust
+rustc -vV
+export CARGO_BUILD_TARGET=armv7-linux-androideabi
+
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
-export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 pip wheel . -w wheels
 pip wheel python-miio==0.5.9.1 -w wheels
 cp requirements.txt wheels
