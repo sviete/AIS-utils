@@ -44,7 +44,7 @@ echo -e '\e[38;5;220m Rust ... \e[0m'
 apt install -y rust
 rustc -vV
 echo "[http]" > ~/.cargo/config
-echo "cainfo = "/data/data/pl.sviete.dom/files/usr/etc/tls/cert.pem"" >> ~/.cargo/config
+echo 'cainfo = "/data/data/pl.sviete.dom/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
 export CARGO_BUILD_TARGET=armv7-linux-androideabi
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
@@ -66,7 +66,7 @@ cd ~/AIS-utils
 git pull
 cp ~/AIS-home-assistant/pre_alfa_wheelhouse.tar.7z releases/
 git add releases/pre_alfa_wheelhouse.tar.7z
-git commit -m 'pre_alfa_wheelhouse $AIS_HA_VERSSION'
+git commit -m pre_alfa_wheelhouse $AIS_HA_VERSSION
 git push
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
