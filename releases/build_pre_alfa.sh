@@ -33,7 +33,7 @@ fi
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_HA_VERSSION '\e[0m'
 SECONDS=0
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
-cd ~/AIS-home-assistant
+cd ~/AIS-home-assistantconfig
 rm -rf wheels
 rm -rf pre_alfa_wheelhouse.tar.7z
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
@@ -43,6 +43,8 @@ git pull
 echo -e '\e[38;5;220m Rust ... \e[0m'
 apt install -y rust
 rustc -vV
+echo "[http]" > ~/.cargo/config
+echo "cainfo = "/data/data/pl.sviete.dom/files/usr/etc/tls/cert.pem"" >> ~/.cargo/config
 export CARGO_BUILD_TARGET=armv7-linux-androideabi
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
