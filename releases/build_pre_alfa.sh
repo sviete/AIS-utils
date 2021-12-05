@@ -11,14 +11,16 @@
 AIS_HA_VERSSION=2021.12.0b0
 # AIS VERSIONS
 
+cd ~
+
 if [ -d ~/AIS-home-assistant ]
 then
-    echo -e '\e[38;5;220m OK AIS-home-assistant repo exists \e[0m'
-else
-    echo -e '\e[38;5;220m Clone AIS-home-assistant repo ... \e[0m'
-    cd ~
-    git clone --depth 1 https://github.com/sviete/AIS-home-assistant.git
+    echo -e '\e[38;5;220m OK AIS-home-assistant repo exists - remove \e[0m'
+    rm -rf ~/AIS-home-assistant 
 fi
+
+echo -e '\e[38;5;220m Clone AIS-home-assistant repo ... \e[0m'
+git clone -b alfa --depth 1 https://github.com/sviete/AIS-home-assistant.git
 
 
 if [ -d ~/AIS-utils ]
