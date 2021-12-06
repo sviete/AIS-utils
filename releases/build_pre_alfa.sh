@@ -66,7 +66,7 @@ cd ~/AIS-utils
 git pull
 cp ~/AIS-home-assistant/pre_alfa_wheelhouse.tar.7z releases/
 git add releases/pre_alfa_wheelhouse.tar.7z
-git commit -m pre_alfa_wheelhouse $AIS_HA_VERSSION
+git commit -m pre_alfa_wheelhouse -m $AIS_HA_VERSSION
 git push
 
 echo -e '\e[40;38;5;220m All OK. The packaing took \e[30;48;5;208m' $SECONDS 'seconds \e[0m'
