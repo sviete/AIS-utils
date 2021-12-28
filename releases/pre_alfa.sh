@@ -8,8 +8,8 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="21.12.03"
-AIS_HA_VERSSION="2021.12.0b5"
+AIS_VERSSION="21.12.04"
+AIS_HA_VERSSION="2021.12.6b0"
 AIS_ZIGBEE_VERSION='"version": "1.22.1",'
 AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
@@ -101,6 +101,15 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 echo "$AIS_VERSSION" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 
 sleep 6
+
+# NEW AIS ANDROID SCREEN APK
+echo -e '\e[38;5;220m ANDROID SCREEN APP \e[30;48;5;208m \e[0m'
+curl http://localhost:8122/text_to_speech?text=Pobieram%20i%20instaluje%20Android%20Screen%20APK
+echo -e '\e[38;5;220m Pobieram i instaluje Android Screen APK... \e[0m'
+curl -H 'Cache-Control: no-cache' -o "/sdcard/AIS-ScreenStream.apk" -L https://github.com/sviete/AIS-utils/blob/master/releases/AIS-ScreenStream.apk?raw=true
+su -c "pm install -r /sdcard/AIS-ScreenStream.apk"
+rm -rf /sdcard/AIS-ScreenStream.apk
+
 
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
