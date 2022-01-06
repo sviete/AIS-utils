@@ -8,9 +8,9 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="21.11.10"
-AIS_HA_VERSSION="2021.11.5b0"
-AIS_ZIGBEE_VERSION='"version": "1.22.0",'
+AIS_VERSSION="21.12.25"
+AIS_HA_VERSSION="2021.12.7b0"
+AIS_ZIGBEE_VERSION='"version": "1.22.1",'
 AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
 # AIS VERSIONS
@@ -80,7 +80,7 @@ if  grep -q "$AIS_ZIGBEE_VERSION" '/data/data/pl.sviete.dom/files/home/zigbee2mq
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
   curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L http://powiedz.co/ota/zigbee_beta.zip
+  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_beta.zip?raw=true
   curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.9"}'
   cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
   rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
@@ -101,6 +101,15 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 echo "$AIS_VERSSION" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 
 sleep 6
+
+# NEW AIS ANDROID SCREEN APK
+echo -e '\e[38;5;220m ANDROID SCREEN APP \e[30;48;5;208m \e[0m'
+curl http://localhost:8122/text_to_speech?text=Pobieram%20i%20instaluje%20Android%20Screen%20APK
+echo -e '\e[38;5;220m Pobieram i instaluje Android Screen APK... \e[0m'
+curl -H 'Cache-Control: no-cache' -o "/sdcard/AIS-ScreenStream.apk" -L https://github.com/sviete/AIS-utils/blob/master/releases/AIS-ScreenStream.apk?raw=true
+su -c "pm install -r /sdcard/AIS-ScreenStream.apk"
+rm -rf /sdcard/AIS-ScreenStream.apk
+
 
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
