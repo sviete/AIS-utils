@@ -80,7 +80,7 @@ if  grep -q "$AIS_ZIGBEE_VERSION" '/data/data/pl.sviete.dom/files/home/zigbee2mq
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
   curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_beta.zip?raw=true
+  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_alfa.zip?raw=true
   curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.9"}'
   cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
   rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
