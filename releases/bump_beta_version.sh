@@ -35,8 +35,10 @@ git add releases/beta.sh
 echo -e '\e[38;5;220m Wysyłanie wersji do Github... \e[0m'
 
 cp releases/alfa_wheelhouse.tar.7z releases/beta_wheelhouse.tar.7z
+cp releases/zigbee_alfa.zip releases/zigbee_beta.zip
 git add releases/beta_wheelhouse.tar.7z
-git commit -m 'bump beta wheelhouse'
+git add releases/zigbee_beta.zip
+git commit -m 'bump beta version'
 git push
 
 echo -e '\e[38;5;220m Wysyłanie informacji o nowej wersji do serwisu AIS... \e[0m'
