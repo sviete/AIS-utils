@@ -2,9 +2,9 @@
 # AIS
 # Homepage: https://ai-speaker.com
 ################################################
-# Install ais-dom on BETA chanel
+# Install ais-dom on PROD chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/beta.sh | bash
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/prod.sh | bash
 #
 
 # AIS VERSIONS
@@ -15,8 +15,8 @@ AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
 # AIS VERSIONS
 
-echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS BETA ' "$AIS_VERSSION" '\e[0m'
-curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20BETA
+echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PROD ' "$AIS_VERSSION" '\e[0m'
+curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%20PROD
 
 # fix for not dispatching media key event because user setup is in progress
 su -c 'settings put secure user_setup_complete 1'
@@ -55,12 +55,12 @@ echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.1:0.3"}'
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/beta_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/beta_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/pl.sviete.dom/files/home/AIS/prod_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/prod_wheelhouse.tar.7z?raw=true
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.2:0.6"}'
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
-7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/beta_wheelhouse.tar.7z -y
+7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/prod_wheelhouse.tar.7z -y
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.3:0.6"}'
 
 echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
@@ -70,7 +70,7 @@ cd /data/data/pl.sviete.dom/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/beta_wheelhouse.tar.7z
+rm -rf /data/data/pl.sviete.dom/files/home/AIS/prod_wheelhouse.tar.7z
 
 
 # AIS ZIGBEE APP
@@ -80,7 +80,7 @@ if  grep -q "$AIS_ZIGBEE_VERSION" '/data/data/pl.sviete.dom/files/home/zigbee2mq
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
   curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_beta.zip?raw=true
+  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_prod.zip?raw=true
   curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.9"}'
   cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
   rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
@@ -118,7 +118,7 @@ if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.95:0.95"}'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-beta'
+    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-prod'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.97"}'
 else
     echo -e '\e[38;5;220m Android OK... \e[0m'
