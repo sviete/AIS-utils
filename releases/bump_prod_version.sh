@@ -26,9 +26,9 @@ echo -e '\e[38;5;220m Przygotowanie skryptu instalacji wersji... \e[0m'
 cd ~/AIS-utils
 git pull
 cp releases/beta.sh releases/prod.sh
-sed -i "s/beta/prod/" releases/beta.sh
-sed -i "s/beta/prod/" releases/beta.sh
-sed -i "s/BETA/PROD/" releases/beta.sh
+sed -i "s/beta/prod/" releases/prod.sh
+sed -i "s/beta/prod/" releases/prod.sh
+sed -i "s/BETA/PROD/" releases/prod.sh
 git commit -m 'bump prod script'
 git add releases/prod.sh
 
