@@ -118,7 +118,7 @@ if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.95:0.95"}'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
-    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update-prod'
+    su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.97"}'
 else
     echo -e '\e[38;5;220m Android OK... \e[0m'
