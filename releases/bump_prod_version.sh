@@ -30,6 +30,7 @@ sed -i "s/beta/prod/" releases/prod.sh
 sed -i "s/beta/prod/" releases/prod.sh
 sed -i "s/BETA/PROD/" releases/prod.sh
 sed -i "s/ais-dom-update-prod/ais-dom-update/" releases/prod.sh
+
 git commit -m 'bump prod script'
 git add releases/prod.sh
 
