@@ -8,9 +8,9 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="22.01.06"
-AIS_HA_VERSSION="2021.12.9"
-AIS_ZIGBEE_VERSION='"version": "1.22.1",'
+AIS_VERSSION="22.01.09"
+AIS_HA_VERSSION="2022.1.0b1"
+AIS_ZIGBEE_VERSION='"version": "1.22.2",'
 AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
 # AIS VERSIONS
@@ -127,6 +127,7 @@ else
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "restart"}'
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "1:0.95"}'
     # restart ais
+    pm2 restart ais
     pkill -9 python
 fi
 
