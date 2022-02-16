@@ -8,8 +8,8 @@
 #
 
 # AIS VERSIONS
-AIS_VERSSION="22.02.01"
-AIS_HA_VERSSION="2022.2.3b0"
+AIS_VERSSION="22.02.11"
+AIS_HA_VERSSION="2022.2.6b0"
 AIS_ZIGBEE_VERSION='"version": "1.23.0",'
 AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
@@ -51,6 +51,12 @@ fi
 
 SECONDS=0
 # AIS PYTHON APP
+
+# FIX
+echo -e '\e[38;5;220m FIX for error on HA start... \e[0m'
+rm /data/data/pl.sviete.dom/files/usr/lib/python3.9/site-packages/homeassistant/components/config/group.py
+
+
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
