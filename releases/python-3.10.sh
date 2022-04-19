@@ -3,5 +3,6 @@ apt update
 apt install libmd
 apt install openssl
 apt install libicu
+apt -y upgrade
 cd ~/zigbee2mqtt/
 npm rebuild
