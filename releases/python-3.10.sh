@@ -4,5 +4,9 @@ apt install libmd
 apt install openssl
 apt install libicu
 apt -y upgrade
+npm install -g npm@8.7.0
 cd ~/zigbee2mqtt/
 npm rebuild
+cd ~/AIS-webcmd/
+npm rebuild
+
