@@ -10,3 +10,6 @@ npm rebuild
 cd ~/AIS-webcmd/
 npm rebuild
 
+rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.9
+
+# install ais-dom
