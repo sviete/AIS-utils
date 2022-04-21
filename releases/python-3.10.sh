@@ -11,5 +11,13 @@ cd ~/AIS-webcmd/
 npm rebuild
 
 rm -rf /data/data/pl.sviete.dom/files/usr/lib/python3.9
+apt install rust
 
+echo "[http]" > ~/.cargo/config
+echo 'cainfo = "/data/data/pl.sviete.dom/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
+export CARGO_BUILD_TARGET=armv7-linux-androideabi
+
+pip install cryptography
+pip install psycopg2
+pip install psutil
 # install ais-dom
