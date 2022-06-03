@@ -9,8 +9,8 @@
 
 # AIS VERSIONS
 AIS_VERSSION="22.03.01"
-AIS_HA_VERSSION="2022.5.5"
-AIS_ZIGBEE_VERSION='"version": "1.25.1",'
+AIS_HA_VERSSION="2022.6.1b1"
+AIS_ZIGBEE_VERSION='"version": "1.25.2",'
 AIS_ANDROID_VERSSION="versionName=3.0.1"
 AIS_VERSSION_OLD="210919"
 # AIS VERSIONS
@@ -51,10 +51,6 @@ fi
 
 SECONDS=0
 # AIS PYTHON APP
-
-# FIX
-echo -e '\e[38;5;220m FIX for error on HA start... \e[0m'
-rm /data/data/pl.sviete.dom/files/usr/lib/python3.9/site-packages/homeassistant/components/config/group.py
 
 
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
@@ -107,14 +103,6 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 echo "$AIS_VERSSION" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
 
 sleep 6
-
-# NEW AIS ANDROID SCREEN APK
-echo -e '\e[38;5;220m ANDROID SCREEN APP \e[30;48;5;208m \e[0m'
-curl http://localhost:8122/text_to_speech?text=Pobieram%20i%20instaluje%20Android%20Screen%20APK
-echo -e '\e[38;5;220m Pobieram i instaluje Android Screen APK... \e[0m'
-curl -H 'Cache-Control: no-cache' -o "/sdcard/AIS-ScreenStream.apk" -L https://github.com/sviete/AIS-utils/blob/master/releases/AIS-ScreenStream.apk?raw=true
-su -c "pm install -r /sdcard/AIS-ScreenStream.apk"
-rm -rf /sdcard/AIS-ScreenStream.apk
 
 
 # AIS ANDROID APP
