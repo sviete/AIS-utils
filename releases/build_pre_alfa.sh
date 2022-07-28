@@ -8,7 +8,7 @@
 #
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2022.7.5
+AIS_HA_VERSSION=2022.7.7
 # AIS VERSIONS
 
 cd ~
@@ -49,7 +49,7 @@ export CARGO_BUILD_TARGET=armv7-linux-androideabi
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel . -w wheels
-pip wheel python-miio==0.5.9.1 -w wheels
+pip wheel python-miio==0.5.11 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
