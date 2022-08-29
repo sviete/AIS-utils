@@ -1,4 +1,4 @@
-#!/data/data/pl.sviete.dom/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 # AIS
 # omepage: https://ai-speaker.com
 ################################################
@@ -44,12 +44,12 @@ echo -e '\e[38;5;220m Rust ... \e[0m'
 apt install -y rust
 rustc -vV
 echo "[http]" > ~/.cargo/config
-echo 'cainfo = "/data/data/pl.sviete.dom/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
+echo 'cainfo = "/data/data/com.termux/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
 export CARGO_BUILD_TARGET=armv7-linux-androideabi
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel . -w wheels
-pip wheel python-miio==0.5.11 -w wheels
+pip wheel python-miio==0.5.12 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp39-cp39-linux_armv7l py3-none-any *
