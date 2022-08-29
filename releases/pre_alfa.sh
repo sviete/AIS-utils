@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # AIS
 # Homepage: https://ai-speaker.com
-################################################
+###############################################
 # Install ais-dom on PRE ALFA chanel
 # run it by executiong in AIS dom console:
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh | bash
