@@ -1,4 +1,4 @@
-#!/data/data/pl.sviete.dom/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 # AIS
 # Homepage: https://ai-speaker.com
 ################################################
@@ -29,7 +29,7 @@ apt install -y neofetch
 neofetch --source  ~/AIS/logo.txt
 
 # TEST requirements
-AIS_CURR_VERSION=`cat /data/data/pl.sviete.dom/files/home/AIS/.ais_apt`
+AIS_CURR_VERSION=`cat /data/data/com.termux/files/home/AIS/.ais_apt`
 echo -e '\e[38;5;220m Aktualizacja AIS z wersji ' "$AIS_CURR_VERSION" ' \e[0m'
 AIS_CURR_VERSION="${AIS_CURR_VERSION//.}"
 
@@ -57,42 +57,42 @@ echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.1:0.3"}'
-curl -o "/data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.2:0.6"}'
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20AIS
-7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/AIS/ /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z -y
+7z x -mmt=2 -o/data/data/com.termux/files/home/AIS/ /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z -y
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.3:0.6"}'
 
 echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
-cd /data/data/pl.sviete.dom/files/home/AIS
+cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/wheels
-rm -rf /data/data/pl.sviete.dom/files/home/AIS/pre_alfa_wheelhouse.tar.7z
+rm -rf /data/data/com.termux/files/home/AIS/wheels
+rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 
 # AIS ZIGBEE APP
 echo -e '\e[38;5;220m ZIGBEE \e[30;48;5;208m ' "$AIS_ZIGBEE_VERSION" '\e[0m'
-if  grep -q "$AIS_ZIGBEE_VERSION" '/data/data/pl.sviete.dom/files/home/zigbee2mqtt/package.json' ; then
+if  grep -q "$AIS_ZIGBEE_VERSION" '/data/data/com.termux/files/home/zigbee2mqtt/package.json' ; then
   echo -e '\e[38;5;220m Zigbee OK... \e[0m'
 else
   echo -e '\e[38;5;220m Pobieram Zigbee ... \e[0m'
   curl http://localhost:8122/text_to_speech?text=Pobieram%20Zigbee
-  curl -H 'Cache-Control: no-cache' -o "/data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_pre_alfa.zip?raw=true
+  curl -H 'Cache-Control: no-cache' -o "/data/data/com.termux/files/home/AIS/zigbee_update.zip" -L https://github.com/sviete/AIS-utils/blob/master/releases/zigbee_pre_alfa.zip?raw=true
   curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.9"}'
-  cp -R /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data /data/data/pl.sviete.dom/files/home/data-backup
-  rm -rf /data/data/pl.sviete.dom/files/home/zigbee2mqtt
+  cp -R /data/data/com.termux/files/home/zigbee2mqtt/data /data/data/com.termux/files/home/data-backup
+  rm -rf /data/data/com.termux/files/home/zigbee2mqtt
 
   echo -e '\e[38;5;220m Rozpakowuje Zigbee ... \e[0m'
   curl http://localhost:8122/text_to_speech?text=Rozpakowuje%20Zigbee
-  7z x -mmt=2 -o/data/data/pl.sviete.dom/files/home/zigbee2mqtt /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip -y
-  rm -rf /data/data/pl.sviete.dom/files/home/AIS/zigbee_update.zip
-  cp -R /data/data/pl.sviete.dom/files/home/data-backup/* /data/data/pl.sviete.dom/files/home/zigbee2mqtt/data
-  rm -rf /data/data/pl.sviete.dom/files/home/data-backup
+  7z x -mmt=2 -o/data/data/com.termux/files/home/zigbee2mqtt /data/data/com.termux/files/home/AIS/zigbee_update.zip -y
+  rm -rf /data/data/com.termux/files/home/AIS/zigbee_update.zip
+  cp -R /data/data/com.termux/files/home/data-backup/* /data/data/com.termux/files/home/zigbee2mqtt/data
+  rm -rf /data/data/com.termux/files/home/data-backup
 fi
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.9:0.92"}'
 
@@ -100,14 +100,14 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 echo -e '\e[40;38;5;220m OK. Instalacja trwała \e[30;48;5;208m' "$SECONDS" 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
 
-echo "$AIS_VERSSION" > /data/data/pl.sviete.dom/files/home/AIS/.ais_apt
+echo "$AIS_VERSSION" > /data/data/com.termux/files/home/AIS/.ais_apt
 
 sleep 6
 
 
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
-if [ `su -c "dumpsys package pl.sviete.dom | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
+if [ `su -c "dumpsys package com.termux | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     curl http://localhost:8122/text_to_speech?text=Pobieram%20Android%20i%20restartuje%20AIS
     curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.95:0.95"}'

@@ -1,4 +1,4 @@
-#!/data/data/pl.sviete.dom/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 # AIS
 # omepage: https://ai-speaker.com
 ################################################
