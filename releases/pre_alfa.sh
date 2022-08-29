@@ -1,18 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # AIS
 # Homepage: https://ai-speaker.com
-###############################################
+################################################
 # Install ais-dom on PRE ALFA chanel
 # run it by executiong in AIS dom console:
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh | bash
 #
 
 # AIS VERSIONS
-AIS_VERSSION="22.03.01"
+AIS_VERSSION="22.08.20"
 AIS_HA_VERSSION="2022.8.7b0"
 AIS_ZIGBEE_VERSION='"version": "1.26.0",'
 AIS_ANDROID_VERSSION="versionName=4.0.0"
-AIS_VERSSION_OLD="220820"
+AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
 
 echo -e '\e[38;5;220m START instalacji wersji \e[30;48;5;208m AIS PRE ALFA ' "$AIS_VERSSION" '\e[0m'
