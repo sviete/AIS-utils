@@ -52,7 +52,7 @@ pip wheel . -w wheels
 pip wheel python-miio==0.5.12 -w wheels
 cp requirements.txt wheels
 cd wheels
-rename cp39-cp39-linux_armv7l py3-none-any *
+rename cp310-cp310-linux_armv7l py3-none-any *
 sed -i '1d' requirements.txt
 echo \ >> requirements.txt
 echo ais-dom==$AIS_HA_VERSSION >> requirements.txt

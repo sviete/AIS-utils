@@ -69,7 +69,7 @@ echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
-pip install -r wheels/requirements.txt --no-index --find-links wheels -U
+pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
