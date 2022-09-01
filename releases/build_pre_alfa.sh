@@ -9,6 +9,7 @@
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2022.9.0b1
+AIS_FRONTEND_VERSSION=20220831.0
 # AIS VERSIONS
 
 cd ~
@@ -49,6 +50,7 @@ export CARGO_BUILD_TARGET=armv7-linux-androideabi
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel . -w wheels
+pip wheel ais-dom-frontend==20220831.0 -w wheels
 pip wheel python-miio==0.5.12 -w wheels
 cp requirements.txt wheels
 cd wheels
