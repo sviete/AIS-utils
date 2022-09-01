@@ -57,7 +57,7 @@ echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.1:0.3"}'
-curl -o "/data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z" -# -L  https://github.com/sviete/AIS-utils/blob/master/releases/pre_alfa_wheelhouse.tar.7z?raw=true
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.2:0.6"}'
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
