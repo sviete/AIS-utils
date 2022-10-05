@@ -47,6 +47,7 @@ rustc -vV
 echo "[http]" > ~/.cargo/config
 echo 'cainfo = "/data/data/com.termux/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
 export CARGO_BUILD_TARGET=armv7-linux-androideabi
+export RUSTFLAGS+=" -C lto=no"
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel . -w wheels
