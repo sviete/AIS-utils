@@ -9,9 +9,9 @@
 
 # AIS VERSIONS
 AIS_VERSSION="22.08.20"
-AIS_HA_VERSSION="2022.9.4"
-AIS_ZIGBEE_VERSION='"version": "1.27.2",'
-AIS_ANDROID_VERSSION="versionName=4.0.0"
+AIS_HA_VERSSION="2022.10.0"
+AIS_ZIGBEE_VERSION='"version": "1.28.0",'
+AIS_ANDROID_VERSSION="versionName=4.0.1"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
 
@@ -24,9 +24,11 @@ su -c 'settings put secure user_setup_complete 1'
 
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
-apt install -y w3m
-apt install -y neofetch
+pkg install -y w3m
+pkg install -y neofetch
+pkg install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
+pkg up -y
 
 # TEST requirements
 AIS_CURR_VERSION=`cat /data/data/com.termux/files/home/AIS/.ais_apt`
