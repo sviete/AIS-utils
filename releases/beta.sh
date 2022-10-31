@@ -28,7 +28,7 @@ pkg install -y w3m
 pkg install -y neofetch
 pkg install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
-pkg up -y
+# pkg up -y
 
 # TEST requirements
 AIS_CURR_VERSION=`cat /data/data/com.termux/files/home/AIS/.ais_apt`
