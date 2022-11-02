@@ -53,6 +53,7 @@ echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel . -w wheels
 pip wheel ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 pip wheel python-miio==0.5.12 -w wheels
+MATHLIB="m" pip wheel numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp310-cp310-linux_armv7l py3-none-any *
