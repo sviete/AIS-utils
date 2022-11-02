@@ -76,11 +76,13 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
+
+MATHLIB="m" pip install wheels/ numpy --no-index --find-links=wheels
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 echo -e '\e[38;5;220m numpy ... \e[0m'
-MATHLIB="m" pip3 install numpy==1.23.2
+MATHLIB="m" pip install numpy==1.23.2
 
 # AIS ZIGBEE APP
 echo -e '\e[38;5;220m ZIGBEE \e[30;48;5;208m ' "$AIS_ZIGBEE_VERSION" '\e[0m'
