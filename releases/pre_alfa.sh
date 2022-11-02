@@ -9,7 +9,7 @@
 
 # AIS VERSIONS
 AIS_VERSSION="22.08.20"
-AIS_HA_VERSSION="2022.11.0b1"
+AIS_HA_VERSSION="2022.11.0b6"
 AIS_ZIGBEE_VERSION='"version": "1.28.0",'
 AIS_ANDROID_VERSSION="versionName=4.0.1"
 AIS_VERSSION_OLD="210901"
@@ -30,6 +30,7 @@ apt install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
 # apt upgrade -y
 
+pkg install python-cryptography
 pip install aisapi==0.1.1
 
 # TEST requirements
