@@ -77,7 +77,7 @@ cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 
-MATHLIB="m" pip install wheels/ numpy --no-index --find-links=wheels
+MATHLIB="m" pip install wheels/numpy-1.23.2-py3-none-any.whl --no-index --find-links=wheels
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
