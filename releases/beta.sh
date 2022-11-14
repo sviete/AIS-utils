@@ -9,8 +9,8 @@
 
 # AIS VERSIONS
 AIS_VERSSION="22.08.20"
-AIS_HA_VERSSION="2022.10.0"
-AIS_ZIGBEE_VERSION='"version": "1.28.0",'
+AIS_HA_VERSSION="2022.11.2"
+AIS_ZIGBEE_VERSION='"version": "1.28.1",'
 AIS_ANDROID_VERSSION="versionName=4.0.1"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -24,11 +24,14 @@ su -c 'settings put secure user_setup_complete 1'
 
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
-pkg install -y w3m
-pkg install -y neofetch
-pkg install -y python-numpy
+apt install -y w3m
+apt install -y neofetch
+apt install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
-# pkg up -y
+# apt upgrade -y
+
+apt install python-cryptography
+pip install aisapi==0.1.1
 
 # TEST requirements
 AIS_CURR_VERSION=`cat /data/data/com.termux/files/home/AIS/.ais_apt`
@@ -73,9 +76,13 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
+
+MATHLIB="m" pip install wheels/numpy-1.23.2-py3-none-any.whl --no-index --find-links=wheels
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/beta_wheelhouse.tar.7z
 
+echo -e '\e[38;5;220m numpy ... \e[0m'
+MATHLIB="m" pip install numpy==1.23.2
 
 # AIS ZIGBEE APP
 echo -e '\e[38;5;220m ZIGBEE \e[30;48;5;208m ' "$AIS_ZIGBEE_VERSION" '\e[0m'
