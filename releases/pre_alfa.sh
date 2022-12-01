@@ -21,10 +21,6 @@ curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%2
 # fix for not dispatching media key event because user setup is in progress
 su -c 'settings put secure user_setup_complete 1'
 
-# 2022.12 fix for device_tracker problem
-rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
-
-
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
 apt install -y w3m
@@ -115,6 +111,9 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 echo "$AIS_VERSSION" > /data/data/com.termux/files/home/AIS/.ais_apt
 
 sleep 6
+
+# 2022.12 fix for device_tracker problem
+rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
 
 # AIS ANDROID APP
