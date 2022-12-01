@@ -11,7 +11,7 @@
 AIS_VERSSION="22.08.20"
 AIS_HA_VERSSION="2022.12.0b0"
 AIS_ZIGBEE_VERSION='"version": "1.28.1",'
-AIS_ANDROID_VERSSION="versionName=4.0.1"
+AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
 
@@ -21,7 +21,7 @@ curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%2
 # fix for not dispatching media key event because user setup is in progress
 su -c 'settings put secure user_setup_complete 1'
 
-# 2022.12 fix for device_tracker problem 
+# 2022.12 fix for device_tracker problem
 rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
 
