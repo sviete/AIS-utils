@@ -23,13 +23,8 @@ su -c 'settings put secure user_setup_complete 1'
 
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
-apt install -y w3m
-apt install -y neofetch
-apt install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
-# apt upgrade -y
 
-apt install python-cryptography
 pip install aisapi==0.1.1
 
 # TEST requirements
