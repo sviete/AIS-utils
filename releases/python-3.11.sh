@@ -1,13 +1,12 @@
 apt update
 apt -y upgrade
-cd ~/zigbee2mqtt/
-npm rebuild
-cd ~/AIS-webcmd/
-npm rebuild
 
 rm -rf /data/data/com.termux/files/usr/lib/python3.10
 
 apt install rust
+
+export CARGO_BUILD_TARGET=armv7-linux-androideabi
+export RUSTFLAGS+=" -C lto=no"
 
 pip install aisapi
 pip install cryptography
