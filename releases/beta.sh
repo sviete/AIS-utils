@@ -9,8 +9,8 @@
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
-AIS_HA_VERSSION="2023.2.5"
-AIS_ZIGBEE_VERSION='"version": "1.30.0",'
+AIS_HA_VERSSION="2023.3.6"
+AIS_ZIGBEE_VERSION='"version": "1.30.2",'
 AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -110,6 +110,10 @@ sleep 6
 # 2022.12 fix for device_tracker problem
 rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
+
+# Spotify
+curl -o "/sdcard/spotify-8-8-18-509.apk" -# -L  https://github.com/sviete/AIS-utils/blob/master/releases/spotify-8-8-18-509.apk?raw=true
+su -c "pm install /sdcard/spotify-8-8-18-509.apk"
 
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
