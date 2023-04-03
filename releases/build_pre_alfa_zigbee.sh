@@ -31,8 +31,6 @@ git clone --depth=1 https://github.com/Koenkk/zigbee2mqtt.git
 
 echo -e '\e[38;5;220m npm... \e[0m'
 cd ~/zigbee2mqtt
-git checkout HEAD -- npm-shrinkwrap.json
-git pull
 npm ci --unsafe-perm
 
 echo -e '\e[38;5;220m configuration.yaml \e[0m'
