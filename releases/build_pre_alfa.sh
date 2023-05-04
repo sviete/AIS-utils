@@ -50,7 +50,7 @@ export CARGO_BUILD_TARGET=armv7-linux-androideabi
 export RUSTFLAGS+=" -C lto=no"
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
-pip wheel . -w wheels
+pip wheel --no-cache-dir . -w wheels
 pip wheel ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 pip wheel python-miio==0.5.12 -w wheels
 MATHLIB="m" pip wheel numpy==1.23.2 -w wheels
