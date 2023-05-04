@@ -42,7 +42,7 @@ git checkout alfa
 git pull
 
 echo -e '\e[38;5;220m Rust ... \e[0m'
-apt install -y rust
+# apt install -y rust
 rustc -vV
 echo "[http]" > ~/.cargo/config
 echo 'cainfo = "/data/data/com.termux/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
