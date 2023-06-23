@@ -4,12 +4,13 @@
 ################################################
 # Install ais-dom on ALFA chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh | bash
-#
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/alfa.sh -o alfa.sh
+# chmod +x alfa.sh
+# ./alfa.sh
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
-AIS_HA_VERSSION="2023.6.2"
+AIS_HA_VERSSION="2023.6.3"
 AIS_ZIGBEE_VERSION='"version": "1.31.2",'
 AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
