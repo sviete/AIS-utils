@@ -4,8 +4,9 @@
 ################################################
 # Install ais-dom on PRE ALFA chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh | bash
-#
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/pre_alfa.sh -o pre_alfa.sh
+# chmod +x pre_alfa.sh
+# ./pre_alfa.sh
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
