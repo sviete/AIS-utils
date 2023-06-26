@@ -4,13 +4,14 @@
 ################################################
 # Install ais-dom on PROD chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/prod.sh | bash
-#
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/prod.sh -o prod.sh
+# chmod +x prod.sh
+# ./prod.sh
 
 # AIS VERSIONS
-AIS_VERSSION="22.08.20"
-AIS_HA_VERSSION="2022.12.8"
-AIS_ZIGBEE_VERSION='"version": "1.28.4",'
+AIS_VERSSION="23.01.02"
+AIS_HA_VERSSION="2023.6.3"
+AIS_ZIGBEE_VERSION='"version": "1.31.2",'
 AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -23,13 +24,8 @@ su -c 'settings put secure user_setup_complete 1'
 
 apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
-apt install -y w3m
-apt install -y neofetch
-apt install -y python-numpy
 neofetch --source  ~/AIS/logo.txt
-# apt upgrade -y
 
-apt install python-cryptography
 pip install aisapi==0.1.1
 
 # TEST requirements
@@ -61,7 +57,7 @@ echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.1:0.3"}'
-curl -o "/data/data/com.termux/files/home/AIS/prod_wheelhouse.tar.7z" -# -L  https://github.com/sviete/AIS-utils/blob/master/releases/prod_wheelhouse.tar.7z?raw=true
+curl -o "/data/data/com.termux/files/home/AIS/prod_wheelhouse.tar.7z" -L  https://github.com/sviete/AIS-utils/blob/master/releases/prod_wheelhouse.tar.7z?raw=true
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.2:0.6"}'
 
 echo -e '\e[38;5;220m Rozpakowuje AIS ... \e[0m'
@@ -115,6 +111,10 @@ sleep 6
 # 2022.12 fix for device_tracker problem
 rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
+
+# Spotify
+curl -o "/sdcard/spotify-8-8-18-509.apk" -# -L  https://github.com/sviete/AIS-utils/blob/master/releases/spotify-8-8-18-509.apk?raw=true
+su -c "pm install /sdcard/spotify-8-8-18-509.apk"
 
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
