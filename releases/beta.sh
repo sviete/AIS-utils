@@ -4,13 +4,14 @@
 ################################################
 # Install ais-dom on BETA chanel
 # run it by executiong in AIS dom console:
-# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/beta.sh | bash
-#
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/beta.sh -o beta.sh
+# chmod +x beta.sh
+# ./beta.sh
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
-AIS_HA_VERSSION="2023.4.6"
-AIS_ZIGBEE_VERSION='"version": "1.30.3",'
+AIS_HA_VERSSION="2023.6.3"
+AIS_ZIGBEE_VERSION='"version": "1.31.2",'
 AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
