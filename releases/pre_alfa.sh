@@ -112,10 +112,6 @@ sleep 6
 rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
 
-# Spotify
-curl -o "/sdcard/spotify-8-8-18-509.apk" -# -L  https://github.com/sviete/AIS-utils/blob/master/releases/spotify-8-8-18-509.apk?raw=true
-su -c "pm install /sdcard/spotify-8-8-18-509.apk"
-
 # AIS ANDROID APP
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
 if [ `su -c "dumpsys package com.termux | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
