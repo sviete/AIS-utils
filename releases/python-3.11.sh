@@ -18,8 +18,18 @@ pip install aisapi
 pip install psutil
 pip install tzdata
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip3 install numpy==1.23.2
+pip install git+https://github.com/boto/botocore
 pip install ais-dom
 
+cd ~/zigbee2mqtt/
+npm install npm
+npm install
+
+cd ~/AIS-webcmd/
+npm install
+
+cd ~
+pm2 update
 
 
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
