@@ -17,8 +17,9 @@ pip install setuptools
 pip install aisapi
 pip install psutil
 pip install tzdata
-MATHLIB="m" pip install numpy==1.23.2
+MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip3 install numpy==1.23.2
 pip install ais-dom
+
 
 
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
