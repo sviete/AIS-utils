@@ -10,8 +10,8 @@
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
-AIS_HA_VERSSION="2023.7.0b0"
-AIS_ZIGBEE_VERSION='"version": "1.31.2",'
+AIS_HA_VERSSION="2023.7.2"
+AIS_ZIGBEE_VERSION='"version": "1.32.1",'
 AIS_ANDROID_VERSSION="versionName=4.2.0"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -26,7 +26,6 @@ apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
 neofetch --source  ~/AIS/logo.txt
 
-pip install aisapi==0.1.1
 
 # TEST requirements
 AIS_CURR_VERSION=`cat /data/data/com.termux/files/home/AIS/.ais_apt`
@@ -47,12 +46,9 @@ if [ $AIS_CURR_VERSION -ge $AIS_VERSSION_OLD ]
     exit 1
 fi
 
-
-
 SECONDS=0
+
 # AIS PYTHON APP
-
-
 echo -e '\e[38;5;220m Pobieram AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Pobieram%20AIS
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "downloading"}'
@@ -67,17 +63,21 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 
 echo -e '\e[38;5;220m Instaluje AIS ... \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
+apt update
+apt -y -o Dpkg::Options::="--force-confnew" upgrade
+apt -y autoremove
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
-
-MATHLIB="m" pip install wheels/numpy-1.23.2-py3-none-any.whl --no-index --find-links=wheels
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
+rm -rf /data/data/com.termux/files/usr/lib/python3.10
+cd ~/AIS-webcmd/
+npm install
+cd ~
+pm2 update
 
-echo -e '\e[38;5;220m numpy ... \e[0m'
-MATHLIB="m" pip install numpy==1.23.2
 
 # AIS ZIGBEE APP
 echo -e '\e[38;5;220m ZIGBEE \e[30;48;5;208m ' "$AIS_ZIGBEE_VERSION" '\e[0m'
@@ -107,9 +107,6 @@ curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECON
 echo "$AIS_VERSSION" > /data/data/com.termux/files/home/AIS/.ais_apt
 
 sleep 6
-
-# 2022.12 fix for device_tracker problem
-rm -rf /data/data/com.termux/files/usr/lib/python3.10/site-packages/homeassistant/components/mqtt/device_tracker
 
 
 # AIS ANDROID APP

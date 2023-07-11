@@ -30,6 +30,7 @@ npm install
 
 cd ~
 pm2 update
+pm2 restart ais
 
 
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
