@@ -8,8 +8,8 @@
 #
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2023.7.0b0
-AIS_FRONTEND_VERSSION=20230628.0
+AIS_HA_VERSSION=2023.7.2
+AIS_FRONTEND_VERSSION=20230705.2
 # AIS VERSIONS
 
 cd ~
@@ -44,16 +44,12 @@ git pull
 echo -e '\e[38;5;220m Rust ... \e[0m'
 # apt install -y rust
 rustc -vV
-echo "[http]" > ~/.cargo/config
-echo 'cainfo = "/data/data/com.termux/files/usr/etc/tls/cert.pem"' >> ~/.cargo/config
-export CARGO_BUILD_TARGET=armv7-linux-androideabi
-export RUSTFLAGS+=" -C lto=no"
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel --no-cache-dir . -w wheels
 pip wheel ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 pip wheel python-miio==0.5.12 -w wheels
-MATHLIB="m" pip wheel numpy==1.23.2 -w wheels
+MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp310-cp310-linux_armv7l py3-none-any *
