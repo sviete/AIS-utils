@@ -53,6 +53,11 @@ pip wheel ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 pip wheel python-miio==0.5.12 -w wheels
 pip wheel Pillow==9.5.0 -w wheels
 pip wheel PyNaCl==1.5.0 -w wheels
+pip wheel aisapi==0.1.1 -w wheels
+pip wheel botocore==1.31.2 -w wheels
+pip wheel setuptools==68.0.0 -w wheels
+pip wheel tzdata==2023.3 -w wheels
+pip wheel psutil==5.9.5 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
