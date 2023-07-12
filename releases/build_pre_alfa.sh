@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.07.11.3 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.11.4 \e[0m'
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2023.7.2
@@ -35,16 +35,18 @@ fi
 
 echo -e '\e[38;5;220m START bulding version \e[30;48;5;208m AIS PRE ALFA ' $AIS_HA_VERSSION '\e[0m'
 SECONDS=0
+
 echo -e '\e[38;5;220m AIS cleenup ... \e[0m'
 cd ~/AIS-home-assistant
 rm -rf wheels
 rm -rf pre_alfa_wheelhouse.tar.7z
+rm -rf build
+
 echo -e '\e[38;5;220m Download AIS codes ... \e[0m'
 git checkout alfa
 git pull
 
 echo -e '\e[38;5;220m Rust ... \e[0m'
-# apt install -y rust
 rustc -vV
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
@@ -58,7 +60,7 @@ pip wheel botocore==1.31.2 -w wheels
 pip wheel setuptools==68.0.0 -w wheels
 pip wheel tzdata==2023.3 -w wheels
 pip wheel psutil==5.9.5 -w wheels
-pip wheel zeroconf==0.70.0 -w wheels
+pip wheel hassil==1.0.6 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
