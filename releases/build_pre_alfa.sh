@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.07.11.6 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.11.7 \e[0m'
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2023.7.2
@@ -60,8 +60,9 @@ pip wheel --no-cache-dir botocore==1.31.2 -w wheels
 pip wheel --no-cache-dir setuptools==68.0.0 -w wheels
 pip wheel --no-cache-dir tzdata==2023.3 -w wheels
 pip wheel --no-cache-dir psutil==5.9.5 -w wheels
-pip wheel --no-cache-dir hassil==1.0.6 -w wheels
 pip wheel --no-cache-dir zeroconf==0.70.0 -w wheels
+pip wheel --no-cache-dir hassil==1.0.6 -w wheels
+pip wheel --no-cache-dir home-assistant-intents==2023.6.28 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
