@@ -99,7 +99,8 @@ rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 # demonize
-apt -y install demonize
+echo -e '\e[38;5;220m Daemonize start \e[0m'
+apt -y install daemonize
 echo 'cd ~/AIS-webcmd/' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'cd ~' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
@@ -110,7 +111,7 @@ echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.10' > /data/data/com.te
 echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.11/site-packages/homeassistant/components/mqtt/device_tracker'
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 daemonize /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-
+echo -e '\e[38;5;220m Daemonize end \e[0m'
 
 echo -e '\e[40;38;5;220m OK. Instalacja trwała \e[30;48;5;208m' "$SECONDS" 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
