@@ -107,7 +107,6 @@ echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 restart ais' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pkill -9 python' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.10' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 daemonize /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo -e '\e[38;5;220m Daemonize end \e[0m'
