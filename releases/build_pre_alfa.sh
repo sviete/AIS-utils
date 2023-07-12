@@ -58,6 +58,7 @@ pip wheel botocore==1.31.2 -w wheels
 pip wheel setuptools==68.0.0 -w wheels
 pip wheel tzdata==2023.3 -w wheels
 pip wheel psutil==5.9.5 -w wheels
+pip wheel zeroconf==0.70.0 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel numpy==1.23.2 -w wheels
 cp requirements.txt wheels
 cd wheels
