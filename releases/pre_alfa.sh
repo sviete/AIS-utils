@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.12.1 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.12.2 \e[0m'
 
 
 # AIS VERSIONS
@@ -102,17 +102,17 @@ rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 echo -e '\e[38;5;220m Daemonize start \e[0m'
 apt -y install daemonize
 echo 'echo Daemonize1' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'cd ~/AIS-webcmd/' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'npm install' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'echo Daemonize2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'cd ~' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'pm2 update' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'pm2 restart ais' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'pkill -9 python' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'echo Daemonize3' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.10' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.11/site-packages/homeassistant/components/mqtt/device_tracker' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'echo Daemonize4' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'cd ~/AIS-webcmd/' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'npm install' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'echo Daemonize2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 restart ais' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pkill -9 python' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'echo Daemonize3' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.10' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'rm -rf /data/data/com.termux/files/usr/lib/python3.11/site-packages/homeassistant/components/mqtt/device_tracker' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'echo Daemonize4' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 daemonize /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo -e '\e[38;5;220m Daemonize end \e[0m'
