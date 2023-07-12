@@ -102,10 +102,10 @@ rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 echo -e '\e[38;5;220m Daemonize start \e[0m'
 apt -y install daemonize
-cd ~/AIS-webcmd/
-npm update
-cd ~/zigbee2mqtt/
-npm update
+# cd ~/AIS-webcmd/
+# npm update
+# cd ~/zigbee2mqtt/
+# npm update
 echo 'cd ~' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
