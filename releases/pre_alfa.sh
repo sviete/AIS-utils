@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.12.5 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.12.6 \e[0m'
 
 
 # AIS VERSIONS
@@ -97,10 +97,12 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
+echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
 cd ~/AIS-webcmd/
 npm install
+echo -e '\e[38;5;220m Rebuild zigbee2mqtt ... \e[0m'
 cd ~/zigbee2mqtt/
-npm install
+npm rebuild
 
 # demonize
 apt -y install daemonize
