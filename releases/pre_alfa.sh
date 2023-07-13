@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.12.4 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.12.5 \e[0m'
 
 
 # AIS VERSIONS
@@ -25,7 +25,6 @@ curl http://localhost:8122/text_to_speech?text=Start%20instalacji%20wersji%AIS%2
 # fix for not dispatching media key event because user setup is in progress
 su -c 'settings put secure user_setup_complete 1'
 
-apt update
 curl -o ~/AIS/logo.txt -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/logo.txt
 neofetch --source  ~/AIS/logo.txt
 
@@ -98,15 +97,15 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
-# demonize
-
-echo -e '\e[38;5;220m Daemonize start \e[0m'
-apt -y install daemonize
 cd ~/AIS-webcmd/
 npm install
 cd ~/zigbee2mqtt/
 npm install
-echo 'cd ~' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+
+# demonize
+apt -y install daemonize
+echo -e '\e[38;5;220m Daemonize start \e[0m'
+echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
