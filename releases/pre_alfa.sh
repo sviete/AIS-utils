@@ -8,14 +8,14 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.12.6 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.14.0 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.01.02"
 AIS_HA_VERSSION="2023.7.2"
 AIS_ZIGBEE_VERSION='"version": "1.32.1",'
-AIS_ANDROID_VERSSION="versionName=4.2.0"
+AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
 
@@ -110,6 +110,13 @@ echo -e '\e[38;5;220m Daemonize start \e[0m'
 echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
+if [ `su -c "dumpsys package com.termux | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
+    echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
+    echo "su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update'" >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+else
+    echo -e '\e[38;5;220m Android OK... \e[0m'
+fi
 chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 daemonize /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo -e '\e[38;5;220m Daemonize end \e[0m'
