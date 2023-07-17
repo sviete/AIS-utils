@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.14.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.17.0 \e[0m'
 
 
 # AIS VERSIONS
@@ -110,6 +110,17 @@ echo -e '\e[38;5;220m Daemonize start \e[0m'
 echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo ''
+echo 'pm2 delete ais' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 delete webssh' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 delete ftp' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 delete mqtt' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo ''
+echo 'pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 bash' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo ''
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
 if [ `su -c "dumpsys package com.termux | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
