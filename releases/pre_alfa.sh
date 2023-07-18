@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.17.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.18.0 \e[0m'
 
 
 # AIS VERSIONS
@@ -96,6 +96,10 @@ pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
+
+echo '# AIS Config file for mosquitto on gate' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
+echo 'listener 1883 0.0.0.0' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
+echo 'allow_anonymous true' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 
 echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
 cd ~/AIS-webcmd/
