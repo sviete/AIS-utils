@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.18.2 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.18.3 \e[0m'
 
 
 # AIS VERSIONS
@@ -99,6 +99,7 @@ rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 echo '# AIS Config file for mosquitto on gate' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 echo 'listener 1883 0.0.0.0' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
+echo 'protocol mqtt' >> '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 echo 'allow_anonymous true' >> '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 
 echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
