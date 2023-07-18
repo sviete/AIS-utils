@@ -12,7 +12,7 @@ echo -e '\e[38;5;220m Script version 2023.07.18.1 \e[0m'
 
 
 # AIS VERSIONS
-AIS_VERSSION="23.01.02"
+AIS_VERSSION="23.07.18"
 AIS_HA_VERSSION="2023.7.2"
 AIS_ZIGBEE_VERSION='"version": "1.32.1",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
