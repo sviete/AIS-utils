@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.18.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.18.1 \e[0m'
 
 
 # AIS VERSIONS
@@ -99,7 +99,7 @@ rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
 
 echo '# AIS Config file for mosquitto on gate' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 echo 'listener 1883 0.0.0.0' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
-echo 'allow_anonymous true' > '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
+echo 'allow_anonymous true' >> '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 
 echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
 cd ~/AIS-webcmd/
@@ -120,6 +120,7 @@ echo 'pm2 delete webssh' >> /data/data/com.termux/files/home/AIS/ais_daemonize.s
 echo 'pm2 delete ftp' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 delete mqtt' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo ''
+echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 bash' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
