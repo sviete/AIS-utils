@@ -50,6 +50,7 @@ echo -e '\e[38;5;220m Rust ... \e[0m'
 rustc -vV
 
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
+pip wheel --no-cache-dir --no-build-isolation PyYAML==6.0 -w wheels
 pip wheel --no-cache-dir . -w wheels
 pip wheel --no-cache-dir ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 pip wheel --no-cache-dir python-miio==0.5.12 -w wheels
