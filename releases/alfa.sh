@@ -111,6 +111,7 @@ npm rebuild
 
 # demonize
 apt -y install daemonize
+apt -y install libsodium
 echo -e '\e[38;5;220m Daemonize start \e[0m'
 echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
