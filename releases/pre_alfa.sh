@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.25.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.25.1 \e[0m'
 
 
 # AIS VERSIONS
@@ -93,6 +93,7 @@ apt -y autoremove
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
+pip install wheels/ha_av-10.1.0-py3-none-any.whl -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/pre_alfa_wheelhouse.tar.7z
