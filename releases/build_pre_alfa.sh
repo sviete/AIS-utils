@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.07.24.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.24.1 \e[0m'
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2023.7.3
@@ -64,6 +64,9 @@ pip wheel --no-cache-dir zeroconf==0.70.0 -w wheels
 pip wheel --no-cache-dir hassil==1.0.6 -w wheels
 pip wheel --no-cache-dir home-assistant-intents==2023.6.28 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.23.2 -w wheels
+echo "cython<3.0" >> c.txt
+PIP_CONSTRAINT=c.txt pip wheel ha-av==10.1.0 -w wheels
+rm c.txt
 cp requirements.txt wheels
 cd wheels
 rename cp311-cp311-linux_armv7l py3-none-any *
