@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.07.24.1 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.27.0 \e[0m'
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2023.7.3
@@ -70,6 +70,8 @@ rm c.txt
 cp requirements.txt wheels
 cd wheels
 rename cp311-cp311-linux_armv7l py3-none-any *
+rename cp311-abi3-linux_armv7l py3-none-any *
+rename cp35-abi3-linux_armv7l py3-none-any *
 sed -i '1d' requirements.txt
 echo \ >> requirements.txt
 echo ais-dom==$AIS_HA_VERSSION >> requirements.txt
