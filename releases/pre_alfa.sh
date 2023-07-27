@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.25.1 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.27.0 \e[0m'
 
 
 # AIS VERSIONS
