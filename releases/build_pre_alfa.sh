@@ -7,11 +7,11 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.07.27.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.07.28.0 \e[0m'
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2023.7.3
-AIS_FRONTEND_VERSSION=20230705.2
+AIS_HA_VERSSION=2023.8.0b1
+AIS_FRONTEND_VERSSION=20230725.0
 # AIS VERSIONS
 
 cd ~
@@ -52,18 +52,18 @@ rustc -vV
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel --no-cache-dir . -w wheels
 pip wheel --no-cache-dir ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
-pip wheel --no-cache-dir python-miio==0.5.12 -w wheels
-pip wheel --no-cache-dir Pillow==9.5.0 -w wheels
-pip wheel --no-cache-dir PyNaCl==1.5.0 -w wheels
 pip wheel --no-cache-dir aisapi==0.1.1 -w wheels
-pip wheel --no-cache-dir botocore==1.31.2 -w wheels
-pip wheel --no-cache-dir setuptools==68.0.0 -w wheels
 pip wheel --no-cache-dir tzdata==2023.3 -w wheels
 pip wheel --no-cache-dir psutil==5.9.5 -w wheels
-pip wheel --no-cache-dir zeroconf==0.70.0 -w wheels
-pip wheel --no-cache-dir hassil==1.0.6 -w wheels
-pip wheel --no-cache-dir home-assistant-intents==2023.6.28 -w wheels
+pip wheel --no-cache-dir setuptools==68.0.0 -w wheels
+pip wheel --no-cache-dir botocore==1.31.2 -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.23.2 -w wheels
+pip wheel --no-cache-dir python-miio==0.5.12 -w wheels
+pip wheel --no-cache-dir PyNaCl==1.5.0 -w wheels
+pip wheel --no-cache-dir Pillow==10.0.0 -w wheels
+pip wheel --no-cache-dir zeroconf==0.71.4 -w wheels
+pip wheel --no-cache-dir hassil==1.2.5 -w wheels
+pip wheel --no-cache-dir home-assistant-intents==2023.7.25 -w wheels
 echo "cython<3.0" >> c.txt
 PIP_CONSTRAINT=c.txt pip wheel ha-av==10.1.0 -w wheels
 rm c.txt
