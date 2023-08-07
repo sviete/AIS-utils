@@ -8,13 +8,13 @@
 # chmod +x alfa.sh
 # ./alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.07.28.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.08.07.0 \e[0m'
 
 
 # AIS VERSIONS
-AIS_VERSSION="23.07.18"
-AIS_HA_VERSSION="2023.8.0b1"
-AIS_ZIGBEE_VERSION='"version": "1.32.1",'
+AIS_VERSSION="23.08.07"
+AIS_HA_VERSSION="2023.8.1"
+AIS_ZIGBEE_VERSION='"version": "1.32.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -93,7 +93,7 @@ apt -y autoremove
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
-pip install wheels/ha_av-10.1.0-py3-none-any.whl -U
+pip install wheels/ha_av-10.1.1-py3-none-any.whl -U
 pip install pyinotify -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
@@ -117,9 +117,10 @@ apt -y install libsodium
 termux-fix-shebang /data/data/com.termux/files/usr/bin/pm2
 echo -e '\e[38;5;220m Daemonize start \e[0m'
 echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo ''
+echo 'set LD_LIBRARY_PATH=""' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete ais' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete webssh' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete ftp' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
