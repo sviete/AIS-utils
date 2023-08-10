@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.08.10.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.08.10.1 \e[0m'
 
 
 # AIS VERSIONS
@@ -116,6 +116,7 @@ apt -y install code-server
 touch ~/AIS/ais-code-server.js
 echo "const { execSync } = require('child_process');" > ~/AIS/ais-code-server.js
 echo "execSync('code-server  --bind-addr 0.0.0.0:8080 --disable-telemetry --auth none',{stdio:['inherit','inherit','inherit']})" >> ~/AIS/ais-code-server.js
+pm2 delete code-server
 pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
 pm2 save
 
