@@ -8,12 +8,12 @@
 # chmod +x alfa.sh
 # ./alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.08.07.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.08.12.0 \e[0m'
 
 
 # AIS VERSIONS
-AIS_VERSSION="23.08.07"
-AIS_HA_VERSSION="2023.8.1"
+AIS_VERSSION="23.08.11"
+AIS_HA_VERSSION="2023.8.2"
 AIS_ZIGBEE_VERSION='"version": "1.32.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
@@ -109,6 +109,16 @@ npm install
 echo -e '\e[38;5;220m Rebuild zigbee2mqtt ... \e[0m'
 cd ~/zigbee2mqtt/
 npm rebuild
+
+# Code server
+apt -y install tur-repo
+apt -y install code-server
+touch ~/AIS/ais-code-server.js
+echo "const { execSync } = require('child_process');" > ~/AIS/ais-code-server.js
+echo "execSync('code-server  --bind-addr 0.0.0.0:8080 --disable-telemetry --auth none',{stdio:['inherit','inherit','inherit']})" >> ~/AIS/ais-code-server.js
+pm2 delete code-server
+pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
+pm2 save
 
 # demonize
 apt -y install daemonize
