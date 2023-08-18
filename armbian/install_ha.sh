@@ -9,6 +9,10 @@
 echo "add kernel boot parameters"
 sed -i '$ s/$/ systemd.unified_cgroup_hierarchy=0 apparmor=1 security=apparmor/' /boot/uEnv.txt
 
+echo "fix DNS resolving"
+echo "nameserver 80.80.80.80" >> /etc/resolv.conf
+
+
 echo "install apt packages"
 apt update
 apt upgrade -y
@@ -36,11 +40,11 @@ dpkg -i ./os-agent_1.5.1_linux_aarch64.deb
 echo "install homeassistant-supervised"
 sed -i 's#PRETTY_NAME=.*#PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"#'  /etc/os-release
 wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-BYPASS_OS_CHECK=true dpkg -i homeassistant-supervised.deb
+# dpkg -i homeassistant-supervised.deb
 
 echo "enable services"
-sudo systemctl enable hassio-apparmor.service
-sudo systemctl enable hassio-supervisor.service
+# sudo systemctl enable hassio-apparmor.service
+# sudo systemctl enable hassio-supervisor.service
 
 # Create image from USB
 # sudo sh -c "dd if=/dev/sda status=progress | xz -c > ~/armbian.img.xz"
