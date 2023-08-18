@@ -23,7 +23,8 @@ network-manager \
 dbus \
 lsb-release \
 systemd-journal-remote \
-systemd-resolved -y
+systemd-resolved \
+udisks2 -y
 
 echo "install docker"
 curl -fsSL get.docker.com | sh
@@ -35,8 +36,11 @@ dpkg -i ./os-agent_1.5.1_linux_aarch64.deb
 echo "install homeassistant-supervised"
 sed -i 's#PRETTY_NAME=.*#PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"#'  /etc/os-release
 wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-apt install ./homeassistant-supervised.deb
+BYPASS_OS_CHECK=true dpkg -i homeassistant-supervised.deb
 
 echo "enable services"
 sudo systemctl enable hassio-apparmor.service
 sudo systemctl enable hassio-supervisor.service
+
+# Create image from USB
+# sudo sh -c "dd if=/dev/sda status=progress | xz -c > ~/armbian.img.xz"
