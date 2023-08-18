@@ -1,3 +1,11 @@
+#!/bin/bash
+# AIS
+# omepage: https://ai-speaker.com
+################################################
+# Install Home Assistant Supervised on Armbian
+# run it by executiong in Armbian console:
+# curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/armbian/install_ha.sh | bash
+#
 echo "add kernel boot parameters"
 sed -i '$ s/$/ systemd.unified_cgroup_hierarchy=0 apparmor=1 security=apparmor/' /boot/uEnv.txt
 
