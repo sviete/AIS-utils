@@ -42,8 +42,8 @@ wget https://github.com/home-assistant/supervised-installer/releases/latest/down
 # dpkg -i homeassistant-supervised.deb
 
 echo "enable services"
-# sudo systemctl enable hassio-apparmor.service
-# sudo systemctl enable hassio-supervisor.service
+# systemctl enable hassio-apparmor.service
+# systemctl enable hassio-supervisor.service
 
 # Create image from USB
 # sudo sh -c "dd if=/dev/sda status=progress | xz -c > ~/armbian.img.xz"
