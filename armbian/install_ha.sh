@@ -9,10 +9,6 @@
 echo "add kernel boot parameters"
 sed -i '$ s/$/ systemd.unified_cgroup_hierarchy=0 apparmor=1 security=apparmor/' /boot/uEnv.txt
 
-echo "fix DNS resolving"
-echo "nameserver 80.80.80.80" >> /etc/resolv.conf
-
-
 echo "install apt packages"
 apt update
 apt upgrade -y
@@ -29,6 +25,9 @@ lsb-release \
 systemd-journal-remote \
 systemd-resolved \
 udisks2 -y
+
+echo "fix DNS resolving"
+echo "nameserver 80.80.80.80" >> /etc/resolv.conf
 
 echo "install docker"
 curl -fsSL get.docker.com | sh
