@@ -30,6 +30,8 @@ todo_rootfs_resize="/root/.no_rootfs_resize"
     echo "[$(date +"%Y.%m.%d.%H:%M:%S")] Maximize root partition done!" >>${custom_log}
 }
 
+poweroff
+
 5. Use Gparted to shrink the partition.
 check the disk end sector in info or via fdisk
 
@@ -58,7 +60,8 @@ for example:
 sudo dd if=/dev/mmcblk0 bs=512 count=13004800 status=progress \
  | gzip -c > ais_dev3_lunar_6.1.46_server_2023.08.25.img.gz
 
-8. Publish image in
+8. Publish image in mega
+https://mega.nz/folder/ncIWAISS#_fJBggsNUnw-DMKDV7ZseQ
 
 9. Download and write via balena-etcher
 
