@@ -52,7 +52,6 @@ rustc -vV
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel --no-cache-dir . -w wheels
 pip wheel --no-cache-dir ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
-pip wheel --no-cache-dir aisapi==0.1.1 -w wheels
 pip wheel --no-cache-dir tzdata==2023.3 -w wheels
 pip wheel --no-cache-dir psutil==5.9.5 -w wheels
 pip wheel --no-cache-dir setuptools==68.0.0 -w wheels
