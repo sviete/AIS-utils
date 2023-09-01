@@ -8,12 +8,12 @@
 # chmod +x alfa.sh
 # ./alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.08.12.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.09.01.0 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.08.11"
-AIS_HA_VERSSION="2023.8.2"
+AIS_HA_VERSSION="2023.9.0b1"
 AIS_ZIGBEE_VERSION='"version": "1.32.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
@@ -94,6 +94,11 @@ curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 
 cd /data/data/com.termux/files/home/AIS
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
 pip install pyinotify -U
+pip install aisapi==0.1.1
+pip install psutil==5.9.5
+pip install tzdata==2023.3
+pip install setuptools==68.0.0
+pip install botocore==1.31.2
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
 rm -rf /data/data/com.termux/files/home/AIS/alfa_wheelhouse.tar.7z
