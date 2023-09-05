@@ -1,0 +1,13 @@
+#
+ffmpeg -fflags nobuffer  -rtsp_transport tcp  -i rtsp://178.43.133.12:28554/ch0_1.h264 -acodec copy -vcodec copy test.mp4
+
+#
+ffmpeg -y -i rtsp://192.168.0.54:554/onvif1 -ss 0:0:2 -frames 1  1.jpg
+
+
+camera:
+  - platform: ffmpeg
+    input: http://pendelcam.kip.uni-heidelberg.de/mjpg/video.mjpg
+  - platform: ffmpeg
+    input: -rtsp_transport tcp -i rtsp://178.43.133.12:28554/ch0_1.h264
+    extra_arguments: -pred 1 -q:v 2
