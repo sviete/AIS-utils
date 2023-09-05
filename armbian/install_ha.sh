@@ -27,7 +27,8 @@ systemd-resolved \
 udisks2 -y
 
 echo "fix DNS resolving"
-echo "nameserver 80.80.80.80" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 
 echo "install docker"
 curl -fsSL get.docker.com | sh
