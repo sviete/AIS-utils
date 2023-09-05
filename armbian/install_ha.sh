@@ -40,7 +40,3 @@ echo "install homeassistant-supervised"
 sed -i 's#PRETTY_NAME=.*#PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"#'  /etc/os-release
 wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 dpkg -i homeassistant-supervised.deb
-
-# echo "enable services"
-# systemctl enable hassio-apparmor.service
-# systemctl enable hassio-supervisor.service
