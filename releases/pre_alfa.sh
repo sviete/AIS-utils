@@ -8,12 +8,12 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.09.01.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.09.05.0 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.08.11"
-AIS_HA_VERSSION="2023.9.0b1"
+AIS_HA_VERSSION="2023.9.0b4"
 AIS_ZIGBEE_VERSION='"version": "1.32.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
@@ -125,6 +125,15 @@ pm2 delete code-server
 pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
 pm2 save
 
+# tmux
+apt -y install tmux
+apt -y install trzsz-go
+apt -y install lsix
+apt -y install libsixel
+pm2 delete webssh
+pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l
+
+
 # demonize
 apt -y install daemonize
 apt -y install libsodium
@@ -142,7 +151,7 @@ echo 'node /data/data/com.termux/files/usr/bin/pm2 delete mqtt' >> /data/data/co
 echo ''
 echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 bash' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 save' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
