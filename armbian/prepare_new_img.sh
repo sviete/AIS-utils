@@ -10,10 +10,11 @@ rm onboarding person auth auth_provider.homeassistant http.auth mobile_app front
 
 3. Twick the armbian settings
 change hostname for avachi to ais-dom
-/etc/hostname
+echo "ais-dom" > /etc/hostname
 
-change motd baner to ais-dev3 or asi-pro1
+change motd baner to ais-dev3 or asi-pro1 or ais-dev
 nano /etc/armbian-release
+change BOARD_NAME
 
 forget all wireless connections
 
@@ -22,7 +23,8 @@ echo "yes" > /root/.no_rootfs_resize
 deluser --remove-all-files ais
 touch /root/.not_logged_in_yet
 
-in /etc/custom_service/start_service.sh add:
+nano /etc/custom_service/start_service.sh
+add:
 # Maximize root partition size
 todo_rootfs_resize="/root/.no_rootfs_resize"
 [[ -f "${todo_rootfs_resize}" && "$(cat ${todo_rootfs_resize} 2>/dev/null | xargs)" == "yes" ]] && {
@@ -33,11 +35,13 @@ todo_rootfs_resize="/root/.no_rootfs_resize"
 poweroff
 
 5. Use Gparted to shrink the partition.
-check the disk end sector in info or via fdisk
+check the disk end sector in info
 
 6. Check disk end sector via fdisk
 
 sudo fdisk -l -u=sectors /dev/mmcblk0
+or
+sudo fdisk -l -u=sectors /dev/sda
 
 ```
 Disk /dev/mmcblk0: 59,45 GiB, 63831015424 bytes, 124669952 sectors
@@ -59,6 +63,11 @@ sudo dd if=/dev/mmcblk0 of=./5.img bs=SECTOR_SIZE count=END_SECTOR+1 status=prog
 for example:
 sudo dd if=/dev/mmcblk0 bs=512 count=13004800 status=progress \
  | gzip -c > ais_dev3_lunar_6.1.46_server_2023.08.25.img.gz
+
+or
+
+sudo dd if=/dev/sda bs=512 count=12963840 status=progress \
+ | gzip -c > ais_pro1_lunar_6.1.46_server_2023.08.27.img.gz
 
 8. Publish image in mega
 https://mega.nz/folder/ncIWAISS#_fJBggsNUnw-DMKDV7ZseQ
