@@ -8,7 +8,7 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.09.05.1 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.09.05.2 \e[0m'
 
 
 # AIS VERSIONS
@@ -109,12 +109,12 @@ echo 'listener 1883 0.0.0.0' > '/data/data/com.termux/files/usr/etc/mosquitto/mo
 echo 'protocol mqtt' >> '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 echo 'allow_anonymous true' >> '/data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf'
 
-echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
-cd ~/AIS-webcmd/
-npm install
-echo -e '\e[38;5;220m Rebuild zigbee2mqtt ... \e[0m'
-cd ~/zigbee2mqtt/
-npm rebuild
+#echo -e '\e[38;5;220m Instaluje AIS-webcmd ... \e[0m'
+#cd ~/AIS-webcmd/
+#npm install
+#echo -e '\e[38;5;220m Rebuild zigbee2mqtt ... \e[0m'
+#cd ~/zigbee2mqtt/
+#npm rebuild
 
 # Code server
 apt -y install tur-repo
@@ -123,7 +123,7 @@ touch ~/AIS/ais-code-server.js
 echo "const { execSync } = require('child_process');" > ~/AIS/ais-code-server.js
 echo "execSync('code-server  --bind-addr 0.0.0.0:8080 --disable-telemetry --auth none',{stdio:['inherit','inherit','inherit']})" >> ~/AIS/ais-code-server.js
 pm2 delete code-server
-pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
+LD_LIBRARY_PATH="" pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
 pm2 save
 
 # tmux
@@ -131,6 +131,7 @@ apt -y install tmux
 apt -y install trzsz-go
 apt -y install lsix
 apt -y install libsixel
+echo "set -g mouse off" > /data/data/com.termux/files/usr/etc/tmux.conf
 pm2 delete webssh
 pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l
 
@@ -141,32 +142,35 @@ apt -y install libsodium
 termux-fix-shebang /data/data/com.termux/files/usr/bin/pm2
 echo -e '\e[38;5;220m Daemonize start \e[0m'
 echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'cd ~/.pm2' > /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'npm install pm2' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 update' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'set LD_LIBRARY_PATH=""' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete ais' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete webssh' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete ftp' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'node /data/data/com.termux/files/usr/bin/pm2 delete mqtt' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo ''
 echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'node /data/data/com.termux/files/usr/bin/pm2 save' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 save' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo ''
+
+chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+daemonize -o ~/AIS/ais_daemonize.log -e ~/AIS/ais_daemonize_log ~/AIS/ais_daemonize.sh
+echo -e '\e[38;5;220m Daemonize end \e[0m'
+
 echo -e '\e[38;5;220m ANDROID \e[30;48;5;208m ' "$AIS_ANDROID_VERSSION" '\e[0m'
 if [ `su -c "dumpsys package com.termux | grep versionName" | tr -d '[:space:]'` != "$AIS_ANDROID_VERSSION" ]; then
+    # wait for the daemonize end before restart gate
+    sleep 60
     echo -e '\e[38;5;220m Pobieram i instaluje Android ... \e[0m'
     echo "su -c 'am start -n launcher.sviete.pl.domlauncherapp/.LauncherActivity -e command ais-dom-update'" >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 else
     echo -e '\e[38;5;220m Android OK... \e[0m'
 fi
-chmod +x /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-daemonize -o ~/AIS/ais_daemonize.log -e ~/AIS/ais_daemonize_log ~/AIS/ais_daemonize.sh
-echo -e '\e[38;5;220m Daemonize end \e[0m'
+
 
 echo -e '\e[40;38;5;220m OK. Instalacja trwała \e[30;48;5;208m' "$SECONDS" 'sekund \e[0m'
 curl http://localhost:8122/text_to_speech?text=Instalacja%20trwa%C5%82a%20$SECONDS%20sekund.%20Poczekaj%20na%20ponowne%20uruchomienie%20systemu.
