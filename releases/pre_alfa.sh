@@ -120,7 +120,8 @@ echo 'allow_anonymous true' >> '/data/data/com.termux/files/usr/etc/mosquitto/mo
 apt -y install tur-repo
 apt -y install code-server
 touch ~/AIS/ais-code-server.js
-echo "const { execSync } = require('child_process');" > ~/AIS/ais-code-server.js
+echo "Object.defineProperty(process, 'platform', { value: 'linux' });" >  ~/AIS/ais-code-server.js
+echo "const { execSync } = require('child_process');" >> ~/AIS/ais-code-server.js
 echo "execSync('code-server  --bind-addr 0.0.0.0:8080 --disable-telemetry --auth none',{stdio:['inherit','inherit','inherit']})" >> ~/AIS/ais-code-server.js
 pm2 delete code-server
 LD_LIBRARY_PATH="" pm2 start ~/AIS/ais-code-server.js --name code-server --output NULL --error NULL --restart-delay=30000
