@@ -8,12 +8,12 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.09.05.2 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.09.06.0 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.08.11"
-AIS_HA_VERSSION="2023.9.0b4"
+AIS_HA_VERSSION="2023.9.0b5"
 AIS_ZIGBEE_VERSION='"version": "1.33.0",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
