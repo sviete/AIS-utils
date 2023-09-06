@@ -132,7 +132,7 @@ apt -y install tmux
 apt -y install trzsz-go
 apt -y install lsix
 apt -y install libsixel
-echo "set -g mouse off" > /data/data/com.termux/files/usr/etc/tmux.conf
+# echo "set -g mouse off" > /data/data/com.termux/files/usr/etc/tmux.conf
 pm2 delete webssh
 pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l
 
