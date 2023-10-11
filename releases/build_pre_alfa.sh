@@ -7,11 +7,11 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.09.28.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.10.11.0 \e[0m'
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2023.10.0b1
-AIS_FRONTEND_VERSSION=20230926.0
+AIS_HA_VERSSION=2023.10.1
+AIS_FRONTEND_VERSSION=20231005.0
 # AIS VERSIONS
 
 cd ~
@@ -55,10 +55,10 @@ pip wheel --no-cache-dir ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
 MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.26.0 -w wheels
 pip wheel --no-cache-dir python-miio==0.5.12 -w wheels
 pip wheel --no-cache-dir PyNaCl==1.5.0 -w wheels
-pip wheel --no-cache-dir Pillow==10.0.0 -w wheels
-pip wheel --no-cache-dir zeroconf==0.115.0 -w wheels
+pip wheel --no-cache-dir Pillow==10.0.1 -w wheels
+pip wheel --no-cache-dir zeroconf==0.115.2 -w wheels
 pip wheel --no-cache-dir hassil==1.2.5 -w wheels
-pip wheel --no-cache-dir home-assistant-intents==2023.9.22 -w wheels
+pip wheel --no-cache-dir home-assistant-intents==2023.10.2 -w wheels
 cp requirements.txt wheels
 cd wheels
 rename cp311-cp311-linux_armv7l py3-none-any *
