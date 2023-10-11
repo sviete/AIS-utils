@@ -8,13 +8,13 @@
 # chmod +x alfa.sh
 # ./alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.09.06.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.10.11.1 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.08.11"
-AIS_HA_VERSSION="2023.9.0b5"
-AIS_ZIGBEE_VERSION='"version": "1.33.0",'
+AIS_HA_VERSSION="2023.10.1"
+AIS_ZIGBEE_VERSION='"version": "1.33.1",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -134,7 +134,7 @@ apt -y install lsix
 apt -y install libsixel
 # echo "set -g mouse off" > /data/data/com.termux/files/usr/etc/tmux.conf
 pm2 delete webssh
-pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l
+pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -W -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l
 
 
 # demonize
@@ -152,7 +152,7 @@ echo 'node /data/data/com.termux/files/usr/bin/pm2 delete mqtt' >> /data/data/co
 echo ''
 echo 'cd ~' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start hass --name ais --output NULL --error NULL --interpreter=python --restart-delay=30000 -- --config /data/data/com.termux/files/home/AIS' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
-echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
+echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start ttyd --name webssh --output NULL --error NULL --restart-delay=30000 -- -W -p 8888 -t enableTrzsz=true tmux -u new -A -s ais bash -l' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start mosquitto --name mqtt --output NULL --error NULL --restart-delay=30000 -- -c /data/data/com.termux/files/usr/etc/mosquitto/mosquitto.conf' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 start busybox --name ftp --output  /dev/null --error  /dev/null --restart-delay=150000 -- tcpsvd -vE 0.0.0.0 1024 busybox ftpd -w /sdcard' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
 echo 'LD_LIBRARY_PATH="" node /data/data/com.termux/files/usr/bin/pm2 save' >> /data/data/com.termux/files/home/AIS/ais_daemonize.sh
