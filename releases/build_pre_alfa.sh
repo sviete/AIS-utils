@@ -58,6 +58,7 @@ pip wheel --no-cache-dir PyNaCl==1.5.0 -w wheels
 pip wheel --no-cache-dir Pillow==10.0.1 -w wheels
 pip wheel --no-cache-dir zeroconf==0.115.2 -w wheels
 pip wheel --no-cache-dir hassil==1.2.5 -w wheels
+pip wheel --no-cache-dir webrtc-noise-gain==1.2.3 -w wheels
 pip wheel --no-cache-dir home-assistant-intents==2023.10.2 -w wheels
 cp requirements.txt wheels
 cd wheels
