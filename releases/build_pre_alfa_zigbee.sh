@@ -7,6 +7,8 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa_zigbee.sh | bash
 #
 
+echo -e '\e[38;5;220m Script version 2023.10.11.0 \e[0m'
+
 if [ -d ~/AIS-utils ]
 then
     echo -e '\e[38;5;220m OK repozytorium istnieje \e[0m'
@@ -31,6 +33,7 @@ git clone --depth=1 https://github.com/Koenkk/zigbee2mqtt.git
 
 echo -e '\e[38;5;220m npm... \e[0m'
 cd ~/zigbee2mqtt
+npm install --save nan
 npm ci --unsafe-perm
 
 echo -e '\e[38;5;220m configuration.yaml \e[0m'
