@@ -7,7 +7,7 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.10.30.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.10.31.0 \e[0m'
 
 # AIS VERSIONS
 AIS_HA_VERSSION=2023.10.5
