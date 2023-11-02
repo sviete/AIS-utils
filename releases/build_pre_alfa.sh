@@ -7,11 +7,11 @@
 # curl -L https://raw.githubusercontent.com/sviete/AIS-utils/master/releases/build_pre_alfa.sh | bash
 #
 
-echo -e '\e[38;5;220m Script version 2023.10.31.1 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.11.02.0 \e[0m'
 
 # AIS VERSIONS
-AIS_HA_VERSSION=2023.11.0b4
-AIS_FRONTEND_VERSSION=20231030.0
+AIS_HA_VERSSION=2023.11.0
+AIS_FRONTEND_VERSSION=20231030.1
 # AIS VERSIONS
 
 cd ~
@@ -52,7 +52,7 @@ rustc -vV
 echo -e '\e[38;5;220m Building AIS wheels ... \e[0m'
 pip wheel --no-cache-dir . -w wheels
 pip wheel --no-cache-dir ais-dom-frontend==$AIS_FRONTEND_VERSSION -w wheels
-MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.26.0 -w wheels
+MATHLIB=m CFLAGS+=" -Wno-implicit-function-declaration" pip wheel --no-cache-dir numpy==1.26.1 -w wheels
 pip wheel --no-cache-dir python-miio==0.5.12 -w wheels
 pip wheel --no-cache-dir PyNaCl==1.5.0 -w wheels
 pip wheel --no-cache-dir Pillow==10.1.0 -w wheels
