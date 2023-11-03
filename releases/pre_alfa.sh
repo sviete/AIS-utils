@@ -91,10 +91,15 @@ apt update
 apt -y -o Dpkg::Options::="--force-confnew" upgrade
 apt -y autoremove
 apt -y install patchelf
+echo -e '1. pip uninstall -y numpy'
 pip uninstall -y numpy
+echo -e '2. apt -y install python-numpy'
 apt -y install python-numpy
-pip install numpy==1.26.1
+echo -e '3. pip install numpy==1.26.1 -U'
+pip install numpy==1.26.1 -U
+echo -e '4. apt -y remove python-numpy'
 apt -y remove python-numpy
+echo -e '5. numpy end'
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install pyinotify -U
