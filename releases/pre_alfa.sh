@@ -8,13 +8,13 @@
 # chmod +x pre_alfa.sh
 # ./pre_alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.11.02.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.11.03.0 \e[0m'
 
 
 # AIS VERSIONS
 AIS_VERSSION="23.08.11"
 AIS_HA_VERSSION="2023.11.0"
-AIS_ZIGBEE_VERSION='"version": "1.33.1",'
+AIS_ZIGBEE_VERSION='"version": "1.33.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -91,7 +91,7 @@ apt update
 apt -y -o Dpkg::Options::="--force-confnew" upgrade
 apt -y autoremove
 apt -y install patchelf
-apt -y install python-numpy
+apt -y remove python-numpy
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install pyinotify -U
@@ -101,6 +101,7 @@ pip install tzdata==2023.3
 pip install setuptools==68.0.0
 pip install botocore==1.31.2
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
+pip install numpy==1.26.1 -U
 
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
