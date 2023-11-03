@@ -91,7 +91,8 @@ apt update
 apt -y -o Dpkg::Options::="--force-confnew" upgrade
 apt -y autoremove
 apt -y install patchelf
-apt -y remove python-numpy
+pip uninstall -y numpy
+apt -y install python-numpy
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install pyinotify -U
@@ -101,7 +102,6 @@ pip install tzdata==2023.3
 pip install setuptools==68.0.0
 pip install botocore==1.31.2
 pip install -r wheels/requirements.txt --no-index --find-links=wheels -U
-pip install numpy==1.26.1 -U
 
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_progress", "payload": "0.6:0.6"}'
 rm -rf /data/data/com.termux/files/home/AIS/wheels
