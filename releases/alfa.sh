@@ -8,13 +8,13 @@
 # chmod +x alfa.sh
 # ./alfa.sh
 
-echo -e '\e[38;5;220m Script version 2023.10.31.0 \e[0m'
+echo -e '\e[38;5;220m Script version 2023.11.03.1 \e[0m'
 
 
 # AIS VERSIONS
-AIS_VERSSION="23.08.11"
-AIS_HA_VERSSION="2023.10.5"
-AIS_ZIGBEE_VERSION='"version": "1.33.1",'
+AIS_VERSSION="23.11.03"
+AIS_HA_VERSSION="2023.11.0"
+AIS_ZIGBEE_VERSION='"version": "1.33.2",'
 AIS_ANDROID_VERSSION="versionName=4.3.3"
 AIS_VERSSION_OLD="210901"
 # AIS VERSIONS
@@ -90,7 +90,11 @@ curl http://localhost:8122/text_to_speech?text=Instaluje%20AIS
 apt update
 apt -y -o Dpkg::Options::="--force-confnew" upgrade
 apt -y autoremove
+apt -y install patchelf
+pip uninstall -y numpy
 apt -y install python-numpy
+pip install numpy==1.26.1
+apt -y remove python-numpy
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install pyinotify -U
