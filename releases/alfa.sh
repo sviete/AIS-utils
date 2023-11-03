@@ -99,7 +99,8 @@ echo -e '3. pip install numpy==1.26.1 -U'
 pip install numpy==1.26.1 -U
 echo -e '4. apt -y remove python-numpy'
 apt -y remove python-numpy
-echo -e '5. numpy end'
+echo -e '5. pip install numpy==1.26.1 -U'
+pip install numpy==1.26.1 -U
 curl -X POST http://localhost:8180/api/webhook/aisdomprocesscommandfromframe -H 'Content-Type: application/json' -d '{"topic":"ais/set_update_status", "payload": "installing"}'
 cd /data/data/com.termux/files/home/AIS
 pip install pyinotify -U
