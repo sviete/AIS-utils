@@ -36,7 +36,7 @@ echo "install docker"
 curl -fsSL get.docker.com | sh
 
 echo "install os-agent"
-curl -L https://github.com/home-assistant/os-agent/releases/download/1.5.1/os-agent_1.5.1_linux_aarch64.deb -o os-agent_1.5.1_linux_aarch64.deb
+curl -L https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb -o os-agent_1.5.1_linux_aarch64.deb
 dpkg -i ./os-agent_1.5.1_linux_aarch64.deb
 
 echo "install homeassistant-supervised"
