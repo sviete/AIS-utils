@@ -2,6 +2,8 @@
 
 1. Preconfigure HA from app
 add: mqtt, ssh, file
+add repo: https://github.com/sviete/ais-ha-addons
+
 
 2. Remove HA account and some settings
 
