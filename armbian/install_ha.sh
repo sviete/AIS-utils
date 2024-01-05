@@ -36,10 +36,12 @@ echo "install docker"
 curl -fsSL get.docker.com | sh
 
 echo "install os-agent"
-curl -L https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb -o os-agent_1.5.1_linux_aarch64.deb
-dpkg -i ./os-agent_1.5.1_linux_aarch64.deb
+curl -L https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb -o os-agent_1.6.0_linux_aarch64.deb
+dpkg -i ./os-agent_1.6.0_linux_aarch64.deb
 
 echo "install homeassistant-supervised"
 sed -i 's#PRETTY_NAME=.*#PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"#'  /etc/os-release
 wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-BYPASS_OS_CHECK=true dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
+# BYPASS_OS_CHECK=true dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
+dpkg -i homeassistant-supervised.deb
+# select machine type: quemu-arm64
